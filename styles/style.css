@@ -1,0 +1,41 @@
+
+html {
+    font-size: 10px; /* px quiere decir 'píxeles': el tamaño de la fuente base es ahora de 10 píxeles de altura */
+    font-family: 'Catamaran', sans-serif; /* Este debe ser el resto del resultado que obtuviste de Google fonts */
+  }
+  h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #5d3168;
+    text-shadow: 3px 3px 1px black;
+  }
+  html {
+    background-color: #6789a8;
+  }
+  p, li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+  body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #c29e6c;
+    padding: 0 20px 20px 20px;
+    border: 5px solid rgb(138, 113, 113);
+  }
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+  /*
+p {
+    color: rgba(19, 122, 91, 0.527);
+  }
+  li {
+    color: rgb(77, 42, 117);
+    font-style: initial;
+  }
+  */
