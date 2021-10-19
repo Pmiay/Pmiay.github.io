@@ -26,10 +26,11 @@ miImage.onclick = function () {
 let miBoton = document.querySelector('button'); // sin id toma el primero
 let miTitulo = document.querySelector( 'h1');
 function estableceNombreUsuario() {
-    //let miNombre = prompt('Introduzca su nombre.');
+    //temp
+    /*let miNombre = prompt('Introduzca su nombre.'); 
     if(!miNombre) {
-      //estableceNombreUsuario();
-    } else {
+      //estableceNombreUsuario(); //temp
+    } else*/ {
       localStorage.setItem('nombre', miNombre);
       miTitulo.innerHTML = 'Deleites Miyuro, ' + miNombre;
     }
@@ -39,7 +40,7 @@ if (!localStorage.getItem('nombre')) {
 }
 else {
     let nombreAlmacenado = localStorage.getItem('nombre');
-    miTitulo.textContent = 'Deleites Miyuro, ' + nombreAlmacenado;
+    miTitulo.textContent = 'Deleites Miyuro, ' + nombreAlmacenado; 
 }
 miBoton.onclick = function() {
     estableceNombreUsuario();
