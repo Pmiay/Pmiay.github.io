@@ -1,5 +1,5 @@
 //const miTitulo = document.querySelector('h1');
-//miTitulo.textContent = '¡Hola mundo!';
+//miTitulo.textContent = '¡Hola www.miyuro.one!';
 
 document.querySelector('h1').onclick = 
     function() {alert('¡Ouch! ¡Deja de pincharme!');}
@@ -31,7 +31,7 @@ function estableceNombreUsuario() {
       estableceNombreUsuario();
     } else {
       localStorage.setItem('nombre', miNombre);
-      miTitulo.innerHTML = 'Java Script is genial, ' + miNombre;
+      miTitulo.innerHTML = 'Deleites Miyuro, ' + miNombre;
     }
   }
 if (!localStorage.getItem('nombre')) {
@@ -39,7 +39,7 @@ if (!localStorage.getItem('nombre')) {
 }
 else {
     let nombreAlmacenado = localStorage.getItem('nombre');
-    miTitulo.textContent = 'Java Script es genial, ' + nombreAlmacenado;
+    miTitulo.textContent = 'Deleites Miyuro, ' + nombreAlmacenado;
 }
 miBoton.onclick = function() {
     estableceNombreUsuario();
