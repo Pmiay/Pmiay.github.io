@@ -27,13 +27,14 @@ let miBoton = document.querySelector('button'); // sin id toma el primero
 let miTitulo = document.querySelector( 'h1');
 function estableceNombreUsuario() {
     //temp
+    miTitulo.innerHTML = 'Deleites Miyuro' 
     /*let miNombre = prompt('Introduzca su nombre.'); 
     if(!miNombre) {
       //estableceNombreUsuario(); //temp
-    } else*/ {
+    } else {
       localStorage.setItem('nombre', miNombre);
       miTitulo.innerHTML = 'Deleites Miyuro, ' + miNombre;
-    }
+    }*/
   }
 if (!localStorage.getItem('nombre')) {
     estableceNombreUsuario();
