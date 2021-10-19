@@ -28,7 +28,7 @@ let miTitulo = document.querySelector( 'h1');
 function estableceNombreUsuario() {
     //let miNombre = prompt('Introduzca su nombre.');
     if(!miNombre) {
-      estableceNombreUsuario();
+      //estableceNombreUsuario();
     } else {
       localStorage.setItem('nombre', miNombre);
       miTitulo.innerHTML = 'Deleites Miyuro, ' + miNombre;
