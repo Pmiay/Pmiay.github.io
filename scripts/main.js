@@ -27,7 +27,7 @@ let miBoton = document.querySelector('button'); // sin id toma el primero
 let miTitulo = document.querySelector( 'h1');
 function estableceNombreUsuario() {
     //temp
-    miTitulo.innerHTML = 'Deleites Miyuro' 
+    miTitulo.innerHTML = 'Deleites Miyuro'; 
     /*let miNombre = prompt('Introduzca su nombre.'); 
     if(!miNombre) {
       //estableceNombreUsuario(); //temp
