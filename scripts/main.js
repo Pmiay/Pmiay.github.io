@@ -2,14 +2,10 @@
 //miTitulo.textContent = '¡Hola www.miyuro.one!';
 
 document.querySelector('h1').onclick = 
-    function() {alert('¡Ouch! ¡Deja de pincharme!');}
+    function() {alert('¡Has tu pedido Pronto! ¡Deja tu datos en Whatsapp!');}
 
-/*let img01 = document.querySelector('img');
-let html01 = document.querySelector('html');
-img01.onclick = function() {alert('¡Ouch! ¡Deja de pincharme!');}
-*///html01.onclick = function() {alert('¡Ouch! ¡Deja de pincharme!');}
 
-let miImage = document.querySelector('img');
+let miImage = document.getElementById("limg");
 miImage.onclick = function () {
     let miSrc = miImage.getAttribute('src');
     if (miSrc === 'images/Img01.jpg') {
