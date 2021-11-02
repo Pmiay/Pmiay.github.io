@@ -88,7 +88,7 @@ body {
 }
 
 .wrapper {
-	max-width: 520px;
+	max-width: 1024px;
 	margin: 0 auto;
 }
 
@@ -170,15 +170,15 @@ body {
 	font-size: 1.5rem;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 520px) {
 	.slide {
-		width: 480px;
+		width: 520px;
 	}
 
 	.caption {
 		font-size: 96px;
 		color:#c29e6c;
-    bottom: 16px;
+    		bottom: 16px;
 		right: 50px;
     
 	}
