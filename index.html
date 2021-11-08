@@ -1,82 +1,230 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap" rel="stylesheet">
-    <title>Mi página de productos</title>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q11QCNPERG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="R&D">
+    <meta name="generator" content="Miyuro.one">
+    <title>Deleites Miyuro</title>
 
-        gtag('config', 'G-Q11QCNPERG');
-    </script>
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/"> -->
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="styles/miyuro.one.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q11QCNPERG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q11QCNPERG');
+</script>
+    
   </head>
   <body>
-      <h1>Deleites Miyuro</h1>
-<!-- slide main -->
-<div class="wrapper">
-  <div class="slider" id="slider">
-    <ul class="slides">
-      <li class="slide" id="slide1">
-        <a href="#">
-          <p class="caption">Deleites Miyuro</p>
-          <img src="images/sld/si01.jpg" alt="Limón Criollo">
-        </a>
-      </li>
-      <li class="slide" id="slide2">
-        <a href="#">
-          <p class="caption">Deleites Miyuro</p>
-          <img src="images/sld/si02.jpg" alt="Cocos y Cocada">
-        </a>
-      </li>
-      <li class="slide" id="slide3">
-        <a href="#">
-          <p class="caption">Deleites Miyuro</p>
-          <img src="images/sld/si03.jpg" alt="Miel de Caña artesanal">
-        </a>
-      </li>
-      <li class="slide" id="slide4">
-        <a href="#">
-          <p class="caption">Deleites Miyuro</p>
-          <img src="images/sld/si04.jpg" alt="guineo tradicional y dulce de Guineo">
-        </a>
-      </li>
-      <li class="slide" id="slide5">
-        <a href="#">
-           <p class="caption">Deleites Miyuro</p>
-           <img src="images/sld/si05.jpg" alt="Gengibre">
-        </a>
-      </li>
-      <li class="slide">
-        <a href="#">
-          <p class="caption">Deleites Miyuro</p>
-          <img src="images/sld/si01.jpg" alt="Limón Criollo">
-        </a>
-      </li>
-    </ul>
-    <ul class="slider-controler">
-      <li><a href="#slide1">&bullet;</a></li>
-      <li><a href="#slide2">&bullet;</a></li>
-      <li><a href="#slide3">&bullet;</a></li>
-      <li><a href="#slide4">&bullet;</a></li>
-      <li><a href="#slide5">&bullet;</a></li>
-    </ul>
-  </div>
-</div>
-<!-- end slide main -->
-  
-      <div class="btn-whap" id="btnw">
-        <a href="https://api.whatsapp.com/send?phone=50765370687" target="_blank">
-          <img src="images/btn_w.png" width="64" height="64" alt="">
-        </a>
+    
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">Deleites Miyuro</h4>
+          <p class="text-muted">Presenta galaría de sabores, para el educado paladar, productos cultivados y preparados en forma artesanal.  By R&M. Utilizamos en nuestros productos preparados Ingredientes Orgánicos y estos mismos también estan disponibles, para su disfrute  o para incluirlo en su receta familiar.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contáctenos</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://wa.me/50765370687?text=Quiero%20de%20estos%20productos" class="text-white">Whatsapp</a></li>
+            <li><a href="#" class="text-white">Email me</a></li>
+          </ul>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Productos</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Deleites Miyuro</h1>
+        <p class="lead text-muted">Exquisitos postres para deleitar el paladar, creados artesanalmente con ingredientes orgánicos traídos directamente del campo, donde son cultivados con métodos tradicionales, propiciando dulzura y textura totalmente natural.</p>
+        <!-- <p>
+          <a href="#" class="btn btn-primary my-2">Más Productos</a>
+          <a href="#" class="btn btn-secondary my-2">Nuestros Postres</a>
+        </p> -->
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+ <!--          <div class="card" style="width: 300px;">
+            <img src="images/mi01.jpg" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+               <h5 class="card-title">Alice Liddel</h5>
+               <p class="card-text">Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+               <a href="#" class="btn btn-primary">View Profile</a>
+            </div>
+         </div> -->
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top"  width="100%" height="25" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Miel</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Miel de Caña</text></svg>
+              <img src="images/mi01.jpg" alt="Miel de Caña">  
+            <div class="card-body">
+              <p class="card-text">Botella sellada, para garantizar la seguridad, transparente para sentir la consistencia. 24onz líquidas; 37onz de peso, más de dos libras de salud y bienestar, esta miel debes degustar.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Conocer Más</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Recetas</button>
+                </div>
+                <small class="text-muted">Orgánica</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="25" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Arroz Nuevo Tostado</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Arroz Nuevo Tostado</text></svg>
+            <img src="images/ai01.jpg" alt="Arroz nuevo Tostado">
+            <div class="card-body">
+              <p class="card-text">Arroz "fututeado", para los que crecimos en el campo, tan solo su aroma, nos transporta a aquellas tardes lluviosas de la temporada donde mamá o la abuela mecedor en mano con movimiento rítmico, recién cortado el arroz tostaba y luego a un lado del pilón buscando los granitos, no hay pop corn que pueda superarlo, <b>este arroz conserva la tradición</b>, en un fogón de tres piedras fue tostado y a mano en un pilón descascarado, conmemore aquellos momentos y transmita el legado de sabor disfrutando junto con su familia.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Conocer Más</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Recetas</button>
+                </div>
+                <small class="text-muted">Orgánico</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="25" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Limon</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Limón Criollo</text></svg>
+            <img src="images/li02.jpg" alt="Limon Criollo">
+            <div class="card-body">
+              <p class="card-text">El limón, un fruto ácido de aroma relajante, por todos conocido, algunos lo especifican más al decir "limón nacional" o "limón criollo", lo cierto es que su color, textura, tamaño y en especial su abundante jugo, es la identidad del <b>limón panameño</b> y la buena tierra donde se cultiva.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Conocer Más</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Recetas</button>
+                </div>
+                <small class="text-muted">Cultivo artesanal</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="25" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Dulce</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Dulce de Guineo</text></svg>
+            <img src="images/sld/si03.jpg" alt="Banana's Cake">
+            <div class="card-body">
+              <p class="card-text">Dulce de Guineo, versión almendra, solo es posible describirlo al probarlo. El guineo como ingrediente principal es un fruto cuidadosamente cultivado y especialmente madurado en su árbol, capturando toda la esencia del campo y transfiriendo azúcar frutal que a su salud juntos con las almendras su corazón y mente agradecerán por ser natural.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Conocer Más</button> -->
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ingredientes</button>
+                </div>
+                <small class="text-muted">Ingrediente Orgánico</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="25" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Cocada</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Cocada</text></svg>
+            <img src="images/sld/si08.jpg" alt="Cocada">
+            <div class="card-body">
+              <p class="card-text">Variedad, tres versiones a saborear, con semilla de marañon, con nueces y con almendras, no es el monton, porque es <b>gurmet 7 onzas</b>, con miel artesanal orgánica y cocos cultivados en armonia con la fauna, donde la ardilla y la iguana mantienen la ecologia sana, y la estopa al huerto regresa como abono organico de fama.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Conocer Más</button> -->
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ingredientes</button>
+                </div>
+                <small class="text-muted">Ingrediente Orgánico</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="25" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Chicheme con Coco</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Chicheme con Coco</text></svg>
+            <img src="images/sld/si05.jpg" alt="Chicheme con Coco">
+            <div class="card-body">
+              <p class="card-text">Cremoso, de olor envolvente y el sabor de parar, hasta terminar. Casualidad, el maíz es de cultivo tradicional por campesinos a mano nada industrial, se prepara en casa definiendo su propiedad, con orgullo consume lo tradicional como lo tuyo.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Conocer Más</button> -->
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ingredientes</button>
+                </div>
+                <small class="text-muted">Ingrediente Orgánico</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">Miyuro is &copy; R&M, sienta total libertad de consultarnos sin compromiso!</p>
+    <p class="mb-0">Primera ves aquí? <a href="ayuda.html">Conozca la historia de Miyuro</a> o vea nuestros servicios relacionados <a href="https://vctramites.miyuro.one/">Estamos para ayudar</a>.</p>
+  </div>
+</footer>
+
+<div class="btn-whap" id="btnw">
   
-    <script src="scripts/main.js"></script>
-</body>
+  <a href="https://wa.me/50765370687?text=Me%20interesa" id="wbtn" target="_blank"> 
+    <img src="images/btn_whatsapp.png" width="64" height="64" alt="">
+ </a>
+</div>
+
+    <script src="scripts/miyuro.one.js"></script>
+
+      
+  </body>
 </html>
