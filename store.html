@@ -1,0 +1,295 @@
+<!DOCTYPE html> 
+<html lang="es" class="h-100">
+<head class="mb-auto">
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="R&M">
+    <meta name="generator" content="1.0">
+    <title>De compras con Miyuro</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">   
+
+    <!-- miyuro.one core CSS   -->
+    <link href="styles/miyuro.store.css" rel="stylesheet">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Variables
+            const baseDeDatos = [
+                {	id: 1,	imagen: 'https://miyuro.one/images/store/st27.png',	nombre: 'Azucar Turbinada Santa Rosa 800g',	precio: 1.15,	ofertaen: '',	},
+                {	id: 2,	imagen: 'https://miyuro.one/images/store/st26.png',	nombre: 'Galletas con Crema Sabor Vainilla 10 und',	precio: 1.25,	ofertaen: '',	},
+                {	id: 3,	imagen: 'https://miyuro.one/images/store/st20.png',	nombre: 'Leche En Polvo instantánea Kanny refill 400g',	precio: 3.3,	ofertaen: '',	},
+                {	id: 4,	imagen: 'https://miyuro.one/images/store/st19.jpg',	nombre: 'LECHE ENTERA ESTRELLA AZUL LITRO',	precio: 1.6,	ofertaen: '',	},
+                {	id: 5,	imagen: 'https://miyuro.one/images/store/st05.jpg',	nombre: 'LECHE ENTERA NEVADA 946ml',	precio: 1.75,	ofertaen: '',	},
+                {	id: 6,	imagen: 'https://miyuro.one/images/store/st38.png',	nombre: 'Leche Evaporada Ideal 315 g',	precio: 1.15,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/271810',	},
+                {	id: 7,	imagen: 'https://miyuro.one/images/store/st28.jpg',	nombre: 'LECHE EVAPORADA SUCEDA SPRING FARM 354ml',	precio: 1.15,	ofertaen: '',	},
+                {	id: 8,	imagen: 'https://miyuro.one/images/store/st16.jpg',	nombre: 'MERMELADA CEREZA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+                {	id: 9,	imagen: 'https://miyuro.one/images/store/st18.png',	nombre: 'MERMELADA FRESA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+                {	id: 10,	imagen: 'https://miyuro.one/images/store/st17.png',	nombre: 'MERMELADA MELOCOTON LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+                {	id: 11,	imagen: 'https://miyuro.one/images/store/st15.jpg',	nombre: 'MERMELADA NARANJA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+                {	id: 12,	imagen: 'https://miyuro.one/images/store/st29.png',	nombre: 'Queso Americano Nestlé Individual 25und',	precio: 4,	ofertaen: '',	},
+                {	id: 13,	imagen: 'https://miyuro.one/images/store/st53.jpg',	nombre: 'Huevos Toledano Grandes 15  und',	precio: 2.7,	ofertaen: '',	},
+                {	id: 14,	imagen: 'https://miyuro.one/images/store/st43.jpg',	nombre: 'Huevos Toledano Grandes 30  unidades',	precio: 5.4,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/2717',	},
+                {	id: 15,	imagen: 'https://miyuro.one/images/store/st61.png',	nombre: 'Honey Bunches Cereal de Avena y Miel Bolsa de 680gms / 24oz',	precio: 5.5,	ofertaen: 'https://www.ribasmith.com/index.php/218807-cereal%20honey%20bounches%20almonds.html',	},
+                {	id: 16,	imagen: 'https://miyuro.one/images/store/st14.png',	nombre: 'CAFE TRADICIONAL MOLIDO REGUL DURAN 425g',	precio: 5.25,	ofertaen: '',	},
+                {	id: 17,	imagen: 'https://miyuro.one/images/store/st45.jpg',	nombre: 'Tulip Jamonilla de Cerdo 340 g',	precio: 2.45,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/309016',	},
+                {	id: 18,	imagen: 'https://miyuro.one/images/store/st11.jpg',	nombre: 'TUNA TROZO EN ACEITE AMERICAN PRIDE 170g',	precio: 1,	ofertaen: '',	},
+                {	id: 19,	imagen: 'https://miyuro.one/images/store/st13.jpg',	nombre: 'ARVEJAS AMARILLAS GALLO PINTO 12oz',	precio: 0.75,	ofertaen: '',	},
+                {	id: 20,	imagen: 'https://miyuro.one/images/store/st12.jpg',	nombre: 'LENTEJAS VIKINGO 1lb',	precio: 0.95,	ofertaen: '',	},
+                {	id: 21,	imagen: 'https://miyuro.one/images/store/st56.jpg',	nombre: 'Cepillo Dental Oral B Suave Oral-B 4 Pack',	precio: 3.1,	ofertaen: 'https://supercarnes.com/producto/cepillo-dental-clean-pack-familia-indicator-color-collection-suave-oral-b-4-pack/',	},
+                {	id: 22,	imagen: 'https://miyuro.one/images/store/st08.jpg',	nombre: 'CLORO EN POLVO SIO 1000g',	precio: 1.25,	ofertaen: '',	},
+                {	id: 23,	imagen: 'https://miyuro.one/images/store/st44.png',	nombre: 'Jabón de Baño Coast Aroma Pacific Force 113 g',	precio: 0.8,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/901414',	},
+                {	id: 24,	imagen: 'https://miyuro.one/images/store/st59.png',	nombre: 'Jabon de Baño Ivory Original Scent 90 g 3und',	precio: 1.75,	ofertaen: '',	},
+                {	id: 25,	imagen: 'https://miyuro.one/images/store/st10.jpg',	nombre: 'LAVAPLATOS CREMA CITRUS POWER ZAGAZ 235g',	precio: 0.65,	ofertaen: '',	},
+                {	id: 26,	imagen: 'https://miyuro.one/images/store/st09.jpg',	nombre: 'LAVAPLATOS CREMA FRUTOS ROJOS ZAGAZ 235g',	precio: 0.65,	ofertaen: '',	},
+                {	id: 27,	imagen: 'https://miyuro.one/images/store/st24.jpg',	nombre: 'Lavaplatos Klinpiax Frutos Rojos 1000 Gms',	precio: 1.45,	ofertaen: 'https://industrialapopular.com/klinpiax/',	},
+                {	id: 28,	imagen: 'https://miyuro.one/images/store/st23.jpg',	nombre: 'Lavaplatos Klinpiax Limon 1000 Gms',	precio: 1.45,	ofertaen: 'https://industrialapopular.com/klinpiax/',	},
+                {	id: 29,	imagen: 'https://miyuro.one/images/store/st22.png',	nombre: 'Lavaplatos Líquido Sip Rosa 400 ML',	precio: 1.1,	ofertaen: '',	},
+                {	id: 30,	imagen: 'https://miyuro.one/images/store/st21.png',	nombre: 'Papel Higiénico Higienol 1000 Hojas  4 Rollos',	precio: 2.95,	ofertaen: '',	},
+                {	id: 31,	imagen: 'https://miyuro.one/images/store/st57.png',	nombre: 'Papel Toalla2 Rollos200 hojas c/u',	precio: 3,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/324768',	},
+                {	id: 32,	imagen: 'https://miyuro.one/images/store/st25.jpg',	nombre: 'Pasta dental Crest Complete 178 Gms',	precio: 2.85,	ofertaen: '',	},
+                {	id: 33,	imagen: 'https://miyuro.one/images/store/st32.png',	nombre: 'Platon Plástico 42 Plg',	precio: 2,	ofertaen: 'https://plasticbrothers.com/productos/limpieza/banos/bano-42-color-ab/',	},
+                {	id: 34,	imagen: 'https://miyuro.one/images/store/st54.jpg',	nombre: 'Toallas Microfibra Individuales3 und 40x40cm',	precio: 2,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/877990',	},
+                {	id: 35,	imagen: 'https://miyuro.one/images/store/st58.png',	nombre: 'SPAGUETTI LA PARMIGIANA 454g',	precio: 0.65,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/315398',	},
+                {	id: 36,	imagen: 'https://miyuro.one/images/store/st35.jpg',	nombre: 'Cámara web 1080P con micrófono, clip flexible y trípode',	precio: 20,	ofertaen: '',	},
+                {	id: 37,	imagen: 'https://miyuro.one/images/store/st34.jpg',	nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  Negro',	precio: 25,	ofertaen: '',	},
+                {	id: 38,	imagen: 'https://miyuro.one/images/store/st33.jpg',	nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  verde claro',	precio: 25,	ofertaen: '',	},
+                {	id: 39,	imagen: 'https://miyuro.one/images/store/st30.png',	nombre: 'Bolsa Plástica 5 x 10 100 Und',	precio: 0.65,	ofertaen: '',	},
+                {	id: 40,	imagen: 'https://miyuro.one/images/store/st31.jpg',	nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: 'http://www.disthh.com/index.php?cocli=&clien=&grupo=BOLSAS%20Y%20CARTUCHOS&SEGRU=True',	},
+
+
+            ];
+
+            let lista = [];
+            const divisa = '$';
+            const DOMitems = document.querySelector('#items');
+            const DOMlista = document.querySelector('#lista');
+            const DOMtotal = document.querySelector('#total');
+            const DOMbotonVaciar = document.querySelector('#btn-clear');
+            const miLocalStorage = window.localStorage;
+
+            // Funciones
+
+            /**
+            * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+            */
+            function ListarSku() {
+                baseDeDatos.forEach((info) => {
+                    // Estructura
+                    const miNodo = document.createElement('div');
+                   // miNodo.classList.add('card', 'col-sm-4');
+                    // Body
+                    const miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body' );
+                    // Titulo
+                    const miNodoTitle = document.createElement('h2');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info.nombre;
+                    // Imagen
+                    const miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('mt-auto');
+                    miNodoImagen.style.height="45%"
+                    miNodoImagen.style.width ="45%"
+                    miNodoImagen.setAttribute('src', info.imagen);
+                    // Precio
+                    const miNodoPrecio = document.createElement('h2');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                    // Boton
+                    const miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info.id);
+                    miNodoBoton.addEventListener('click', addSku);
+                    // Insertamos
+                    const miitemsep = document.createElement('hr');
+                    miitemsep.classList.add('featurette-divider');
+                    miNodoCardBody.appendChild(miitemsep);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    DOMitems.appendChild(miNodo);
+                });
+            }
+
+            /**
+            * Evento para añadir un producto al carrito de la compra
+            */
+            function addSku(evento) {
+                // Anyadimos el Nodo a nuestro lista
+                lista.push(evento.target.getAttribute('marcador'))
+                // Actualizamos el carrito
+                ListaDeCompra();
+                // Actualizamos el LocalStorage
+                ListaToLocalStorage();
+            }
+
+            /**
+            * Dibuja todos los productos guardados en el carrito
+            */
+            function ListaDeCompra() {
+                DOMlista.textContent = '';
+                const listaSinDuplicados = [...new Set(lista)];
+                listaSinDuplicados.forEach((item) => {
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    const numeroUnidadesItem = lista.reduce((total, itemId) => {
+                       return itemId === item ? total += 1 : total;
+                    }, 0);
+                    const miNodo = document.createElement('span');
+                    miNodo.classList.add('d-flex');
+      
+                   // Imagen
+                   const midivimg = document.createElement('div');
+                   midivimg.classList.add('product-img-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
+                   const carimg = document.createElement('img');
+                  carimg.style.width='35px';
+                  carimg.style.height='35px'                   
+                   carimg.setAttribute('src', `${miItem[0].imagen}`);
+                   midivimg.appendChild(carimg);
+                    // Descripcion
+                    const miNododivtxt = document.createElement('div');
+                    miNododivtxt.classList.add('txt-product-container');
+                        const mispandes = document.createElement('span');
+                        mispandes.classList.add('cart-item-description' );
+                        mispandes.textContent= `${miItem[0].nombre} - ${numeroUnidadesItem} x ${miItem[0].precio}${divisa}`;
+                        miNododivtxt.appendChild(mispandes);
+                    
+                   // miNodo.textContent 
+                    // Boton de borrar
+                    const miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'col-sm-0');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.dataset.item = item;
+                    miBoton.addEventListener('click', BorraSkuLista);
+                    // Mezclamos nodos
+                    miNodo.appendChild(midivimg);
+                    miNodo.appendChild(miNododivtxt)
+                    miNodo.appendChild(miBoton);
+                    DOMlista.appendChild(miNodo);
+                });
+                // Renderizamos el precio total en el HTML
+                DOMtotal.textContent = Total();
+            }
+
+            /**
+            * Evento para borrar un elemento del carrito
+            */
+            function BorraSkuLista(evento) {
+                // Obtenemos el producto ID que hay en el boton pulsado
+                const id = evento.target.dataset.item;
+                // Borramos todos los productos
+                lista = lista.filter((listaId) => {
+                    return listaId !== id;
+                });
+                // volvemos a renderizar
+                ListaDeCompra();
+                // Actualizamos el LocalStorage
+                ListaToLocalStorage();
+
+            }
+
+            /**
+             * Calcula el precio total teniendo en cuenta los productos repetidos
+             */
+            function Total() {
+                // Recorremos el array del lista
+                return lista.reduce((total, item) => {
+                    // De cada elemento obtenemos su precio
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Los sumamos al total
+                    return total + miItem[0].precio;
+                }, 0).toFixed(2);
+            }
+
+            /**
+            * Varia el carrito y vuelve a dibujarlo
+            */
+            function limpiarLista() {
+                // Limpiamos los productos guardados
+                lista = [];
+                // Renderizamos los cambios
+                ListaDeCompra();
+                // Borra LocalStorage
+                localStorage.clear();
+
+            }
+
+            function ListaToLocalStorage () {
+                miLocalStorage.setItem('lista', JSON.stringify(lista));
+            }
+
+            function localStorageToLista () {
+                // ¿Existe un carrito previo guardado en LocalStorage?
+                if (miLocalStorage.getItem('lista') !== null) {
+                    // Carga la información
+                    lista = JSON.parse(miLocalStorage.getItem('lista'));
+                }
+            }
+
+            // Eventos
+            DOMbotonVaciar.addEventListener('click', limpiarLista);
+
+            // Inicio
+            localStorageToLista();
+            ListarSku();
+            ListaDeCompra();
+        });
+    </script>
+</head>
+<body  class="d-flex h-100 text-center text-white bg-dark">
+
+    <div  class="container style.system-container d-flex mw-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto"> 
+            <div>
+              <h3 class="float-md-start mb-1">Miyuro</h3>
+              <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                <a class="nav-link" href="#">Servicios</a>
+                <a class="nav-link" href="#">Contacto</a>
+              </nav>
+            </div>
+            <h1>Directo, al mismo precio</h1>
+            <p class="lead">No se complique solo elija lo que necesita y nosotros haremos el resto.</p>
+                      
+        </header>
+         <!-- Elementos generados a partir del JSON -->
+        <main id="items" >
+                <!-- Carrito -->
+            <aside class="mt-auto">
+                <!-- Elementos del carrito -->
+                 <!--<ul id="carrito" class="list-group "></ul>  -->
+                <div class="col-xl-8 col-lg-7 col-sm-12 col-md-12 px-3">
+                    <div class="product-main-container p-3 bg-white">
+                        <div class="row px-3">
+                            <div class="col-12 px-0">
+                                <h3 class="title-mdm title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
+                            </div>
+                        </div>
+                        <div class="px-3">
+                                <div class="row prod-item-cart-list">
+                                    <div id="lista" class="list-group col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0"> </div>
+                                        <button id="btn-clear" class="col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0 btn btn-danger">Limpiar</button>
+                                    <!--  <hr class="featurette-divider"> -->
+                                </div> 
+                        </div>  
+                    </div>
+                </div>               
+            </aside> 
+
+        </main>
+              <!-- Precio total -->
+        <div class="btn-total" id ="btn-t">
+            <p class="text-muted text-right">Total: &dollar;<span id="total"></span>            
+            </p>
+        </div>    
+    </div>
+</body>
+</html>
