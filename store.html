@@ -1,0 +1,270 @@
+<!DOCTYPE html> 
+<html lang="es" class="h-100">
+<head class="mb-auto">
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="R&M">
+    <meta name="generator" content="1.0">
+    <title>De compras con Miyuro</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">   
+
+    <!-- miyuro.one core CSS base on  https://programadorwebvalencia.com/javascript-ejemplo-carrito-de-compra/-->
+    <link href="styles/miyuro.store.css" rel="stylesheet">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Variables
+            const baseDeDatos = [
+                {
+                    id: 1,
+                    nombre: 'Patata',
+                    ofertaen:'https://www.pricesmart.com',
+                    precio: 1,
+                    imagen: './images/store/st28.jpg'
+                },
+                {
+                    id: 2,
+                    nombre: 'Cebolla',
+                    ofertaen:'https://www.pricesmart.com',
+                    precio: 1.2,
+                    imagen: './images/store/st33.jpg'
+                },
+                {
+                    id: 3,
+                    nombre: 'Calabacin',
+                    ofertaen:'https://www.pricesmart.com',
+                    precio: 2.1,
+                    imagen: './images/store/st45.jpg'
+                },
+                {
+                    id: 4,
+                    nombre: 'Fresas',
+                    ofertaen:'https://www.pricesmart.com',
+                    precio: 0.6,
+                    imagen: './images/store/st12.jpg'
+                }
+
+            ];
+
+            let carrito = [];
+            const divisa = '$';
+            const DOMitems = document.querySelector('#items');
+            const DOMcarrito = document.querySelector('#carrito');
+            const DOMtotal = document.querySelector('#total');
+            const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+            const miLocalStorage = window.localStorage;
+
+            // Funciones
+
+            /**
+            * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+            */
+            function renderizarProductos() {
+                baseDeDatos.forEach((info) => {
+                    // Estructura
+                    const miNodo = document.createElement('div');
+                   // miNodo.classList.add('card', 'col-sm-4');
+                    // Body
+                    const miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body' );
+                    // Titulo
+                    const miNodoTitle = document.createElement('h2');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info.nombre;
+                    // Imagen
+                    const miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('mt-auto');
+                    miNodoImagen.style.height="45%"
+                    miNodoImagen.style.width ="45%"
+                    miNodoImagen.setAttribute('src', info.imagen);
+                    // Precio
+                    const miNodoPrecio = document.createElement('h2');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                    // Boton
+                    const miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info.id);
+                    miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                    // Insertamos
+                    const miitemsep = document.createElement('hr');
+                    miNodoBoton.classList.add('featurette-divider');
+                    miNodoCardBody.appendChild(miitemsep);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    DOMitems.appendChild(miNodo);
+                });
+            }
+
+            /**
+            * Evento para añadir un producto al carrito de la compra
+            */
+            function anyadirProductoAlCarrito(evento) {
+                // Anyadimos el Nodo a nuestro carrito
+                carrito.push(evento.target.getAttribute('marcador'))
+                // Actualizamos el carrito
+                renderizarCarrito();
+                // Actualizamos el LocalStorage
+                guardarCarritoEnLocalStorage();
+            }
+
+            /**
+            * Dibuja todos los productos guardados en el carrito
+            */
+            function renderizarCarrito() {
+                // Vaciamos todo el html
+                DOMcarrito.textContent = '';
+                // Quitamos los duplicados
+                const carritoSinDuplicados = [...new Set(carrito)];
+                // Generamos los Nodos a partir de carrito
+                carritoSinDuplicados.forEach((item) => {
+                    // Obtenemos el item que necesitamos de la variable base de datos
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        // ¿Coincide las id? Solo puede existir un caso
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Cuenta el número de veces que se repite el producto
+                    const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                        // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+                    // Creamos el nodo del item del carrito
+                    const miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mt-auto');
+      
+                   // Imagen
+                   const carimg = document.createElement('img');
+                   carimg.classList.add('product-img-container');
+                   //carimg.style.add('border:5px' )  
+                   carimg.setAttribute('src', `${miItem[0].imagen}`);
+                    //"<img  src="./images/store/st45.jpg" style="border:5px solid var(--color0);">"
+                    const miNododivtxt = document.createElement('div');
+                    miNododivtxt.classList.add('cart-item-description');
+                    miNododivtxt.textContent= `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                   // miNodo.textContent 
+                    // Boton de borrar
+                    const miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.dataset.item = item;
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    // Mezclamos nodos
+                    miNodo.appendChild(carimg);
+                    miNodo.appendChild(miNododivtxt)
+                    miNodo.appendChild(miBoton);
+                    DOMcarrito.appendChild(miNodo);
+                });
+                // Renderizamos el precio total en el HTML
+                DOMtotal.textContent = calcularTotal();
+            }
+
+            /**
+            * Evento para borrar un elemento del carrito
+            */
+            function borrarItemCarrito(evento) {
+                // Obtenemos el producto ID que hay en el boton pulsado
+                const id = evento.target.dataset.item;
+                // Borramos todos los productos
+                carrito = carrito.filter((carritoId) => {
+                    return carritoId !== id;
+                });
+                // volvemos a renderizar
+                renderizarCarrito();
+                // Actualizamos el LocalStorage
+                guardarCarritoEnLocalStorage();
+
+            }
+
+            /**
+             * Calcula el precio total teniendo en cuenta los productos repetidos
+             */
+            function calcularTotal() {
+                // Recorremos el array del carrito
+                return carrito.reduce((total, item) => {
+                    // De cada elemento obtenemos su precio
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Los sumamos al total
+                    return total + miItem[0].precio;
+                }, 0).toFixed(2);
+            }
+
+            /**
+            * Varia el carrito y vuelve a dibujarlo
+            */
+            function vaciarCarrito() {
+                // Limpiamos los productos guardados
+                carrito = [];
+                // Renderizamos los cambios
+                renderizarCarrito();
+                // Borra LocalStorage
+                localStorage.clear();
+
+            }
+
+            function guardarCarritoEnLocalStorage () {
+                miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+            }
+
+            function cargarCarritoDeLocalStorage () {
+                // ¿Existe un carrito previo guardado en LocalStorage?
+                if (miLocalStorage.getItem('carrito') !== null) {
+                    // Carga la información
+                    carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+                }
+            }
+
+            // Eventos
+            DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+            // Inicio
+            cargarCarritoDeLocalStorage();
+            renderizarProductos();
+            renderizarCarrito();
+        });
+    </script>
+</head>
+<body  class="d-flex h-100 text-center text-white bg-dark">
+
+    <div  class="container style.system-container d-flex mw-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto"> 
+            <div>
+              <h3 class="float-md-start mb-1">Miyuro</h3>
+              <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                <a class="nav-link" href="#">Servicios</a>
+                <a class="nav-link" href="#">Contacto</a>
+              </nav>
+            </div>
+            <h1>Directo, al mismo precio</h1>
+            <p class="lead">No se complique solo elija lo que necesita y nosotros haremos el resto.</p>
+                      
+        </header>
+         <!-- Elementos generados a partir del JSON -->
+        <main id="items" >
+                <!-- Carrito -->
+            <aside class="mt-auto">
+                <h2>Bolsa de Poductos</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group "></ul> 
+                   <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+               <!--  <hr class="featurette-divider"> -->
+            </aside> 
+
+        </main>
+              <!-- Precio total -->
+        <div class="btn-total" id ="btn-t">
+            <p class="text-muted text-right">Total: <span id="total"></span>&dollar;            
+            </p>
+        </div>    
+    </div>
+</body>
+</html>
