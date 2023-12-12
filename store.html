@@ -66,7 +66,7 @@
             const DOMitems = document.querySelector('#items');
             const DOMcarrito = document.querySelector('#carrito');
             const DOMtotal = document.querySelector('#total');
-            const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+            const DOMbotonVaciar = document.querySelector('#btn-clear');
             const miLocalStorage = window.localStorage;
 
             // Funciones
@@ -74,7 +74,7 @@
             /**
             * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
             */
-            function renderizarProductos() {
+            function ListarSku() {
                 baseDeDatos.forEach((info) => {
                     // Estructura
                     const miNodo = document.createElement('div');
@@ -101,7 +101,7 @@
                     miNodoBoton.classList.add('btn', 'btn-primary');
                     miNodoBoton.textContent = '+';
                     miNodoBoton.setAttribute('marcador', info.id);
-                    miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                    miNodoBoton.addEventListener('click', addSku);
                     // Insertamos
                     const miitemsep = document.createElement('hr');
                     miitemsep.classList.add('featurette-divider');
@@ -118,19 +118,19 @@
             /**
             * Evento para añadir un producto al carrito de la compra
             */
-            function anyadirProductoAlCarrito(evento) {
+            function addSku(evento) {
                 // Anyadimos el Nodo a nuestro carrito
                 carrito.push(evento.target.getAttribute('marcador'))
                 // Actualizamos el carrito
-                renderizarCarrito();
+                ListaDeCompra();
                 // Actualizamos el LocalStorage
-                guardarCarritoEnLocalStorage();
+                ListaToLocalStorage();
             }
 
             /**
             * Dibuja todos los productos guardados en el carrito
             */
-            function renderizarCarrito() {
+            function ListaDeCompra() {
                 DOMcarrito.textContent = '';
                 const carritoSinDuplicados = [...new Set(carrito)];
                 carritoSinDuplicados.forEach((item) => {
@@ -155,7 +155,7 @@
                     const miNododivtxt = document.createElement('div');
                     miNododivtxt.classList.add('txt-product-container');
                         const mispandes = document.createElement('span');
-                        mispandes.classList.add('cart-item-description');
+                        mispandes.classList.add('cart-item-description' );
                         mispandes.textContent= `${miItem[0].nombre} - ${numeroUnidadesItem} x ${miItem[0].precio}${divisa}`;
                         miNododivtxt.appendChild(mispandes);
                     
@@ -166,7 +166,7 @@
                     miBoton.textContent = 'X';
                     miBoton.style.marginLeft = '1rem';
                     miBoton.dataset.item = item;
-                    miBoton.addEventListener('click', borrarItemCarrito);
+                    miBoton.addEventListener('click', BorraSkuLista);
                     // Mezclamos nodos
                     miNodo.appendChild(midivimg);
                     miNodo.appendChild(miNododivtxt)
@@ -174,13 +174,13 @@
                     DOMcarrito.appendChild(miNodo);
                 });
                 // Renderizamos el precio total en el HTML
-                DOMtotal.textContent = calcularTotal();
+                DOMtotal.textContent = Total();
             }
 
             /**
             * Evento para borrar un elemento del carrito
             */
-            function borrarItemCarrito(evento) {
+            function BorraSkuLista(evento) {
                 // Obtenemos el producto ID que hay en el boton pulsado
                 const id = evento.target.dataset.item;
                 // Borramos todos los productos
@@ -188,16 +188,16 @@
                     return carritoId !== id;
                 });
                 // volvemos a renderizar
-                renderizarCarrito();
+                ListaDeCompra();
                 // Actualizamos el LocalStorage
-                guardarCarritoEnLocalStorage();
+                ListaToLocalStorage();
 
             }
 
             /**
              * Calcula el precio total teniendo en cuenta los productos repetidos
              */
-            function calcularTotal() {
+            function Total() {
                 // Recorremos el array del carrito
                 return carrito.reduce((total, item) => {
                     // De cada elemento obtenemos su precio
@@ -212,21 +212,21 @@
             /**
             * Varia el carrito y vuelve a dibujarlo
             */
-            function vaciarCarrito() {
+            function limpiarLista() {
                 // Limpiamos los productos guardados
                 carrito = [];
                 // Renderizamos los cambios
-                renderizarCarrito();
+                ListaDeCompra();
                 // Borra LocalStorage
                 localStorage.clear();
 
             }
 
-            function guardarCarritoEnLocalStorage () {
+            function ListaToLocalStorage () {
                 miLocalStorage.setItem('carrito', JSON.stringify(carrito));
             }
 
-            function cargarCarritoDeLocalStorage () {
+            function localStorageToLista () {
                 // ¿Existe un carrito previo guardado en LocalStorage?
                 if (miLocalStorage.getItem('carrito') !== null) {
                     // Carga la información
@@ -235,12 +235,12 @@
             }
 
             // Eventos
-            DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+            DOMbotonVaciar.addEventListener('click', limpiarLista);
 
             // Inicio
-            cargarCarritoDeLocalStorage();
-            renderizarProductos();
-            renderizarCarrito();
+            localStorageToLista();
+            ListarSku();
+            ListaDeCompra();
         });
     </script>
 </head>
@@ -276,7 +276,7 @@
                         <div class="px-3">
                                 <div class="row prod-item-cart-list">
                                     <div id="carrito" class="list-group col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0"> </div>
-                                        <button id="boton-vaciar" class="col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0 btn btn-danger">Vaciar</button>
+                                        <button id="btn-clear" class="col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0 btn btn-danger">Vaciar</button>
                                     <!--  <hr class="featurette-divider"> -->
                                 </div> 
                         </div>  
