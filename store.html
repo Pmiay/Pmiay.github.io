@@ -147,9 +147,10 @@
                    const midivimg = document.createElement('div');
                    midivimg.classList.add('product-img-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
                    const carimg = document.createElement('img');
-                  // carimg.style.add('border:5px solid var(--color0);');
-                   midivimg.appendChild(carimg);
+                  carimg.style.width='20px';
+                  carimg.style.height='20px'                   
                    carimg.setAttribute('src', `${miItem[0].imagen}`);
+                   midivimg.appendChild(carimg);
                     // Descripcion
                     const miNododivtxt = document.createElement('div');
                     miNododivtxt.classList.add('txt-product-container');
