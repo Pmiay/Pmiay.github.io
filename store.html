@@ -147,8 +147,8 @@
                    const midivimg = document.createElement('div');
                    midivimg.classList.add('product-img-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
                    const carimg = document.createElement('img');
-                  carimg.style.width='20px';
-                  carimg.style.height='20px'                   
+                  carimg.style.width='35px';
+                  carimg.style.height='35px'                   
                    carimg.setAttribute('src', `${miItem[0].imagen}`);
                    midivimg.appendChild(carimg);
                     // Descripcion
@@ -156,13 +156,13 @@
                     miNododivtxt.classList.add('txt-product-container');
                         const mispandes = document.createElement('span');
                         mispandes.classList.add('cart-item-description');
-                        mispandes.textContent= `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                        mispandes.textContent= `${miItem[0].nombre} - ${numeroUnidadesItem} x ${miItem[0].precio}${divisa}`;
                         miNododivtxt.appendChild(mispandes);
                     
                    // miNodo.textContent 
                     // Boton de borrar
                     const miBoton = document.createElement('button');
-                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.classList.add('btn', 'btn-danger', 'col-sm-0');
                     miBoton.textContent = 'X';
                     miBoton.style.marginLeft = '1rem';
                     miBoton.dataset.item = item;
