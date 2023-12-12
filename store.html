@@ -118,35 +118,33 @@
             * Dibuja todos los productos guardados en el carrito
             */
             function renderizarCarrito() {
-                // Vaciamos todo el html
                 DOMcarrito.textContent = '';
-                // Quitamos los duplicados
                 const carritoSinDuplicados = [...new Set(carrito)];
-                // Generamos los Nodos a partir de carrito
                 carritoSinDuplicados.forEach((item) => {
-                    // Obtenemos el item que necesitamos de la variable base de datos
                     const miItem = baseDeDatos.filter((itemBaseDatos) => {
-                        // ¿Coincide las id? Solo puede existir un caso
                         return itemBaseDatos.id === parseInt(item);
                     });
-                    // Cuenta el número de veces que se repite el producto
                     const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-                        // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-                        return itemId === item ? total += 1 : total;
+                       return itemId === item ? total += 1 : total;
                     }, 0);
-                    // Creamos el nodo del item del carrito
-                    const miNodo = document.createElement('li');
-                    miNodo.classList.add('list-group-item', 'text-right', 'mt-auto');
+                    const miNodo = document.createElement('span');
+                    miNodo.classList.add('d-flex');
       
                    // Imagen
+                   const midivimg = document.createElement('div');
+                   midivimg.classList.add('product-img-container pr-3');
                    const carimg = document.createElement('img');
-                   carimg.classList.add('product-img-container');
-                   //carimg.style.add('border:5px' )  
+                   carimg.style.add('border:5px solid var(--color0);');
+                   midivimg.appendChild(carimg);
                    carimg.setAttribute('src', `${miItem[0].imagen}`);
-                    //"<img  src="./images/store/st45.jpg" style="border:5px solid var(--color0);">"
+                    // Descripcion
                     const miNododivtxt = document.createElement('div');
-                    miNododivtxt.classList.add('cart-item-description');
-                    miNododivtxt.textContent= `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                    miNododivtxt.classList.add('txt-product-container');
+                        const mispandes = document.createElement('span');
+                        mispandes.classList.add('cart-item-description');
+                        mispandes.textContent= `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                        miNododivtxt.appendChild(mispandes);
+                    
                    // miNodo.textContent 
                     // Boton de borrar
                     const miBoton = document.createElement('button');
@@ -156,7 +154,7 @@
                     miBoton.dataset.item = item;
                     miBoton.addEventListener('click', borrarItemCarrito);
                     // Mezclamos nodos
-                    miNodo.appendChild(carimg);
+                    miNodo.appendChild(midivimg);
                     miNodo.appendChild(miNododivtxt)
                     miNodo.appendChild(miBoton);
                     DOMcarrito.appendChild(miNodo);
@@ -254,9 +252,23 @@
             <aside class="mt-auto">
                 <h2>Bolsa de Poductos</h2>
                 <!-- Elementos del carrito -->
-                <ul id="carrito" class="list-group "></ul> 
-                   <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-               <!--  <hr class="featurette-divider"> -->
+                 <!--<ul id="carrito" class="list-group "></ul>  -->
+                <div class="col-xl-8 col-lg-7 col-sm-12 col-md-12 px-3">
+                    <div class="product-main-container p-3 bg-white">
+                        <div class="row px-3">
+                            <div class="col-12 px-0">
+                                <h3 class="title-mdm title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
+                            </div>
+                        </div>
+                        <div class="px-3">
+                                <div class="row prod-item-cart-list">
+                                    <div id="carrito" class="col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0"> </div>
+                                        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                                    <!--  <hr class="featurette-divider"> -->
+                                </div> 
+                        </div>  
+                    </div>
+                </div>               
             </aside> 
 
         </main>
