@@ -95,7 +95,7 @@
                     // Precio
                     const miNodoPrecio = document.createElement('h2');
                     miNodoPrecio.classList.add('card-text');
-                    miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                    miNodoPrecio.textContent = `Precio: ${info.precio}${divisa}`;
                     // Boton
                     const miNodoBoton = document.createElement('button');
                     miNodoBoton.classList.add('btn', 'btn-primary');
@@ -241,7 +241,29 @@
             localStorageToLista();
             ListarSku();
             ListaDeCompra();
+
+            function enviarPedido(){
+
+                window.alert("#lista");
+                window.jsPDF = window.jspdf.jsPDF;
+
+                 var doc = new jsPDF();                        
+                    // Source HTMLElement or a string containing HTML.
+                var elementHTML = document.querySelector("#lista");
+
+                doc.html(elementHTML, {
+                callback: function(doc) {
+                       // Save the PDF
+                       doc.save('sample-document.pdf');
+                   },
+                x: 15,
+                y: 15,
+                width: 170, //target width in the PDF document
+                windowWidth: 650 //window width in CSS pixels
+});   
+            }
         });
+
     </script>
 </head>
 <body  class="d-flex h-100 text-center text-white bg-dark">
@@ -287,7 +309,12 @@
         </main>
               <!-- Precio total -->
         <div class="btn-total" id ="btn-t">
-            <p class="text-muted text-right">Total: &dollar;<span id="total"></span>            
+            <p class="text-muted text-right">Total: &dollar;<span id="total"></span> 
+            </p>
+        </div>    
+            <div class="btn-total" id ="btn-t">    
+            <p   class="text-right text-right">
+                <button id="btn-env" onclick="enviarPedido()"   type="button">Enviar</button>      
             </p>
         </div>    
     </div>
