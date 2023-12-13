@@ -11,14 +11,17 @@
 
     <!-- miyuro.one core CSS   -->
     <link href="styles/miyuro.store.css" rel="stylesheet">
-    
+    <script src="./scripts/miyuro.one.pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">            </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">          </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">	</script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
             // Variables
             const baseDeDatos = [
                 {	id: 1,	imagen: 'https://miyuro.one/images/store/st27.png',	nombre: 'Azucar Turbinada Santa Rosa 800g',	precio: 1.15,	ofertaen: '',	},
-                {	id: 2,	imagen: 'https://miyuro.one/images/store/st26.png',	nombre: 'Galletas con Crema Sabor Vainilla 10 und',	precio: 1.25,	ofertaen: '',	},
+ /*                {	id: 2,	imagen: 'https://miyuro.one/images/store/st26.png',	nombre: 'Galletas con Crema Sabor Vainilla 10 und',	precio: 1.25,	ofertaen: '',	},
                 {	id: 3,	imagen: 'https://miyuro.one/images/store/st20.png',	nombre: 'Leche En Polvo instantánea Kanny refill 400g',	precio: 3.3,	ofertaen: '',	},
                 {	id: 4,	imagen: 'https://miyuro.one/images/store/st19.jpg',	nombre: 'LECHE ENTERA ESTRELLA AZUL LITRO',	precio: 1.6,	ofertaen: '',	},
                 {	id: 5,	imagen: 'https://miyuro.one/images/store/st05.jpg',	nombre: 'LECHE ENTERA NEVADA 946ml',	precio: 1.75,	ofertaen: '',	},
@@ -55,7 +58,7 @@
                 {	id: 36,	imagen: 'https://miyuro.one/images/store/st35.jpg',	nombre: 'Cámara web 1080P con micrófono, clip flexible y trípode',	precio: 20,	ofertaen: '',	},
                 {	id: 37,	imagen: 'https://miyuro.one/images/store/st34.jpg',	nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  Negro',	precio: 25,	ofertaen: '',	},
                 {	id: 38,	imagen: 'https://miyuro.one/images/store/st33.jpg',	nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  verde claro',	precio: 25,	ofertaen: '',	},
-                {	id: 39,	imagen: 'https://miyuro.one/images/store/st30.png',	nombre: 'Bolsa Plástica 5 x 10 100 Und',	precio: 0.65,	ofertaen: '',	},
+                */ {	id: 39,	imagen: 'https://miyuro.one/images/store/st30.png',	nombre: 'Bolsa Plástica 5 x 10 100 Und',	precio: 0.65,	ofertaen: '',	},
                 {	id: 40,	imagen: 'https://miyuro.one/images/store/st31.jpg',	nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: 'http://www.disthh.com/index.php?cocli=&clien=&grupo=BOLSAS%20Y%20CARTUCHOS&SEGRU=True',	},
 
 
@@ -242,28 +245,31 @@
             ListarSku();
             ListaDeCompra();
 
-            function enviarPedido(){
 
-                window.alert("#lista");
+        });
+
+    </script>
+    <script>
+            function enviarPedido(){
+ 
                 window.jsPDF = window.jspdf.jsPDF;
 
                  var doc = new jsPDF();                        
                     // Source HTMLElement or a string containing HTML.
                 var elementHTML = document.querySelector("#lista");
-
+window.alert("#lista2" + elementHTML );
                 doc.html(elementHTML, {
-                callback: function(doc) {
-                       // Save the PDF
-                       doc.save('sample-document.pdf');
-                   },
-                x: 15,
-                y: 15,
-                width: 170, //target width in the PDF document
-                windowWidth: 650 //window width in CSS pixels
-});   
+                    callback: function(doc) {
+                        // Save the PDF
+                        doc.save('Pedido_Miyuro_One.pdf');
+                    },
+                    x: 15,
+                    y: 15,
+                    width: 170, //target width in the PDF document
+                    windowWidth: 650 //window width in CSS pixels
+                });   
+window.alert("Pdf creado");
             }
-        });
-
     </script>
 </head>
 <body  class="d-flex h-100 text-center text-white bg-dark">
@@ -314,7 +320,7 @@
         </div>    
             <div class="btn-total" id ="btn-t">    
             <p   class="text-right text-right">
-                <button id="btn-env" onclick="enviarPedido()"   type="button">Enviar</button>      
+                <button id="btn-env" onclick="enviarPedido();"   type="button">Enviar</button>      
             </p>
         </div>    
     </div>
