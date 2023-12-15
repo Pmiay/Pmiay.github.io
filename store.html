@@ -20,47 +20,112 @@
 
             // Variables
             const baseDeDatos = [
-                {	id: 1,	imagen: 'https://miyuro.one/images/store/st27.png',	nombre: 'Azucar Turbinada Santa Rosa 800g',	precio: 1.15,	ofertaen: '',	},
- /*                {	id: 2,	imagen: 'https://miyuro.one/images/store/st26.png',	nombre: 'Galletas con Crema Sabor Vainilla 10 und',	precio: 1.25,	ofertaen: '',	},
-                {	id: 3,	imagen: 'https://miyuro.one/images/store/st20.png',	nombre: 'Leche En Polvo instantánea Kanny refill 400g',	precio: 3.3,	ofertaen: '',	},
-                {	id: 4,	imagen: 'https://miyuro.one/images/store/st19.jpg',	nombre: 'LECHE ENTERA ESTRELLA AZUL LITRO',	precio: 1.6,	ofertaen: '',	},
-                {	id: 5,	imagen: 'https://miyuro.one/images/store/st05.jpg',	nombre: 'LECHE ENTERA NEVADA 946ml',	precio: 1.75,	ofertaen: '',	},
-                {	id: 6,	imagen: 'https://miyuro.one/images/store/st38.png',	nombre: 'Leche Evaporada Ideal 315 g',	precio: 1.15,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/271810',	},
-                {	id: 7,	imagen: 'https://miyuro.one/images/store/st28.jpg',	nombre: 'LECHE EVAPORADA SUCEDA SPRING FARM 354ml',	precio: 1.15,	ofertaen: '',	},
-                {	id: 8,	imagen: 'https://miyuro.one/images/store/st16.jpg',	nombre: 'MERMELADA CEREZA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
-                {	id: 9,	imagen: 'https://miyuro.one/images/store/st18.png',	nombre: 'MERMELADA FRESA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
-                {	id: 10,	imagen: 'https://miyuro.one/images/store/st17.png',	nombre: 'MERMELADA MELOCOTON LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
-                {	id: 11,	imagen: 'https://miyuro.one/images/store/st15.jpg',	nombre: 'MERMELADA NARANJA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
-                {	id: 12,	imagen: 'https://miyuro.one/images/store/st29.png',	nombre: 'Queso Americano Nestlé Individual 25und',	precio: 4,	ofertaen: '',	},
-                {	id: 13,	imagen: 'https://miyuro.one/images/store/st53.jpg',	nombre: 'Huevos Toledano Grandes 15  und',	precio: 2.7,	ofertaen: '',	},
-                {	id: 14,	imagen: 'https://miyuro.one/images/store/st43.jpg',	nombre: 'Huevos Toledano Grandes 30  unidades',	precio: 5.4,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/2717',	},
-                {	id: 15,	imagen: 'https://miyuro.one/images/store/st61.png',	nombre: 'Honey Bunches Cereal de Avena y Miel Bolsa de 680gms / 24oz',	precio: 5.5,	ofertaen: 'https://www.ribasmith.com/index.php/218807-cereal%20honey%20bounches%20almonds.html',	},
-                {	id: 16,	imagen: 'https://miyuro.one/images/store/st14.png',	nombre: 'CAFE TRADICIONAL MOLIDO REGUL DURAN 425g',	precio: 5.25,	ofertaen: '',	},
-                {	id: 17,	imagen: 'https://miyuro.one/images/store/st45.jpg',	nombre: 'Tulip Jamonilla de Cerdo 340 g',	precio: 2.45,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/309016',	},
-                {	id: 18,	imagen: 'https://miyuro.one/images/store/st11.jpg',	nombre: 'TUNA TROZO EN ACEITE AMERICAN PRIDE 170g',	precio: 1,	ofertaen: '',	},
-                {	id: 19,	imagen: 'https://miyuro.one/images/store/st13.jpg',	nombre: 'ARVEJAS AMARILLAS GALLO PINTO 12oz',	precio: 0.75,	ofertaen: '',	},
-                {	id: 20,	imagen: 'https://miyuro.one/images/store/st12.jpg',	nombre: 'LENTEJAS VIKINGO 1lb',	precio: 0.95,	ofertaen: '',	},
-                {	id: 21,	imagen: 'https://miyuro.one/images/store/st56.jpg',	nombre: 'Cepillo Dental Oral B Suave Oral-B 4 Pack',	precio: 3.1,	ofertaen: 'https://supercarnes.com/producto/cepillo-dental-clean-pack-familia-indicator-color-collection-suave-oral-b-4-pack/',	},
-                {	id: 22,	imagen: 'https://miyuro.one/images/store/st08.jpg',	nombre: 'CLORO EN POLVO SIO 1000g',	precio: 1.25,	ofertaen: '',	},
-                {	id: 23,	imagen: 'https://miyuro.one/images/store/st44.png',	nombre: 'Jabón de Baño Coast Aroma Pacific Force 113 g',	precio: 0.8,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/901414',	},
-                {	id: 24,	imagen: 'https://miyuro.one/images/store/st59.png',	nombre: 'Jabon de Baño Ivory Original Scent 90 g 3und',	precio: 1.75,	ofertaen: '',	},
-                {	id: 25,	imagen: 'https://miyuro.one/images/store/st10.jpg',	nombre: 'LAVAPLATOS CREMA CITRUS POWER ZAGAZ 235g',	precio: 0.65,	ofertaen: '',	},
-                {	id: 26,	imagen: 'https://miyuro.one/images/store/st09.jpg',	nombre: 'LAVAPLATOS CREMA FRUTOS ROJOS ZAGAZ 235g',	precio: 0.65,	ofertaen: '',	},
-                {	id: 27,	imagen: 'https://miyuro.one/images/store/st24.jpg',	nombre: 'Lavaplatos Klinpiax Frutos Rojos 1000 Gms',	precio: 1.45,	ofertaen: 'https://industrialapopular.com/klinpiax/',	},
-                {	id: 28,	imagen: 'https://miyuro.one/images/store/st23.jpg',	nombre: 'Lavaplatos Klinpiax Limon 1000 Gms',	precio: 1.45,	ofertaen: 'https://industrialapopular.com/klinpiax/',	},
-                {	id: 29,	imagen: 'https://miyuro.one/images/store/st22.png',	nombre: 'Lavaplatos Líquido Sip Rosa 400 ML',	precio: 1.1,	ofertaen: '',	},
-                {	id: 30,	imagen: 'https://miyuro.one/images/store/st21.png',	nombre: 'Papel Higiénico Higienol 1000 Hojas  4 Rollos',	precio: 2.95,	ofertaen: '',	},
-                {	id: 31,	imagen: 'https://miyuro.one/images/store/st57.png',	nombre: 'Papel Toalla2 Rollos200 hojas c/u',	precio: 3,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/324768',	},
-                {	id: 32,	imagen: 'https://miyuro.one/images/store/st25.jpg',	nombre: 'Pasta dental Crest Complete 178 Gms',	precio: 2.85,	ofertaen: '',	},
-                {	id: 33,	imagen: 'https://miyuro.one/images/store/st32.png',	nombre: 'Platon Plástico 42 Plg',	precio: 2,	ofertaen: 'https://plasticbrothers.com/productos/limpieza/banos/bano-42-color-ab/',	},
-                {	id: 34,	imagen: 'https://miyuro.one/images/store/st54.jpg',	nombre: 'Toallas Microfibra Individuales3 und 40x40cm',	precio: 2,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/877990',	},
-                {	id: 35,	imagen: 'https://miyuro.one/images/store/st58.png',	nombre: 'SPAGUETTI LA PARMIGIANA 454g',	precio: 0.65,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/315398',	},
-                {	id: 36,	imagen: 'https://miyuro.one/images/store/st35.jpg',	nombre: 'Cámara web 1080P con micrófono, clip flexible y trípode',	precio: 20,	ofertaen: '',	},
-                {	id: 37,	imagen: 'https://miyuro.one/images/store/st34.jpg',	nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  Negro',	precio: 25,	ofertaen: '',	},
-                {	id: 38,	imagen: 'https://miyuro.one/images/store/st33.jpg',	nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  verde claro',	precio: 25,	ofertaen: '',	},
-                */ {	id: 39,	imagen: 'https://miyuro.one/images/store/st30.png',	nombre: 'Bolsa Plástica 5 x 10 100 Und',	precio: 0.65,	ofertaen: '',	},
-                {	id: 40,	imagen: 'https://miyuro.one/images/store/st31.jpg',	nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: 'http://www.disthh.com/index.php?cocli=&clien=&grupo=BOLSAS%20Y%20CARTUCHOS&SEGRU=True',	},
-
+{	id: 1,	imagen: 'https://miyuro.one/images/store/st27.png',	nombre: 'Azucar Turbinada Santa Rosa 800g',	precio: 1.15,	ofertaen: '',	},
+{	id: 1,	imagen: 'https://miyuro.one/images/store/st03.jpg',nombre: 'CAFE TRADICIONAL MOLIDO REGUL DURAN 212g',	precio: 0,	ofertaen: '',	},
+{	id: 2,	imagen: 'https://miyuro.one/images/store/st02.jpg',nombre: 'ARVEJAS AMARILLAS VIKINGO 1lbs',	precio: 0,	ofertaen: '',	},
+{	id: 3,	imagen: 'https://miyuro.one/images/store/st60.png',nombre: 'ESPONJA DOBLE USO LIMPIA SOL',	precio:0 ,	ofertaen: '',	},
+{	id: 4,	imagen: 'https://miyuro.one/images/store/st07.png',nombre: 'Lavaplataos Líquido Sip Perla 400 ML',	precio: 0,	ofertaen: '',	},
+{	id: 5,	imagen: 'https://miyuro.one/images/store/st01.jpg',nombre: 'Lavaplatos Crema SIP CREMA Limon Grande 1Kg',	precio: 0,	ofertaen: '',	},
+{	id: 6,	imagen: 'https://miyuro.one/images/store/st41.jpg',nombre: 'Members Selection Detergente en Polvo 10 kg/22 lb',	precio: 16.57,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/375410',	},
+{	id: 7,	imagen: 'https://miyuro.one/images/store/st50.jpg',nombre: 'Butterball Pavo Entero Fresco',	precio: 50.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/1019',	},
+{	id: 8,	imagen: 'https://miyuro.one/images/store/st06.png',nombre: 'Leche En Polvo instantánea Kanny lata 400g',	precio: 0,	ofertaen: '',	},
+{	id: 9,	imagen: 'https://miyuro.one/images/store/st04.jpg',nombre: 'MERMELADA DE PITAYA OKMAN 360g',	precio: 0,	ofertaen: '',	},
+{	id: 10,	imagen: 'https://miyuro.one/images/store/st98.png',nombre: ' Pechuga de Pollo en Agua Enlatada Kirkland 6 Und/ 198 g / 7 oz',	precio: 14.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/228742',	},
+{	id: 11,	imagen: 'https://miyuro.one/images/store/st97.png',nombre: 'Armour Salchicha Viena de Pollo 6 Unidades / 130 g',	precio: 4.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/831422',	},
+{	id: 12,	imagen: 'https://miyuro.one/images/store/st102.png',	nombre: 'Azúcar Morena La Estrella 3 unidades/2.27 kg 5lb',	precio: 9.49,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/304731',	},
+{	id: 13,	imagen: 'https://miyuro.one/images/store/st27a.png',	nombre: 'Azucar Turbinada Santa Rosa 6 Unidades / 800 g',	precio: 6.49,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/352030',	},
+{	id: 14,	imagen: 'https://miyuro.one/images/store/st65.png',nombre: 'Badia Cilantro 99.2 g',	precio: 3.49,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/434352',	},
+{	id: 15,	imagen: 'https://miyuro.one/images/store/st66.png',nombre: 'Badia Perejil Triturado en Hojuelas 56.7 g / 2 oz',	precio: 2.19,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/5429',	},
+{	id: 16,	imagen: 'https://miyuro.one/images/store/st81.png',nombre: 'Bimbo Pan Artesanal 2 unidades/535g',	precio: 4,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/328084',	},
+{	id: 17,	imagen: 'https://miyuro.one/images/store/st82.png',nombre: 'Bimbo Pan Mantequilla 2 unidades/580g',	precio: 4,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/302281',	},
+{	id: 18,	imagen: 'https://miyuro.one/images/store/st64.png',nombre: 'Blue Ridge Vinagre Blanco 3.78 L',	precio: 2.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/258551',	},
+{	id: 19,	imagen: 'https://miyuro.one/images/store/st48.jpg',nombre: 'Calvo Atún en Aceite de Canola 6 Unidades / 142 g',	precio: 9.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/321789',	},
+{	id: 20,	imagen: 'https://miyuro.one/images/store/st49.jpg',nombre: 'Calvo Atún Lomos en Agua 6 Unidades / 170 g',	precio: 9.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/323493',	},
+{	id: 21,	imagen: 'https://miyuro.one/images/store/st73.png',nombre: 'Cereal de Chocolate Nesquik 1.2 kg',	precio: 7.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/393870',	},
+{	id: 22,	imagen: 'https://miyuro.one/images/store/st67.png',nombre: 'Cereal Hojuelas de Maíz Mc Callums 1.5 kg',	precio: 5.49,	ofertaen: 'https://pricesmart.com/site/pa/es/pagina-producto/307602',	},
+{	id: 23,	imagen: 'https://miyuro.one/images/store/st92.png',nombre: 'Cereal Surtido All Inklusive 2 Unidades / 500 g',	precio: 6.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/420413',	},
+{	id: 24,	imagen: 'https://miyuro.one/images/store/st52.jpg',nombre: 'Coca Cola Soda Variadas 24 Unidades / 355 ml',	precio: 10.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/306610',	},
+{	id: 25,	imagen: 'https://miyuro.one/images/store/st84.png',nombre: 'Harina Espiga Blanca 2 Unidades / 5 L',	precio: 4.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/34649',	},
+{	id: 26,	imagen: 'https://miyuro.one/images/store/st43.jpg',nombre: 'Huevos Toledano Grandes 30  unidades',	precio: 5.5,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/331369',	},
+{	id: 27,	imagen: 'https://miyuro.one/images/store/st79.png',nombre: 'Jugo de Arándanos Uvas  Vit C Ocean Spray 2 Und/2.84L / 96.03oz',	precio: 9.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/417171',	},
+{	id: 28,	imagen: 'https://miyuro.one/images/store/st91.png',nombre: 'Kitty Snacks Tortilla de Maíz con Sal 1 kg',	precio: 5.49,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/434111',	},
+{	id: 29,	imagen: 'https://miyuro.one/images/store/st70.png',nombre: 'Leche 2%Grasa Deslactosada Estrella Azul 12 und/946 ml',	precio: 18.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/404028',	},
+{	id: 30,	imagen: 'https://miyuro.one/images/store/st68.png',nombre: 'Leche Condensada Bella Holandesa 3 unidades/397g',	precio: 4.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/382336',	},
+{	id: 31,	imagen: 'https://miyuro.one/images/store/st38a.jpg',	nombre: 'Leche Evaporada Ideal Paquete de 6 Unidades /315 g',	precio: 6.89,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/271810',	},
+{	id: 32,	imagen: 'https://miyuro.one/images/store/st51.jpg',nombre: 'Maggi Ketchup 2 unidades/794 g',	precio: 4.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/31157',	},
+{	id: 33,	imagen: 'https://miyuro.one/images/store/st74.png',nombre: 'Members Selection Aceite de Soya 5 L / 1.3 gal',	precio: 10.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/167229',	},
+{	id: 34,	imagen: 'https://miyuro.one/images/store/st47.jpg',nombre: 'Members Selection Maní Tostado de Coctel 1.13 kg / 40 oz',	precio: 6.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/16250',	},
+{	id: 35,	imagen: 'https://miyuro.one/images/store/st78.png',nombre: 'Members Selection Quinoa Blanca Orgánica 3 lb',	precio: 6.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/26219',	},
+{	id: 36,	imagen: 'https://miyuro.one/images/store/st36.jpg',nombre: 'Members Selection Walnuts Halves and Pieces 1.134 kg / 40 oz',	precio: 10.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/166155',	},
+{	id: 37,	imagen: 'https://miyuro.one/images/store/st40.jpg',nombre: 'MIRACLE WHIPKraft Aderezo 2 Units / 850 g',	precio: 8.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/390106',	},
+{	id: 38,	imagen: 'https://miyuro.one/images/store/st83.png',nombre: 'Pearl Milling Panqueques y Waffles 80 oz / 2.26 kg',	precio: 5.39,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/450882',	},
+{	id: 39,	imagen: 'https://miyuro.one/images/store/st99.png',nombre: 'Té Frío sabor a Limón Members Sel 3kg / 6,6lb',	precio: 5.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/237056',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st85.png',nombre: 'Virginia Honey Miel Pure Clover 48 oz / 1.36 Kg',	precio: 10.89,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/188891',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st42.jpg',nombre: 'Detergente en Polvo  Members Selection 500 g /18 Unidades',	precio: 16.04,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/319845',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st76.png',nombre: 'Detergente Members Floral de  4 und/6.60 lb 12kg',	precio: 17.65,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/365815',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st44a.jpg',	nombre: 'Jabón de Baño con Aroma Pacific Force Coast 16 Unidades / 113 g',	precio: 11.22,	ofertaen: 'https://www.pricesmart.com/site/sv/es/pagina-producto/901414',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st69.png',nombre: 'Jabón Líquido de Avena Members Selection 2Lt',	precio: 5.13,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/333292',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st72.png',nombre: 'Members  Plástico Adherente 2 Unidades / 79 m',	precio: 7.49,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/413198',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st46.jpg',nombre: 'Members Selection Papel Higiénico Suave y Resistente 24Roll',	precio: 15.83,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/324771',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st37.jpg',nombre: 'Pasta Dental Crest Complete + Scope Advanced 5 Units / 6.3 oz / 183.3 ml',	precio: 12.73,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/453550',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st75.png',nombre: 'Suave Shampoo/ Acond Almendra y Karité 2Unds/1.18 L / 40 oz',	precio: 11.76,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/208420',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st77.png',nombre: 'Suavizante  April Fresh Downy Ultra 129oz /3.8 L/150 Lavadas',	precio: 14.65,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/416729',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st62.png',nombre: 'Suavizante de Ropa Primavera Members Sel 2 Unidades / 5lt /  222 lavadas',	precio: 12.83,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/394539',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st86.png',nombre: 'Alimento para Gatos Pollo y Guisantes -  6.8 Kg / 15 lb',	precio: 15.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/755730',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st87.png',nombre: 'Alimento para Perros Adultos Pollo/Guisantes  18.14 Kg / 40 lb',	precio: 34.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/755710',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st93.png',nombre: 'Bebida de Almendras Original Silk 2 Und / 1.89 L / 64 oz',	precio: 8.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/489898',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st94.png',nombre: 'Bebida de Almendras sin Endulzante  Vainilla Silk 6 Und / 946 ml',	precio: 13.49,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/23799',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st95.png',nombre: 'Mariani Arándanos Secos 1.13 kg',	precio: 9.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/430631',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st96.png',nombre: 'Mariani Ciruelas Pasas Snack 36 oz / 1.02 kg',	precio: 8.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/5028',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st39.jpg',nombre: 'Members Selection Granola Orgánica 907 g / 32 oz',	precio: 8.49,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/11188',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st90.png',nombre: 'Nature Valley Barras de Avena y Miel 30 Unidades / 42 g',	precio: 13.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/223732',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st89.png',nombre: 'Nature Valley Barras de Proteína 26 Unidades 40 g',	precio: 17.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/22388',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st88.png',nombre: 'Nature Valley Barras Frutos Secos y Frutas 30 Unidades / 35 g',	precio: 13.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/223733',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st100.png',	nombre: 'NeoCell Super Collagen + C 360 Tabletas',	precio: 20.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/851292',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st101.png',	nombre: 'OKF Bebida Aloe Vera Sin Azúcar 2 Unidades / 2 L',	precio: 8.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/318438',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st63.png',nombre: 'Bombillas Led de 15W 4 Unidades',	precio: 6.41,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/22642',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st55.jpg',nombre: 'Members Selection 10W30 Aceite para Motor',	precio: 22.46,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/42630',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st80.png',nombre: 'Swann Sistema de Seguridad con 8 Cámaras 1080p',	precio: 353.1,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/394563',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st27.png',nombre: 'Azucar Turbinada Santa Rosa 800g',	precio: 1.15,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st71.png',nombre: 'Chocolate Mezcla Swiss Miss Unidad / 28 g / 1 oz',	precio: 7.29,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/3468',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st26.png',nombre: 'Galletas con Crema Sabor Vainilla 10 und',	precio: 1.25,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st61.png',nombre: 'Honey Bunches Cereal de Avena y Miel Bolsa de 680gms / 24oz',	precio: 5.5,	ofertaen: 'https://www.ribasmith.com/index.php/218807-cereal%20honey%20bounches%20almonds.html',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st53.jpg',nombre: 'Huevos Toledano Grandes 15  und',	precio: 2.7,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/2717',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st20.png',nombre: 'Leche En Polvo instantánea Kanny refill 400g',	precio: 3.3,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st19.jpg',nombre: 'LECHE ENTERA ESTRELLA AZUL LITRO',	precio: 1.6,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st05.jpg',nombre: 'LECHE ENTERA NEVADA 946ml',	precio: 1.75,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st38.png',nombre: 'Leche Evaporada Ideal 315 g',	precio: 1.15,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/271810',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st28.jpg',nombre: 'LECHE EVAPORADA SUCEDA SPRING FARM 354ml',	precio: 1.15,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st16.jpg',nombre: 'MERMELADA CEREZA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st18.png',nombre: 'MERMELADA FRESA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st17.png',nombre: 'MERMELADA MELOCOTON LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st15.jpg',nombre: 'MERMELADA NARANJA LOKMAN360g',	precio: 1.55,	ofertaen: 'https://foodexfoodco.com/en/recel-marmelat',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st29.png',nombre: 'Queso Americano Nestlé Individual 25und',	precio: 4,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st14.png',nombre: 'CAFE TRADICIONAL MOLIDO REGUL DURAN 425g',	precio: 5.25,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st45.jpg',nombre: 'Tulip Jamonilla de Cerdo 340 g',	precio: 2.45,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/309016',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st11.jpg',nombre: 'TUNA TROZO EN ACEITE AMERICAN PRIDE 170g',	precio: 1,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st13.jpg',nombre: 'ARVEJAS AMARILLAS GALLO PINTO 12oz',	precio: 0.75,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st12.jpg',nombre: 'LENTEJAS VIKINGO 1lb',	precio: 0.95,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st56.jpg',nombre: 'Cepillo Dental Oral B Suave Oral-B 4 Pack',	precio: 3.1,	ofertaen: 'https://supercarnes.com/producto/cepillo-dental-clean-pack-familia-indicator-color-collection-suave-oral-b-4-pack/',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st08.jpg',nombre: 'CLORO EN POLVO SIO 1000g',	precio: 1.25,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st44.png',nombre: 'Jabón de Baño Coast Aroma Pacific Force 113 g',	precio: 0.8,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/901414',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st59.png',nombre: 'Jabon de Baño Ivory Original Scent 90 g 3und',	precio: 1.75,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st10.jpg',nombre: 'LAVAPLATOS CREMA CITRUS POWER ZAGAZ 235g',	precio: 0.65,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st09.jpg',nombre: 'LAVAPLATOS CREMA FRUTOS ROJOS ZAGAZ 235g',	precio: 0.65,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st24.jpg',nombre: 'Lavaplatos Klinpiax Frutos Rojos 1000 Gms',	precio: 1.45,	ofertaen: 'https://industrialapopular.com/klinpiax/',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st23.jpg',nombre: 'Lavaplatos Klinpiax Limon 1000 Gms',	precio: 1.45,	ofertaen: 'https://industrialapopular.com/klinpiax/',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st22.png',nombre: 'Lavaplatos Líquido Sip Rosa 400 ML',	precio: 1.1,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st21.png',nombre: 'Papel Higiénico Higienol 1000 Hojas  4 Rollos',	precio: 2.95,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st57.png',nombre: 'Papel Toalla2 Rollos200 hojas c/u',	precio: 3,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/324768',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st25.jpg',nombre: 'Pasta dental Crest Complete 178 Gms',	precio: 2.85,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st32.png',nombre: 'Platon Plástico 42 Plg',	precio: 2,	ofertaen: 'https://plasticbrothers.com/productos/limpieza/banos/bano-42-color-ab/',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st54.jpg',nombre: 'Toallas Microfibra Individuales3 und 40x40cm',	precio: 2,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/877990',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st58.png',nombre: 'SPAGUETTI LA PARMIGIANA 454g',	precio: 0.65,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/315398',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st35.jpg',nombre: 'Cámara web 1080P con micrófono, clip flexible y trípode',	precio: 20,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st34.jpg',nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  Negro',	precio: 25,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st33.jpg',nombre: 'Mouse inalámbrico Bluetooth y 2.4G recargable  verde claro',	precio: 25,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st30.png',nombre: 'Bolsa Plástica 5 x 10 100 Und',	precio: 0.65,	ofertaen: '',	},
+{	id: 40,	imagen: 'https://miyuro.one/images/store/st31.jpg',nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: '',	}
 
             ];
 
@@ -84,35 +149,39 @@
                    // miNodo.classList.add('card', 'col-sm-4');
                     // Body
                     const miNodoCardBody = document.createElement('div');
-                    miNodoCardBody.classList.add('card-body' );
+                    miNodoCardBody.classList.add('row', 'card-body' );
                     // Titulo
-                    const miNodoTitle = document.createElement('h2');
-                    miNodoTitle.classList.add('card-title');
+                    const miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('col','col-md-5', 'card-title');
                     miNodoTitle.textContent = info.nombre;
                     // Imagen
                     const miNodoImagen = document.createElement('img');
-                    miNodoImagen.classList.add('mt-auto');
-                    miNodoImagen.style.height="45%"
-                    miNodoImagen.style.width ="45%"
+                    miNodoImagen.classList.add('col','col-xs-12' );
+                    miNodoImagen.style.height="15%"
+                    miNodoImagen.style.width ="15%"
                     miNodoImagen.setAttribute('src', info.imagen);
                     // Precio
-                    const miNodoPrecio = document.createElement('h2');
-                    miNodoPrecio.classList.add('card-text');
+                    const miNodoPrecio = document.createElement('h3');
+                    miNodoPrecio.classList.add('col','col-md-5','card-text');
                     miNodoPrecio.textContent = `Precio: ${info.precio}${divisa}`;
                     // Boton
+                    const miNodoDivBtn = document.createElement('h5');
+                    miNodoDivBtn.classList.add('col' ,'col-md-12'); 
+
                     const miNodoBoton = document.createElement('button');
                     miNodoBoton.classList.add('btn', 'btn-primary');
                     miNodoBoton.textContent = '+';
                     miNodoBoton.setAttribute('marcador', info.id);
                     miNodoBoton.addEventListener('click', addSku);
+                    miNodoDivBtn.appendChild(miNodoBoton);
                     // Insertamos
                     const miitemsep = document.createElement('hr');
                     miitemsep.classList.add('featurette-divider');
                     miNodoCardBody.appendChild(miitemsep);
-                    miNodoCardBody.appendChild(miNodoTitle);
                     miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
                     miNodoCardBody.appendChild(miNodoPrecio);
-                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodoCardBody.appendChild(miNodoDivBtn);
                     miNodo.appendChild(miNodoCardBody);
                     DOMitems.appendChild(miNodo);
                 });
@@ -156,7 +225,7 @@
                    midivimg.appendChild(carimg);
                     // Descripcion
                     const miNododivtxt = document.createElement('div');
-                    miNododivtxt.classList.add('txt-product-container');
+                    miNododivtxt.classList.add('txt-product-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
                         const mispandes = document.createElement('span');
                         mispandes.classList.add('cart-item-description' );
                         mispandes.textContent= `${miItem[0].nombre} - ${numeroUnidadesItem} x ${miItem[0].precio}${divisa}`;
@@ -165,8 +234,8 @@
                    // miNodo.textContent 
                     // Boton de borrar
                     const miBoton = document.createElement('button');
-                    miBoton.classList.add('btn', 'btn-danger', 'col-sm-0');
-                    miBoton.textContent = 'X';
+                    miBoton.classList.add('btn', 'btn-danger', 'col-sm-2');
+                    miBoton.textContent = 'Quitar';
                     miBoton.style.marginLeft = '1rem';
                     miBoton.dataset.item = item;
                     miBoton.addEventListener('click', BorraSkuLista);
@@ -250,25 +319,50 @@
 
     </script>
     <script>
-            function enviarPedido(){
- 
-                window.jsPDF = window.jspdf.jsPDF;
+            function enviarPedido(){//https://stackoverflow.com/questions/17739816/how-to-open-generated-pdf-using-jspdf-in-new-window
 
-                 var doc = new jsPDF();                        
+
+                window.jsPDF = window.jspdf.jsPDF;//new jsPDF('l', 'in', [3, 5]);
+                 var doc = new jsPDF('p', 'cm', [9, 20]); 
+                 //doc.add()                       
                     // Source HTMLElement or a string containing HTML.
-                var elementHTML = document.querySelector("#lista");
-window.alert("#lista2" + elementHTML );
+ 
+                var elementHTML = document.querySelector("#pedido");
+//window.alert("#lista2" + elementHTML );
                 doc.html(elementHTML, {
                     callback: function(doc) {
                         // Save the PDF
                         doc.save('Pedido_Miyuro_One.pdf');
                     },
-                    x: 15,
-                    y: 15,
-                    width: 170, //target width in the PDF document
+                    x: 0.02,
+                    y: 0.02,
+                    width: 12, //target width in the PDF document
                     windowWidth: 650 //window width in CSS pixels
                 });   
-window.alert("Pdf creado");
+/*That code let you create a Blob object inside the browser and show it in the new tab.
+pdf.addHTML($('#content'), y, x, options, function () {
+    var blob = pdf.output("blob");
+    window.open(URL.createObjectURL(blob));
+});
+Search in jspdf.js this:
+    if(type == 'datauri') {
+        document.location.href ='data:application/pdf;base64,' + Base64.encode(buffer);
+    }
+Add :
+    if(type == 'datauriNew') {   
+        window.open('data:application/pdf;base64,' + Base64.encode(buffer));
+    }
+call this option 'datauriNew' Saludos ;)
+using javascript you can send the generated pdf to a new window using the following code.
+var string = doc.output('datauristring');
+
+var iframe = "<iframe width='100%' height='100%' src='" + string + "'></iframe>"
+
+var x = window.open();
+x.document.open();
+x.document.write(iframe);
+x.document.close();
+*/
             }
     </script>
 </head>
@@ -295,19 +389,29 @@ window.alert("Pdf creado");
                 <!-- Elementos del carrito -->
                  <!--<ul id="carrito" class="list-group "></ul>  -->
                 <div class="col-xl-8 col-lg-7 col-sm-12 col-md-12 px-3">
-                    <div class="product-main-container p-3 bg-white">
+                    <div  id="pedido" class="product-main-container p-3 bg-white">
                         <div class="row px-3">
-                            <div class="col-12 px-0">
-                                <h3 class="title-mdm title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
+                            <div class="px-0">
+                                <h3 class="title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
+                                    <h5 class="col-sm-12 title-cart py-3 border-bottom border-gray text-muted">
+                                        <label for="Nombre">Nombre:</label>
+                                        <input type="text" id="Nombre" name="Nombre"></input><br> 
+                                        <label for="Whatsapp">Whatsapp:</label>
+                                        <input type="text" id="Whatsapp" name="Whatsapp"></input>
+    
+                                    </h5>
                             </div>
                         </div>
-                        <div class="px-3">
-                                <div class="row prod-item-cart-list">
+                        <div class="row px-3">
+                                <div class="prod-item-cart-list">
                                     <div id="lista" class="list-group col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0"> </div>
-                                        <button id="btn-clear" class="col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0 btn btn-danger">Limpiar</button>
+                                </div>
+                        </div> 
+                        <div class="row px-3">
+                                <button id="btn-clear" class="col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0 btn btn-danger">Limpiar</button>
                                     <!--  <hr class="featurette-divider"> -->
-                                </div> 
-                        </div>  
+                        </div> 
+                         
                     </div>
                 </div>               
             </aside> 
