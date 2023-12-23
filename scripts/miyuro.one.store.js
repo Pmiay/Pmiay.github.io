@@ -36,23 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
             // Body
             const miNodoCardBody = document.createElement('div');
             miNodoCardBody.classList.add('row', 'card-body' );
-            // Titulo
-            const miNodoTitle = document.createElement('h5');
-            miNodoTitle.classList.add('col','col-md-5', 'card-title');
-            miNodoTitle.textContent = info.nombre;
             // Imagen
             const miNodoImagen = document.createElement('img');
             miNodoImagen.classList.add('col','col-xs-12' );
             miNodoImagen.style.height="15%"
             miNodoImagen.style.width ="15%"
+            
             miNodoImagen.setAttribute('src', info.imagen);
+
+            // Descripción del Producto
+            const miNodoTitle = document.createElement('spam');
+            miNodoTitle.classList.add('col','col-md-5', 'card-title');
+            miNodoTitle.textContent = info.nombre;
             // Precio
-            const miNodoPrecio = document.createElement('h3');
-            miNodoPrecio.classList.add('col','col-md-5','card-text');
-            miNodoPrecio.textContent = `Precio: ${info.precio.toFixed(2)}${divisa}`; //ofertaen
+            const miNodoPrecio = document.createElement('p');
+            miNodoPrecio.classList.add('col','col-md-5','card-precio');
+            miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}`; //ofertaen
             //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
             // Boton
-            const miNodoDivBtn = document.createElement('h5');
+            const miNodoDivBtn = document.createElement('div');
             miNodoDivBtn.classList.add('col' ,'col-md-12'); 
 
             const miNodoBoton = document.createElement('button');
@@ -130,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Boton de borrar
             const miBoton = document.createElement('button');
             miBoton.classList.add('btn', 'btn-danger', 'col-sm-2');
-            miBoton.textContent = 'Quitar';
+            miBoton.textContent = '-';
             miBoton.style.marginLeft = '1rem';
             miBoton.dataset.item = item;
             miBoton.addEventListener('click', BorraSkuLista);
