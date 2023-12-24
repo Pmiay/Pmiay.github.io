@@ -46,23 +46,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Descripción del Producto
             const miNodoTitle = document.createElement('spam');
-            miNodoTitle.classList.add('col','col-md-5', 'card-title');
+            miNodoTitle.classList.add('col','col-md-4' );
             miNodoTitle.textContent = info.nombre;
             // Precio
-            const miNodoPrecio = document.createElement('p');
+            const miNodoPrecio = document.createElement('div');
             miNodoPrecio.classList.add('col','col-md-5','card-precio');
-            miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}`; //ofertaen
+            miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}  `; //ofertaen
             //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
             // Boton
             const miNodoDivBtn = document.createElement('div');
             miNodoDivBtn.classList.add('col' ,'col-md-12'); 
 
-            const miNodoBoton = document.createElement('button');
-            miNodoBoton.classList.add('btn', 'btn-primary');
-            miNodoBoton.textContent = '+';
-            miNodoBoton.setAttribute('marcador', info.id);
-            miNodoBoton.addEventListener('click', addSku);
-            miNodoDivBtn.appendChild(miNodoBoton);
+            const miNodoBtnAdd = document.createElement('button');
+            miNodoBtnAdd.classList.add('btn', 'btn-primary','col-md-3');
+            miNodoBtnAdd.textContent = '+';
+            miNodoBtnAdd.setAttribute('add', info.id);
+            miNodoBtnAdd.addEventListener('click', AddSkuLista);
+
+            /*const miNodoBtnDis = document.createElement('button');
+            miNodoBtnDis.classList.add('btn', 'btn-primary');
+            miNodoBtnDis.textContent = '-';
+            miNodoBtnDis.setAttribute('menos', info.id);
+            miNodoBtnDis.addEventListener('click', AddSkuLista);
+
+            miNodoDivBtn.appendChild(miNodoBtnDis);*/
+            miNodoDivBtn.appendChild(miNodoBtnAdd);
+            miNodoPrecio.appendChild(miNodoDivBtn);
             // Insertamos
             const miitemsep = document.createElement('hr');
             miitemsep.classList.add('featurette-divider');
@@ -70,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodoCardBody.appendChild(miNodoImagen);
             miNodoCardBody.appendChild(miNodoTitle);
             miNodoCardBody.appendChild(miNodoPrecio);
-            miNodoCardBody.appendChild(miNodoDivBtn);
+            //miNodoCardBody.appendChild(miNodoDivBtn);
             miNodo.appendChild(miNodoCardBody);
             DOMitems.appendChild(miNodo);
         });
@@ -79,13 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
     * Evento para añadir un producto al carrito de la compra
     */
-    function addSku(evento) {
-        // Anyadimos el Nodo a nuestro lista
-        lista.push(evento.target.getAttribute('marcador'))
-        // Actualizamos el carrito
-        ListaDeCompra();
-        // Actualizamos el LocalStorage
-        ListaToLocalStorage();
+    function AddSkuLista(evento) { //        window.alert("#changeQtySku evento.target" +  '='    );
+        lista.push(evento.target.getAttribute('add'))   //marcador
+        ListaDeCompra();// Actualizamos el carrito
+        
+        ListaToLocalStorage();// Actualizamos el LocalStorage        
     }
 
     /**
@@ -98,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const miItem = elementosBase.filter((itemBaseDatos) => {
                 return itemBaseDatos.id === parseInt(item);
             });
-            const numeroUnidadesItem = lista.reduce((total, itemId) => {
-               return itemId === item ? total += 1 : total;
+            const numeroUnidadesItem = lista.reduce((qty, itemId) => {
+               return itemId === item ? qty += 1 : qty; //changeQty=1
             }, 0);
             const miNodo = document.createElement('span');
             miNodo.classList.add('d-flex');
@@ -125,22 +132,34 @@ document.addEventListener('DOMContentLoaded', () => {
             miNododivPrecio.classList.add('Precio-product-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
                 const mispandespre = document.createElement('span');
                 mispandespre.classList.add('cart-item-description' );
+
                 mispandespre.textContent= `${numeroUnidadesItem} x ${miItem[0].precio.toFixed(2)} = ${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)} `  ;
                 miNododivPrecio.appendChild(mispandespre);
 
            // miNodo.textContent 
             // Boton de borrar
             const miBoton = document.createElement('button');
-            miBoton.classList.add('btn', 'btn-danger', 'col-sm-2');
-            miBoton.textContent = '-';
-            miBoton.style.marginLeft = '1rem';
+            miBoton.classList.add('btn', 'btn-danger', 'col-sm-1');
+            miBoton.textContent = '-'; //miBoton.style.marginLeft = '1rem';
             miBoton.dataset.item = item;
+            miBoton.setAttribute('add', item);
             miBoton.addEventListener('click', BorraSkuLista);
+
+            const miBotonAdd = document.createElement('button');
+            miBotonAdd.classList.add('btn', 'btn-danger', 'col-sm-1');
+            miBotonAdd.textContent = '+'; //miBotonAdd.style.marginLeft = '1rem';
+            miBotonAdd.dataset.item = item; //      window.alert("#itemlista" + item );
+            miBotonAdd.setAttribute('add', item);
+            miBotonAdd.addEventListener('click', AddSkuLista);
+            
+            miNododivPrecio.appendChild(miBoton);
+            miNododivPrecio.appendChild(miBotonAdd);
+
             // Mezclamos nodos
             miNodo.appendChild(midivimg);
             miNodo.appendChild(miNododivtxt);
             miNodo.appendChild(miNododivPrecio);
-            miNodo.appendChild(miBoton);
+            //miNodo.appendChild(miBoton);
             DOMlista.appendChild(miNodo);
         });
         // Renderizamos el precio total en el HTML
@@ -154,17 +173,43 @@ document.addEventListener('DOMContentLoaded', () => {
     function BorraSkuLista(evento) {
         // Obtenemos el producto ID que hay en el boton pulsado
         const id = evento.target.dataset.item;
+       
         // Borramos todos los productos
+       const tlista  =  lista.filter((listaId) => {
+            return listaId == id;
+        });
+       // window.alert("#BorraSkuLista " + id +  "=> " + tlista[0]);
+    
         lista = lista.filter((listaId) => {
             return listaId !== id;
         });
+        
+        lista.push(tlista[0]);
         // volvemos a renderizar
         ListaDeCompra();
         // Actualizamos el LocalStorage
         ListaToLocalStorage();
 
     }
+    //function changeQtySku(evento) { 
+    function ResQtySkuLista(evento) {    //     window.alert("#ResQtySkuLista evento.target" +  '=' + evento.target.getAttribute('add')   );
+        lista.push(evento.target.getAttribute('add'))   //marcador
 
+        //lista.reduce((qty, itemId
+        const id = evento.target.dataset.item;     
+        // Borramos todos los productos     
+           //lista(id).qty=lista(id).qty-1;
+           window.alert("#ResQtySkuLista " + id +  "=> " + lista );
+           const re = lista.splice(index,1);
+         //  lista = lista.filter((itemId) => {
+          //  return itemId !== id;
+     //   });
+
+
+        ListaDeCompra();// Actualizamos el carrito
+        
+        ListaToLocalStorage();// Actualizamos el LocalStorage        
+    }
     /**
      * Calcula el precio total teniendo en cuenta los productos repetidos
      */
