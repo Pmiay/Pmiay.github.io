@@ -38,19 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodoCardBody.classList.add('row', 'card-body' );
             // Imagen
             const miNodoImagen = document.createElement('img');
-            miNodoImagen.classList.add('col','col-xs-12' );
+           // miNodoImagen.classList.add('col','col-xs-12' );
             miNodoImagen.style.height="15%"
-            miNodoImagen.style.width ="15%"
-            
+            miNodoImagen.style.width ="15%"            
             miNodoImagen.setAttribute('src', info.imagen);
 
             // Descripción del Producto
-            const miNodoTitle = document.createElement('spam');
+            const miNodoTitle = document.createElement('a');
             miNodoTitle.classList.add('col','col-md-4' );
             miNodoTitle.textContent = info.nombre;
+            miNodoTitle.href = info.ofertaen;
             // Precio
             const miNodoPrecio = document.createElement('div');
-            miNodoPrecio.classList.add('col','col-md-5','card-precio');
+            miNodoPrecio.classList.add('col','col-md-4','card-precio');
             miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}  `; //ofertaen
             //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
             // Boton
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodoDivBtn.classList.add('col' ,'col-md-12'); 
 
             const miNodoBtnAdd = document.createElement('button');
-            miNodoBtnAdd.classList.add('btn', 'btn-primary','col-md-3');
+            miNodoBtnAdd.classList.add('btn', 'btn-primary','col-md-4');
             miNodoBtnAdd.textContent = '+';
             miNodoBtnAdd.setAttribute('add', info.id);
             miNodoBtnAdd.addEventListener('click', AddSkuLista);
@@ -108,57 +108,82 @@ document.addEventListener('DOMContentLoaded', () => {
             const numeroUnidadesItem = lista.reduce((qty, itemId) => {
                return itemId === item ? qty += 1 : qty; //changeQty=1
             }, 0);
-            const miNodo = document.createElement('span');
-            miNodo.classList.add('d-flex');
+            const miNodo = document.createElement('tr');
+           // miNodo.classList.add('d-flex' );
+            
+            // Producto Descripcion
+            const miTdProd = document.createElement('td');
+            miTdProd.classList.add('d-flex' );
+                  const midivProd = document.createElement('div'); 
 
-           // Imagen
-           const midivimg = document.createElement('div');
-           midivimg.classList.add('product-img-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
-           const carimg = document.createElement('img');
-          carimg.style.width='35px';
-          carimg.style.height='35px'                   
-           carimg.setAttribute('src', `${miItem[0].imagen}`);
-           midivimg.appendChild(carimg);
-            // Descripcion
-            const miNododivtxt = document.createElement('div');
-            miNododivtxt.classList.add('txt-product-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
-                const mispandes = document.createElement('span');
-                mispandes.classList.add('cart-item-description' );
-                mispandes.textContent= `${miItem[0].nombre} `  ;
-                miNododivtxt.appendChild(mispandes);
+                    // Imagen
+                    const midivimg = document.createElement('div');
+                        midivimg.classList.add('product-img-container');//, 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0'
+                        const carimg = document.createElement('img');
+                        carimg.style.width='35px';
+                        carimg.style.height='35px'                   
+                        carimg.setAttribute('src', `${miItem[0].imagen}`);
+                        midivimg.appendChild(carimg);                    
+                        miTdProd.appendChild(midivimg);
 
-            // Precio
-            const miNododivPrecio = document.createElement('div');
-            miNododivPrecio.classList.add('Precio-product-container', 'col-xs-12', 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0');
-                const mispandespre = document.createElement('span');
-                mispandespre.classList.add('cart-item-description' );
+                        const midivdes = document.createElement('div'); 
+                            midivdes.classList.add('col-sm-12');
+                        midivdes.classList.add('txt-product-container');
+                        const mispandes = document.createElement('span'); 
+                            mispandes.textContent= `${miItem[0].nombre} `  ;
+                            midivdes.appendChild(mispandes);
+                            const mispandespre = document.createElement('span');
+                                mispandespre.classList.add('cart-item-description' );
+                                mispandespre.textContent= `${divisa} ${miItem[0].precio.toFixed(2)}`  ;
+                                midivdes.appendChild(mispandespre);
+                 miTdProd.appendChild(midivdes);  
 
-                mispandespre.textContent= `${numeroUnidadesItem} x ${miItem[0].precio.toFixed(2)} = ${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)} `  ;
-                miNododivPrecio.appendChild(mispandespre);
+                  //  miTdProd.appendChild(midivProd);
+
+                    // Precioconst miNododivPrecio = document.createElement('div'); miNododivPrecio.classList.add('Precio-product-container');
+  
+
+            const miDivTotal = document.createElement('td');
+                const miDivTotalspan = document.createElement('span');
+                miDivTotalspan.classList.add('cart-item-description' );
+                miDivTotalspan.textContent= `${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)} `  ;
+            miDivTotal.appendChild(miDivTotalspan);
+
 
            // miNodo.textContent 
+
+           const miTdBtn = document.createElement('td');
             // Boton de borrar
             const miBoton = document.createElement('button');
-            miBoton.classList.add('btn', 'btn-danger', 'col-sm-1');
+            miBoton.classList.add('btn','btn-primary');
             miBoton.textContent = '-'; //miBoton.style.marginLeft = '1rem';
             miBoton.dataset.item = item;
             miBoton.setAttribute('add', item);
             miBoton.addEventListener('click', BorraSkuLista);
-
-            const miBotonAdd = document.createElement('button');
-            miBotonAdd.classList.add('btn', 'btn-danger', 'col-sm-1');
+                const miInputBox = document.createElement('input');
+                miInputBox.classList.add('cart-item-quantity');  
+               // miInputBox.type='number';
+                miInputBox.value=numeroUnidadesItem;
+             //   miInputBox.pattern('[0-9]*');//<input aria-label="Cantidad" class="quantity-selector__value" pattern="[0-9]*" data-current-value="1" data-line-id="43342411399331" value="1" size="2"></input>
+            
+                const miBotonAdd = document.createElement('button');
+            miBotonAdd.classList.add('btn','btn-primary');
             miBotonAdd.textContent = '+'; //miBotonAdd.style.marginLeft = '1rem';
             miBotonAdd.dataset.item = item; //      window.alert("#itemlista" + item );
             miBotonAdd.setAttribute('add', item);
             miBotonAdd.addEventListener('click', AddSkuLista);
             
-            miNododivPrecio.appendChild(miBoton);
-            miNododivPrecio.appendChild(miBotonAdd);
+
+            miTdBtn.appendChild(miBoton);
+            miTdBtn.appendChild(miInputBox);
+            miTdBtn.appendChild(miBotonAdd); 
+            
 
             // Mezclamos nodos
-            miNodo.appendChild(midivimg);
-            miNodo.appendChild(miNododivtxt);
-            miNodo.appendChild(miNododivPrecio);
+           // miNodo.appendChild(midivimg);
+            miNodo.appendChild(miTdProd);
+            miNodo.appendChild(miTdBtn);
+            miNodo.appendChild(miDivTotal);
             //miNodo.appendChild(miBoton);
             DOMlista.appendChild(miNodo);
         });
