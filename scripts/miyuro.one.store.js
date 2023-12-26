@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function ListarSku() {
         elementosBase.forEach((info) => {
             // Estructura
-            const miNodo = document.createElement('div');
+            const miNodo = document.createElement('row');
            // miNodo.classList.add('card', 'col-sm-4');
             // Body
             const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('row', 'card-body' );
+            miNodoCardBody.classList.add('row' );
             // Imagen
             const miNodoImagen = document.createElement('img');
            // miNodoImagen.classList.add('col','col-xs-12' );
