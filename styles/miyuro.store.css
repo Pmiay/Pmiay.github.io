@@ -1007,7 +1007,7 @@ progress {
         width: 25%
     }
     .col-md-4 {
-        flex: 0 0 0,0;
+        flex: 0 0 auto;
         width: 33.33333333%
     }
     .col-md-5 {
@@ -10261,7 +10261,9 @@ input#customValue {
   .table td {
     padding: 15px 30px;
 }
-  tr:nth-child(even) {background-color: #f2f2f2;}
+  /* tr:nth-child(even) {
+    background-color: #f2f2f2;
+} */
   div{
     display: inline;
   }
