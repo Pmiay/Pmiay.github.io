@@ -35,12 +35,12 @@
                       
         </header>
          <!-- Elementos generados a partir del JSON -->
-        <main id="items" >
+        <main id="items" class="row px-3">
                 <!-- Carrito -->
-            <aside class="mt-auto">
+            <aside class="mt-auto bg-white">
                 <!-- Elementos del carrito -->
                  <!--<ul id="carrito" class="list-group "></ul>  -->
-                <div id="pedido" class=" bg-white">
+                <div id="pedido" >
                   <div class="row px-3">
                       <div class="px-0">
                           <h3 class="title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
@@ -53,12 +53,23 @@
                               </h5>
                       </div>
                   </div>
-                     <div id="lista" > </div>
-                  <div class="row px-3">
+                     <table > 
+                        <thead  >
+                            <tr class="text-muted">
+                              <th>Producto</th>
+                              <th>Cantidad</th>
+                              <th>Valor</th>
+                            </tr>
+                          </thead>
+                        <tbody id="lista" >   </tbody>
+                        
+                     </table>
+
+                  <tfoot class="row px-3">
                           <button id="btn-clear" class="col-xs-12 col-sm-7 col-md-8 col-lg-9 p-0 btn btn-danger">Limpiar</button>
                           <h5 class="text-muted text-right">Total: &dollar;<span id="totalp"></span> 
                               <!--  <hr class="featurette-divider"> -->
-                  </div> 
+                  </tfoot> 
                 </div>               
             </aside> 
         <!--      
