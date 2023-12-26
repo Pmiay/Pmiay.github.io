@@ -143,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Precioconst miNododivPrecio = document.createElement('div'); miNododivPrecio.classList.add('Precio-product-container');
   
 
-            const miTdTotal = document.createElement('td');
+            const miTdTotal = document.createElement('td');                
+                //miTdTotal.classList.add('d-flex' );
             const miDivTotal = document.createElement('div'); 
                 miDivTotal.classList.add('cart-item-description');
                 const miDivTotalspan = document.createElement('span');
@@ -163,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miBoton.dataset.item = item;
             miBoton.setAttribute('add', item);
             miBoton.addEventListener('click', BorraSkuLista);
+            
                 const miInputBox = document.createElement('input');
                 miInputBox.classList.add('cart-item-quantity');  
                // miInputBox.type='number';
@@ -202,17 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Obtenemos el producto ID que hay en el boton pulsado
         const id = evento.target.dataset.item;
        
-        // Borramos todos los productos
-       const tlista  =  lista.filter((listaId) => {
-            return listaId == id;
-        });
-       // window.alert("#BorraSkuLista " + id +  "=> " + tlista[0]);
-    
+        // Borramos todos los productos   window.alert("#BorraSkuLista " + id +  "=> " + lista);
+        for (i = lista.length - 1; i >= 0; i--) {if(lista[i]==id){lista.splice(i,1);break;}
+        } 
+   /*
         lista = lista.filter((listaId) => {
             return listaId !== id;
-        });
-        
-        lista.push(tlista[0]);
+        });*/
         // volvemos a renderizar
         ListaDeCompra();
         // Actualizamos el LocalStorage
@@ -307,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             x: 0.02,
             y: 0.02,
-            width: 12, //target width in the PDF document
+            width: 8.8, //target width in the PDF document
             windowWidth: 650 //window width in CSS pixels
         });   
 /*That code let you create a Blob object inside the browser and show it in the new tab.
