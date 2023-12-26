@@ -143,16 +143,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Precioconst miNododivPrecio = document.createElement('div'); miNododivPrecio.classList.add('Precio-product-container');
   
 
-            const miDivTotal = document.createElement('td');
+            const miTdTotal = document.createElement('td');
+            const miDivTotal = document.createElement('div'); 
+                miDivTotal.classList.add('cart-item-description');
                 const miDivTotalspan = document.createElement('span');
                 miDivTotalspan.classList.add('cart-item-description' );
                 miDivTotalspan.textContent= `${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)} `  ;
             miDivTotal.appendChild(miDivTotalspan);
+            miTdTotal.appendChild(miDivTotal);
 
 
            // miNodo.textContent 
 
-           const miTdBtn = document.createElement('td');
+           const miDivBtn = document.createElement('div'); // ex td
             // Boton de borrar
             const miBoton = document.createElement('button');
             miBoton.classList.add('btn','btn-primary');
@@ -174,16 +177,16 @@ document.addEventListener('DOMContentLoaded', () => {
             miBotonAdd.addEventListener('click', AddSkuLista);
             
 
-            miTdBtn.appendChild(miBoton);
-            miTdBtn.appendChild(miInputBox);
-            miTdBtn.appendChild(miBotonAdd); 
-            
+            miDivBtn.appendChild(miBoton);
+            miDivBtn.appendChild(miInputBox);
+            miDivBtn.appendChild(miBotonAdd); 
+            miTdTotal.appendChild(miDivBtn);
 
             // Mezclamos nodos
            // miNodo.appendChild(midivimg);
             miNodo.appendChild(miTdProd);
-            miNodo.appendChild(miTdBtn);
-            miNodo.appendChild(miDivTotal);
+           // miNodo.appendChild(miTdBtn);
+            miNodo.appendChild(miTdTotal);
             //miNodo.appendChild(miBoton);
             DOMlista.appendChild(miNodo);
         });
