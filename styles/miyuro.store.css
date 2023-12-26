@@ -613,7 +613,7 @@ progress {
     display: flex;
     flex-wrap: wrap;
     margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-right: calc(-.1 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x))
 }
 .row>* {
@@ -621,11 +621,12 @@ progress {
     width: 100%;
     max-width: 100%;
     padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .1);
     margin-top: var(--bs-gutter-y)
 }
 .col {
-    flex: 1 0 0%
+    flex: 1 0 0% 0
+    
 }
 .row-cols-auto>* {
     flex: 0 0 auto;
@@ -1006,7 +1007,7 @@ progress {
         width: 25%
     }
     .col-md-4 {
-        flex: 0 0 auto;
+        flex: 0 0 0,0;
         width: 33.33333333%
     }
     .col-md-5 {
@@ -2639,10 +2640,11 @@ textarea.form-control.is-invalid {
     user-select: none;
     background-color: transparent;
     border: 1px solid transparent;
-    padding: 0;/* padding: .375rem .75rem; */
+    padding: 10;/* padding: .375rem .75rem; */
     font-size: 1.5rem;
     border-radius: .35rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    
 }
 @media (prefers-reduced-motion: reduce) {
     .btn {
@@ -7170,7 +7172,7 @@ fieldset:disabled .btn {
 .bg-danger {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity))!important
-}
+}g-whitecol
 .bg-light {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity))!important
@@ -9944,7 +9946,7 @@ div.prod-item-cart-list:last-child{
 
 .product-img-container{
   width: 45px;
-  margin-bottom: 1px; 
+  margin-bottom: 0; 
 }
 
 .delivery-img-container{
@@ -10233,3 +10235,33 @@ input#customValue {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.cart-item-quantity{
+    text-align: center; 
+    font-weight: bold;    
+    border:#0c4128;
+    border-top: 1px solid var(--color136);
+    border-bottom: 1px solid var(--color136);
+    margin: 0px;
+    width: 25px;
+    height: 30px;
+    margin-left: 5px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 1px 5px 1px 0px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+  } 
+  .table td {
+    padding: 15px 30px;
+}
+  tr:nth-child(even) {background-color: #f2f2f2;}
+  div{
+    display: inline;
+  }
