@@ -126,16 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         midivimg.appendChild(carimg);                    
                         miTdProd.appendChild(midivimg);
 
-                        const midivdes = document.createElement('div'); 
+                       const midivdes = document.createElement('div'); 
                             midivdes.classList.add('col-sm-12');
                         midivdes.classList.add('txt-product-container');
                         const mispandes = document.createElement('span'); 
                             mispandes.textContent= `${miItem[0].nombre} `  ;
                             midivdes.appendChild(mispandes);
-                            const mispandespre = document.createElement('span');
+                     /*        const mispandespre = document.createElement('span');
                                 mispandespre.classList.add('cart-item-description' );
                                 mispandespre.textContent= `${divisa} ${miItem[0].precio.toFixed(2)}`  ;
-                                midivdes.appendChild(mispandespre);
+                                midivdes.appendChild(mispandespre);*/
                  miTdProd.appendChild(midivdes);  
 
                   //  miTdProd.appendChild(midivProd);
