@@ -127,7 +127,7 @@ miyuro =  [
 {	id: 125,	imagen: 'https://miyuro.one/images/store/st31.jpg',	nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: 'http://www.disthh.com/index.php?cocli=&clien=&grupo=BOLSAS%20Y%20CARTUCHOS&SEGRU=True',	},
 {	id: 126,	imagen: 'https://miyuro.one/images/store/st121.png',	nombre: 'Papel Aluminio Blixi 12In X 25ft',	precio: 1.5,	ofertaen: 'https://www.superxtra.com/papel-aluminio-bli-i-25-pies/p',	},
 {	id: 127,	imagen: 'https://miyuro.one/images/store/st108.png',	nombre: 'Roll On Lady Speed Stick Powder Fresh 50 Ml',	precio: 2.75,	ofertaen: 'https://www.superxtra.com/desodorante-roll-on-lady-speed-stick-50-ml-powder-fresh/p',	},
-{	id: 128,	imagen: 'https://miyuro.one/images/store/st122.jpg',	nombre: 'Enfamil Comfort Premium Infant Formula 1.65 kg',	precio: 66.99,	ofertaen: 'https://pricesmart.com/site/pa/en/pdp/375833',	}
+{	id: 128,	imagen: 'https://miyuro.one/images/store/st122.png',	nombre: 'Enfamil Comfort Premium Infant Formula 1.65 kg',	precio: 66.99,	ofertaen: 'https://pricesmart.com/site/pa/en/pdp/375833',	}
 
 
 ] ;
