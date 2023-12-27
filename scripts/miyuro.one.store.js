@@ -34,52 +34,63 @@ document.addEventListener('DOMContentLoaded', () => {
             const miNodo = document.createElement('row');
               //  miNodo.classList.add('d-flex');
             // Body
-            const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('product-img-container' );
+            const miSkuBody = document.createElement('div');
+             //   miSkuBody.classList.add('d-flex');
+            miSkuBody.classList.add('item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
             // Imagen
-            const miNodoImagen = document.createElement('img');
-            miNodoImagen.style.height="75%"
-            miNodoImagen.style.width ="75%"            
-            miNodoImagen.setAttribute('src', info.imagen);
+            
+            const miSkuDivImg = document.createElement('div');  
+                miSkuDivImg.classList.add('my-display-container','my-text-white' ); // 'item-sku-img-wrap', 'offer-image'
+            const miSkuImagen = document.createElement('img');
+                //miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
+                miSkuImagen.style='width:100%'
+          //  miSkuImagen.style.height='75px';
+           // miSkuImagen.style.width ='75px';            
+            miSkuImagen.setAttribute('src', info.imagen);
+            miSkuDivImg.appendChild(miSkuImagen);  
 
+            const miSkuDivPrecio = document.createElement('div');  
+                miSkuDivPrecio.classList.add('my-display-bottomleft','my-container','marker','marker-arrow'); 
+                const miSkuDivPreciospan = document.createElement('span');  
+                    miSkuDivPreciospan.textContent = `${divisa} ${info.precio.toFixed(2)}  `;
+                    miSkuDivPrecio.appendChild(miSkuDivPreciospan);                    
+                    miSkuDivImg.appendChild(miSkuDivPrecio); 
+ 
             // Descripción del Producto
-            const miNodoTitle = document.createElement('a');
-            miNodoTitle.classList.add('col','col-md-4' );
+            const midivTitle = document.createElement('div');  
+                midivTitle.classList.add( 'item-list__title','item-list__body','item-list__body-wrap');//'item-sku-text'); 
+                const miNodoTitle = document.createElement('a');
+    // miNodoTitle.classList.add('col','col-md-4' );//col-md-4 card-precio
             miNodoTitle.textContent = info.nombre;
             miNodoTitle.href = info.ofertaen;
-            // Precio
+            midivTitle.appendChild(miNodoTitle);    
+           /* // Precio
             const miNodoPrecio = document.createElement('div');
             miNodoPrecio.classList.add('col','col-md-4','card-precio');
             miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}  `; //ofertaen
             //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
-            // Boton
-            const miNodoDivBtn = document.createElement('div');
-            miNodoDivBtn.classList.add('col' ,'col-md-12'); 
+          */  // Boton
+ /*           const miNodoDivBtn = document.createElement('div');
+            //miNodoDivBtn.classList.add('col' ,'col-md-12'); 
 
             const miNodoBtnAdd = document.createElement('button');
-            miNodoBtnAdd.classList.add('btn', 'btn-primary','col-md-4');
+            miNodoBtnAdd.classList.add('btn', 'btn-primary');
             miNodoBtnAdd.textContent = '+';
             miNodoBtnAdd.setAttribute('add', info.id);
             miNodoBtnAdd.addEventListener('click', AddSkuLista);
 
-            /*const miNodoBtnDis = document.createElement('button');
-            miNodoBtnDis.classList.add('btn', 'btn-primary');
-            miNodoBtnDis.textContent = '-';
-            miNodoBtnDis.setAttribute('menos', info.id);
-            miNodoBtnDis.addEventListener('click', AddSkuLista);
-
-            miNodoDivBtn.appendChild(miNodoBtnDis);*/
             miNodoDivBtn.appendChild(miNodoBtnAdd);
-            miNodoPrecio.appendChild(miNodoDivBtn);
-            // Insertamos
+          //  miNodoPrecio.appendChild(miNodoDivBtn);
+ */           // Insertamos
             const miitemsep = document.createElement('hr');
             miitemsep.classList.add('featurette-divider');
-            miNodoCardBody.appendChild(miitemsep);
-            miNodoCardBody.appendChild(miNodoImagen);
-            miNodoCardBody.appendChild(miNodoTitle);
-            miNodoCardBody.appendChild(miNodoPrecio);
-            //miNodoCardBody.appendChild(miNodoDivBtn);
-            miNodo.appendChild(miNodoCardBody);
+            miSkuBody.appendChild(miitemsep);
+            miSkuBody.appendChild(miSkuDivImg);
+            //miSkuBody.appendChild(miSkuDivPrecio);
+            miSkuBody.appendChild(midivTitle);
+            //miSkuBody.appendChild(miNodoPrecio);
+            //miSkuBody.appendChild(miNodoDivBtn);
+            miNodo.appendChild(miSkuBody);
             DOMitems.appendChild(miNodo);
         });
     }
