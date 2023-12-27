@@ -43,14 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 miSkuDivImg.classList.add('my-display-container','my-text-white' ); // 'item-sku-img-wrap', 'offer-image'
             const miSkuImagen = document.createElement('img');
                 //miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
-                miSkuImagen.style='width:100%'
+                miSkuImagen.style='width:80%'
           //  miSkuImagen.style.height='75px';
            // miSkuImagen.style.width ='75px';            
             miSkuImagen.setAttribute('src', info.imagen);
             miSkuDivImg.appendChild(miSkuImagen);  
 
             const miSkuDivPrecio = document.createElement('div');  
-                miSkuDivPrecio.classList.add('my-display-bottomleft','my-container','marker','marker-arrow'); 
+                miSkuDivPrecio.classList.add('my-display-bottomleft','my-container'); 
                 const miSkuDivPreciospan = document.createElement('span');  
                     miSkuDivPreciospan.textContent = `${divisa} ${info.precio.toFixed(2)}  `;
                     miSkuDivPrecio.appendChild(miSkuDivPreciospan);                    
@@ -70,18 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}  `; //ofertaen
             //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
           */  // Boton
- /*           const miNodoDivBtn = document.createElement('div');
+            const miNodoDivBtn = document.createElement('div');
             //miNodoDivBtn.classList.add('col' ,'col-md-12'); 
 
             const miNodoBtnAdd = document.createElement('button');
             miNodoBtnAdd.classList.add('btn', 'btn-primary');
-            miNodoBtnAdd.textContent = '+';
+            miNodoBtnAdd.textContent = 'Agregar';
             miNodoBtnAdd.setAttribute('add', info.id);
             miNodoBtnAdd.addEventListener('click', AddSkuLista);
 
             miNodoDivBtn.appendChild(miNodoBtnAdd);
           //  miNodoPrecio.appendChild(miNodoDivBtn);
- */           // Insertamos
+           // Insertamos
             const miitemsep = document.createElement('hr');
             miitemsep.classList.add('featurette-divider');
             miSkuBody.appendChild(miitemsep);
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //miSkuBody.appendChild(miSkuDivPrecio);
             miSkuBody.appendChild(midivTitle);
             //miSkuBody.appendChild(miNodoPrecio);
-            //miSkuBody.appendChild(miNodoDivBtn);
+            miSkuBody.appendChild(miNodoDivBtn);
             miNodo.appendChild(miSkuBody);
             DOMitems.appendChild(miNodo);
         });
