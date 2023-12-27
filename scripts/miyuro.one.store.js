@@ -32,15 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
         elementosBase.forEach((info) => {
             // Estructura
             const miNodo = document.createElement('row');
-           // miNodo.classList.add('card', 'col-sm-4');
+              //  miNodo.classList.add('d-flex');
             // Body
             const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('row' );
+            miNodoCardBody.classList.add('product-img-container' );
             // Imagen
             const miNodoImagen = document.createElement('img');
-           // miNodoImagen.classList.add('col','col-xs-12' );
-            miNodoImagen.style.height="15%"
-            miNodoImagen.style.width ="15%"            
+            miNodoImagen.style.height="75%"
+            miNodoImagen.style.width ="75%"            
             miNodoImagen.setAttribute('src', info.imagen);
 
             // Descripción del Producto
@@ -216,25 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Actualizamos el LocalStorage
         ListaToLocalStorage();
 
-    }
-    //function changeQtySku(evento) { 
-    function ResQtySkuLista(evento) {    //     window.alert("#ResQtySkuLista evento.target" +  '=' + evento.target.getAttribute('add')   );
-        lista.push(evento.target.getAttribute('add'))   //marcador
-
-        //lista.reduce((qty, itemId
-        const id = evento.target.dataset.item;     
-        // Borramos todos los productos     
-           //lista(id).qty=lista(id).qty-1;
-           window.alert("#ResQtySkuLista " + id +  "=> " + lista );
-           const re = lista.splice(index,1);
-         //  lista = lista.filter((itemId) => {
-          //  return itemId !== id;
-     //   });
-
-
-        ListaDeCompra();// Actualizamos el carrito
-        
-        ListaToLocalStorage();// Actualizamos el LocalStorage        
     }
     /**
      * Calcula el precio total teniendo en cuenta los productos repetidos
