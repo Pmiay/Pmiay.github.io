@@ -128,7 +128,6 @@ miyuro =  [
 {	id: 126,	imagen: 'https://miyuro.one/images/store/st121.png',	nombre: 'Papel Aluminio Blixi 12In X 25ft',	precio: 1.5,	ofertaen: 'https://www.superxtra.com/papel-aluminio-bli-i-25-pies/p',	},
 {	id: 127,	imagen: 'https://miyuro.one/images/store/st108.png',	nombre: 'Roll On Lady Speed Stick Powder Fresh 50 Ml',	precio: 2.75,	ofertaen: 'https://www.superxtra.com/desodorante-roll-on-lady-speed-stick-50-ml-powder-fresh/p',	},
 {	id: 128,	imagen: 'https://miyuro.one/images/store/st122.png',	nombre: 'Enfamil Comfort Premium Infant Formula 1.65 kg',	precio: 66.99,	ofertaen: 'https://pricesmart.com/site/pa/en/pdp/375833',	},
-{	id: 130,	imagen: 'https://miyuro.one/images/store/st124.png',	nombre: 'Arena Aglomerante para Gatos Aroma a Fresco 19 Kg',	precio: 19.79,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/3067',	}
-
+{	id: 130,	imagen: 'https://miyuro.one/images/store/st124.png',	nombre: 'Arena Aglomerante para Gatos Aroma a Fresco 19 Kg',	precio: 21.18,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/3067',	}
 
 ] ;
