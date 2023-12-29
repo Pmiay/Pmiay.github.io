@@ -129,5 +129,6 @@ miyuro =  [
 {	id: 127,	imagen: 'https://miyuro.one/images/store/st108.png',	nombre: 'Roll On Lady Speed Stick Powder Fresh 50 Ml',	precio: 2.75,	ofertaen: 'https://www.superxtra.com/desodorante-roll-on-lady-speed-stick-50-ml-powder-fresh/p',	},
 {	id: 128,	imagen: 'https://miyuro.one/images/store/st122.png',	nombre: 'Enfamil Comfort Premium Infant Formula 1.65 kg',	precio: 66.99,	ofertaen: 'https://pricesmart.com/site/pa/en/pdp/375833',	},
 {	id: 130,	imagen: 'https://miyuro.one/images/store/st124.png',	nombre: 'Arena Aglomerante para Gatos Aroma a Fresco 19 Kg',	precio: 21.18,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/3067',	}
+{	id: 131,	imagen: 'https://miyuro.one/images/store/st125.png',	nombre: 'Máquina de Palomitas con Aire Caliente 16 Tazas',	precio: 14.97,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/450068',	}
 
 ] ;
