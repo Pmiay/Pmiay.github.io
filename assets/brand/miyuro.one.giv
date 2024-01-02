@@ -134,7 +134,7 @@ miyuro =  [
 {	id: 132,	imagen: 'https://miyuro.one/images/store/st55a.jpg',	nombre: 'Members Selection 10W30 Aceite Para Motor',	precio: 22.46,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/42630',	},
 {	id: 133,	imagen: 'https://miyuro.one/images/store/st115.png',	nombre: 'Samsung Galaxy A54  RAM 6 GB 128 GB',	precio: 320.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/459988',	},
 {	id: 134,	imagen: 'https://miyuro.one/images/store/st30.png',	nombre: 'Bolsa Plástica 5 X 10 100 Und',	precio: 0.65,	ofertaen: '',	},
-{	id: 135,	imagen: 'https://miyuro.one/images/store/st31.jpg',	nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: 'http://www.disthh.com/index.php?cocli=&clien=&grupo=BOLSAS%20Y%20CARTUCHOS&SEGRU=True',	}
-{	id: 136,	imagen: 'https://miyuro.one/images/store/st121.png',	nombre: 'Papel Aluminio Blixi 12In X 25ft',	precio: 1.5,	ofertaen: 'https://www.superxtra.com/papel-aluminio-bli-i-25-pies/p',	},
+{	id: 135,	imagen: 'https://miyuro.one/images/store/st31.jpg',	nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: 'http://www.disthh.com/index.php?cocli=&clien=&grupo=BOLSAS%20Y%20CARTUCHOS&SEGRU=True',	},
+{	id: 136,	imagen: 'https://miyuro.one/images/store/st121.png',	nombre: 'Papel Aluminio Blixi 12In X 25ft',	precio: 1.5,	ofertaen: 'https://www.superxtra.com/papel-aluminio-bli-i-25-pies/p',	}
 
 ] ;
