@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const miSkuImagen = document.createElement('img');
                 //miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
                 miSkuImagen.style='width:80%'
-          //  miSkuImagen.style.height='75px';
-           // miSkuImagen.style.width ='75px';            
+          //  miSkuImagen.style.height='55px';
+           // miSkuImagen.style.width ='55px';            
             miSkuImagen.setAttribute('src', info.imagen);
             miSkuDivImg.appendChild(miSkuImagen);  
 
