@@ -135,6 +135,21 @@ miyuro =  [
 {	id: 133,	imagen: 'https://miyuro.one/images/store/st115.png',	nombre: 'Samsung Galaxy A54  RAM 6 GB 128 GB',	precio: 320.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/459988',	},
 {	id: 134,	imagen: 'https://miyuro.one/images/store/st30.png',	nombre: 'Bolsa Plástica 5 X 10 100 Und',	precio: 0.65,	ofertaen: '',	},
 {	id: 135,	imagen: 'https://miyuro.one/images/store/st31.jpg',	nombre: 'Bolsa Plástica 6 X 12 100 Und',	precio: 0.75,	ofertaen: 'http://www.disthh.com/index.php?cocli=&clien=&grupo=BOLSAS%20Y%20CARTUCHOS&SEGRU=True',	},
-{	id: 136,	imagen: 'https://miyuro.one/images/store/st121.png',	nombre: 'Papel Aluminio Blixi 12In X 25ft',	precio: 1.5,	ofertaen: 'https://www.superxtra.com/papel-aluminio-bli-i-25-pies/p',	}
+{	id: 136,	imagen: 'https://miyuro.one/images/store/st121.png',	nombre: 'Papel Aluminio Blixi 12In X 25ft',	precio: 1.5,	ofertaen: 'https://www.superxtra.com/papel-aluminio-bli-i-25-pies/p',	},
+{	id: 137,	imagen: 'https://miyuro.one/images/store/st131.png',	nombre: 'Guineo Criollo Maduro o proximo',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 138,	imagen: 'https://miyuro.one/images/store/st132.png',	nombre: 'Guineo Chino Cuadrado verde',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 139,	imagen: 'https://miyuro.one/images/store/st133.png',	nombre: 'Guineo Manzano',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 140,	imagen: 'https://miyuro.one/images/store/st134.png',	nombre: 'Limón Criollo',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 141,	imagen: 'https://miyuro.one/images/store/st135.png',	nombre: 'Jugo Congelado 100% Limón 230ml',	precio: 1.5,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 142,	imagen: 'https://miyuro.one/images/store/st136.png',	nombre: 'Nance Grande, ácido Botella',	precio: 2,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 143,	imagen: 'https://miyuro.one/images/store/st137.png',	nombre: 'Coco en concha negra unidad',	precio: 0.75,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 144,	imagen: 'https://miyuro.one/images/store/st138.png',	nombre: 'Jengibre Nacional',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 145,	imagen: 'https://miyuro.one/images/store/st139.png',	nombre: 'Banana´s Cake, Dulce de Guineo con frutos secos',	precio: 2.75,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 146,	imagen: 'https://miyuro.one/images/store/st140.png',	nombre: 'Cocada gourmet con frutos secos 7 onzas',	precio: 2,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 147,	imagen: 'https://miyuro.one/images/store/st141.png',	nombre: 'Miel de caña 37onz',	precio: 3,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 148,	imagen: 'https://miyuro.one/images/store/st142.png',	nombre: 'Naranja Tierras Altas de Coclé',	precio: 2,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 149,	imagen: 'https://miyuro.one/images/store/st143.png',	nombre: 'Aguacate Mantequilla, Geometría variada Pequeño',	precio: 0.75,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 150,	imagen: 'https://miyuro.one/images/store/st144.png',	nombre: 'Aguacate Mantequilla, Geometría variada Mediado',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 151,	imagen: 'https://miyuro.one/images/store/st145.png',	nombre: 'Aguacate Mantequilla, Geometría variada Grande',	precio: 1.5,	ofertaen: 'https://miyuro.one/Deleites',	}
 
 ] ;
