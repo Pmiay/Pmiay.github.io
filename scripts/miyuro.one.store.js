@@ -158,9 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 //miTdTotal.classList.add('d-flex' );
               //  miTdTotal.wid="28%"
             const miDivTotal = document.createElement('div'); 
-                miDivTotal.classList.add('cart-item-description');
+                miDivTotal.classList.add('cart-item-total');
                 const miDivTotalspan = document.createElement('span');
-                miDivTotalspan.classList.add('cart-item-description' );
+                miDivTotalspan.classList.add('cart-item-total' );
                 miDivTotalspan.textContent= `${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)} `  ;
             miDivTotal.appendChild(miDivTotalspan);
             miTdTotal.appendChild(miDivTotal);
