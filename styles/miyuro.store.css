@@ -4348,7 +4348,13 @@ fieldset:disabled .btn {
 .card-img,
 .card-img-bottom,
 .card-img-top {
-    width: 100%
+    width: 100%;
+    width: 45px;
+    margin-bottom: 0; 
+    padding-bottom: .5rem;
+    display: block;
+    height: auto;
+    object-fit: cover;
 }
 .card-img,
 .card-img-top {
@@ -9830,7 +9836,7 @@ fieldset:disabled .btn {
   /* ##################################################################################### */
   /* ##################################################################################### */
   
-.cart-item-description {
+.cart-item-total {
     font-size: 20px;
     color: var(--bs-orange);
     text-align: right;
@@ -9849,4 +9855,5 @@ fieldset:disabled .btn {
     width: 20px;
     height: 15px;
     margin-left: 1px;
+    
   } 
