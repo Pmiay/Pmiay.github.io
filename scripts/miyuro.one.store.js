@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const miSkuImagen = document.createElement('img');
                 //miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
                 miSkuImagen.style='width:80%'
-          //  miSkuImagen.style.height='55px';
-           // miSkuImagen.style.width ='55px';            
+          //  miSkuImagen.style.height='75px';
+           // miSkuImagen.style.width ='75px';            
             miSkuImagen.setAttribute('src', info.imagen);
             miSkuDivImg.appendChild(miSkuImagen);  
 
@@ -128,10 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Imagen
                     const midivimg = document.createElement('div');
-                        midivimg.classList.add('product-img-container');//, 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0'
+                        midivimg.classList.add('card-img');//, 'col-sm-7', 'col-md-8', 'col-lg-9', 'p-0'
                         const carimg = document.createElement('img');
-                        carimg.style.width='35px';
-                        carimg.style.height='35px'                   
+                        carimg.style.width='32px';
+                        carimg.style.height='32px';
+                        //carimg.style.borderRadius='50%';                   
                         carimg.setAttribute('src', `${miItem[0].imagen}`);
                         midivimg.appendChild(carimg);                    
                         miTdProd.appendChild(midivimg);
@@ -155,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const miTdTotal = document.createElement('td');                
                 //miTdTotal.classList.add('d-flex' );
+              //  miTdTotal.wid="28%"
             const miDivTotal = document.createElement('div'); 
                 miDivTotal.classList.add('cart-item-description');
                 const miDivTotalspan = document.createElement('span');
@@ -167,9 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
            // miNodo.textContent 
 
            const miDivBtn = document.createElement('div'); // ex td
+                miDivBtn.style.minWidth="95px";
             // Boton de borrar
             const miBoton = document.createElement('button');
-            miBoton.classList.add('btn','btn-primary');
+            miBoton.classList.add('btn','btn-primary','btn-redondeado');
             miBoton.textContent = '-'; //miBoton.style.marginLeft = '1rem';
             miBoton.dataset.item = item;
             miBoton.setAttribute('add', item);
@@ -182,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
              //   miInputBox.pattern('[0-9]*');//<input aria-label="Cantidad" class="quantity-selector__value" pattern="[0-9]*" data-current-value="1" data-line-id="43342411399331" value="1" size="2"></input>
             
                 const miBotonAdd = document.createElement('button');
-            miBotonAdd.classList.add('btn','btn-primary');
+            miBotonAdd.classList.add('btn','btn-primary', 'btn-redondeado');
             miBotonAdd.textContent = '+'; //miBotonAdd.style.marginLeft = '1rem';
             miBotonAdd.dataset.item = item; //      window.alert("#itemlista" + item );
             miBotonAdd.setAttribute('add', item);
