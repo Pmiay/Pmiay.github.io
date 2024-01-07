@@ -9966,7 +9966,7 @@ fieldset:disabled .btn {
     padding: 1px 10px 2px 7px;
     position: absolute;
     top: 0;
-    font-size: x-large; 
+    font-size:.8rem; 
 }
 
 .dropmic.dropmic-select1 .dropmic-menu__listContent.disabled .marker-arrow {
@@ -10002,9 +10002,9 @@ fieldset:disabled .btn {
 }
 
 .item-list__item .marker-arrow { /*Liston de Precio*/
-    font-size: 18px;
+    font-size: 1.3rem;
     height: 2rem;
-    width: 6.5rem
+    width: 5.5rem
 }
 .item-list__item {
     background-color: transparent;
