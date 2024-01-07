@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         elementosBase.forEach((info) => {
             // Estructura
             const miNodo = document.createElement('row');
-              //  miNodo.classList.add('d-flex');
+                miNodo.classList.add('column' );
             // Body
             const miSkuBody = document.createElement('div');
              //   miSkuBody.classList.add('d-flex');
-                miSkuBody.classList.add('item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
+                miSkuBody.classList.add( 'item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
                 // Imagen
                 const miSkuDivImgHead = document.createElement('div');  
                     miSkuDivImgHead.classList.add( 'item-list__header');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     miSkuDivImg.classList.add('item-list__img-wrap','offer-image' ); // , 'item-sku-img-wrap', 'offer-image'
                 const miSkuImagen = document.createElement('img');
                     miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
-                //    miSkuImagen.style='width:80%'
+                   // miSkuImagen.style='width:80%'
             //  miSkuImagen.style.height='75px';
             // miSkuImagen.style.width ='75px';            
                 miSkuImagen.setAttribute('src', info.imagen);
@@ -63,9 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         miSkuspanImgLabelTxt.classList.add('label-mark__tag-text');
                     miSkuspanImgLabelTxt.textContent = `${info.disponible}`; 
                      miSkuspanImgLabel.appendChild(miSkuspanImgLabelTxt);   
-            /*<span class="label-mark__tag">
-                <span class="label-mark__tag-text">Disponible</span>
-            </span> 
+            /*<span class="label-mark__tag">  <span class="label-mark__tag-text">Disponible</span>  </span> 
 */  // Boton
                 const miNodoDivBtn = document.createElement('div');
                     miNodoDivBtn.classList.add( 'markerbtn' ); 
