@@ -9820,7 +9820,7 @@ fieldset:disabled .btn {
     width:60px;
     height:60px;
     top:20px;
-    right:75px;
+    right:70px;
     /*background-color:#25d366;*/
     color:#FFF;
     border-radius:50px;
@@ -9828,11 +9828,61 @@ fieldset:disabled .btn {
     font-size:30px;
     z-index:100; /* Distancia del margen derecho*/
   }
-  
+ 
+
   .btn-whap-icon, .btn-tot-icon {
     margin-top:13px;
   }
-
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+  }
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 10px -16px;
+  }
+  
+  /* Add padding BETWEEN each column */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    /* display: none; Hide all elements by default */
+  }
+  
+  /* Clear floats after rows */ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    background-color: white;
+    padding: 10px;
+  }
   /* ##################################################################################### */
   /* ##################################################################################### */
   .item-list__header {
@@ -9916,7 +9966,7 @@ fieldset:disabled .btn {
     padding: 1px 10px 2px 7px;
     position: absolute;
     top: 0;
-     
+    font-size: x-large; 
 }
 
 .dropmic.dropmic-select1 .dropmic-menu__listContent.disabled .marker-arrow {
