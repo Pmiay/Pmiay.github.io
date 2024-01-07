@@ -9819,7 +9819,7 @@ fieldset:disabled .btn {
     position:fixed;
     width:60px;
     height:60px;
-    top:30px;
+    top:20px;
     right:75px;
     /*background-color:#25d366;*/
     color:#FFF;
@@ -9835,7 +9835,50 @@ fieldset:disabled .btn {
 
   /* ##################################################################################### */
   /* ##################################################################################### */
-  
+  .item-list__header {
+    background-color: #f3f7f7;
+    border-radius: .5rem;
+    position: relative
+}
+.item-list__header img {
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%; 
+}
+@media (min-width: 768px) {
+    .item-list__header img {
+        transition: all .5s ease-in-out
+    }
+    .item-list__header img:hover {
+        transform: scale(1.1)
+    }
+    .item-list__header img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px
+    }
+}
+.markerbtn {
+    bottom: 0;
+    right: -.5rem;
+    position: absolute
+}
+.item-list__header .marker {
+    bottom: 0;
+    left: -.5rem;
+    position: absolute
+}
+.osp-section .item-list__header .marker {
+    left: -.2rem
+}
+.mobile-home .item-list__header,
+.mobile-home .item-list__img-wrap {
+    border-radius: var(--item-border-radius)
+}
+.mobile-home .item-list__header img {
+    border-top-left-radius: var(--item-border-radius);
+    border-top-right-radius: var(--item-border-radius)
+}
 .cart-item-total {
     font-size: 20px;
     color: var(--bs-orange);
@@ -9856,3 +9899,177 @@ fieldset:disabled .btn {
     height: 15px;
     margin-left: 1px; 
   } 
+  .label-mark__tag-text {
+    bottom: -1px;
+    left: 2px; 
+    position: relative
+}
+.label-mark__tag {
+    border-top-left-radius: var(--item-border-radius)
+}
+.label-mark__tag {
+    background-color: #ff4200;
+    border-top-left-radius: .5rem;
+    color: #fff;
+    font-family: BarlowReg, sans-serif;
+    font-style: italic;
+    padding: 1px 10px 2px 7px;
+    position: absolute;
+    top: 0;
+     
+}
+
+.dropmic.dropmic-select1 .dropmic-menu__listContent.disabled .marker-arrow {
+    background: 50%/cover no-repeat url(https://miyuro.one/images/darta-grey.svg)
+}
+.dropmic.dropmic-select .marker-arrow span {
+    margin-left: .85rem
+}
+.admin-tab-card__price-table-sale.marker-arrow {
+    font-size: 15px;
+    font-weight: 700;
+    height: 1.6rem;
+    padding: 0;
+    width: 4rem
+}
+
+.marker-arrow {
+    background: 50%/cover no-repeat url(https://miyuro.one/images/darta-uncolor.svg);
+    color: #000;
+    font-size: 25px;
+    font-weight: 700;
+    height: 2.9rem;
+    width: 6.154rem
+}
+.marker-arrow {
+    background: 50%/cover no-repeat url(https://miyuro.one/images/darta-green.svg);
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+    height: 2.4rem;
+    width: 6.154rem;
+    color:#ffc720; 
+}
+
+.item-list__item .marker-arrow { /*Liston de Precio*/
+    font-size: 18px;
+    height: 2rem;
+    width: 6.5rem
+}
+.item-list__item {
+    background-color: transparent;
+    border: none;
+    border-radius: .5rem;
+    text-align: left;
+    white-space: normal
+}
+.header-menu__sale .marker-arrow {
+    font-size: 22px;
+    height: 37px;
+    line-height: 1.6
+}
+.marker-arrow span {
+    margin-left: .5rem
+}
+
+@media (max-width: 991.98px) {
+    .list-top.item-list.osp-section .marker-arrow {
+        font-size: 1.3rem;
+        height: 2rem;
+        width: 5rem
+    }
+}
+@media (max-width: 767.98px) {
+    .list-top.item-list.osp-section .marker-arrow {
+        font-size: 1rem;
+        height: 1.5rem;
+        width: 4rem
+    }
+}
+@media (max-width: 991.98px) {
+    .mobile-2 .marker-arrow {
+        font-size: 1rem;
+        height: 1.5rem;
+        width: 3.5rem
+    }
+    .mobile-2 .carousel-offers-top1__body-wrap .marker-arrow,
+    .mobile-2 .list-top.item-list .marker-arrow {
+        font-size: 1.5rem;
+        height: 2.2rem;
+        width: 6rem
+    }
+    .mobile-2 .list-top.item-list.osp-section .marker-arrow {
+        font-size: 1.3rem;
+        height: 2rem;
+        width: 5rem
+    }
+}
+@media (max-width: 767.98px) {
+    .mobile-2 .list-top.item-list.osp-section .marker-arrow {
+        font-size: 1rem;
+        height: 1.5rem;
+        width: 4rem
+    }
+}
+body.mobile-app .product-loading .label-mark__tag,
+body.mobile-app .product-loading .marker,
+body.mobile-app .product-loading .marker-arrow {
+    display: none
+}
+.item-list__img-wrap {
+    border: none;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    overflow: hidden;
+    width: 100%
+}
+ 
+.offer-image {
+    overflow: hidden;
+    position: relative
+}
+.offer-image:before {
+    content: "";
+    display: block;
+    /*padding-top: 56.01852%; ajusta el div a la img*/
+  
+    width: 100%
+}
+.offer-image__content {
+    bottom: 0;
+    left: 0;
+    position:sticky; 
+    right: 0;
+    top: 0    
+}
+.offer-image__single {
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem
+}
+body.mobile-app .product-loading .offer-image {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0
+}
+body.mobile-app .product-loading .offer-image:before {
+    background: #eee;
+    z-index: 1000
+}
+.item-sku-img-wrap {
+    border: none;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    overflow: hidden;
+    width: 100%;
+}
+body.offers-map #modalMapOffer .item-list__item .item-list__header {
+    width: 150px
+}
