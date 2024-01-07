@@ -36,62 +36,85 @@ document.addEventListener('DOMContentLoaded', () => {
             // Body
             const miSkuBody = document.createElement('div');
              //   miSkuBody.classList.add('d-flex');
-            miSkuBody.classList.add('item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
-            // Imagen
-            
-            const miSkuDivImg = document.createElement('div');  
-                miSkuDivImg.classList.add('my-display-container','my-text-white' ); // 'item-sku-img-wrap', 'offer-image'
-            const miSkuImagen = document.createElement('img');
-                //miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
-                miSkuImagen.style='width:80%'
-          //  miSkuImagen.style.height='75px';
-           // miSkuImagen.style.width ='75px';            
-            miSkuImagen.setAttribute('src', info.imagen);
-            miSkuDivImg.appendChild(miSkuImagen);  
+                miSkuBody.classList.add('item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
+                // Imagen
+                const miSkuDivImgHead = document.createElement('div');  
+                    miSkuDivImgHead.classList.add( 'item-list__header');
+                const miSkuDivImg = document.createElement('div');  
+                    miSkuDivImg.classList.add('item-list__img-wrap','offer-image' ); // , 'item-sku-img-wrap', 'offer-image'
+                const miSkuImagen = document.createElement('img');
+                    miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
+                    miSkuImagen.style='width:80%'
+            //  miSkuImagen.style.height='75px';
+            // miSkuImagen.style.width ='75px';            
+                miSkuImagen.setAttribute('src', info.imagen);
+                miSkuDivImg.appendChild(miSkuImagen);  
 
-            const miSkuDivPrecio = document.createElement('div');  
-                miSkuDivPrecio.classList.add('my-display-bottomleft','my-container'); 
-                const miSkuDivPreciospan = document.createElement('span');  
-                    miSkuDivPreciospan.textContent = `${divisa} ${info.precio.toFixed(2)}  `;
-                    miSkuDivPrecio.appendChild(miSkuDivPreciospan);                    
-                    miSkuDivImg.appendChild(miSkuDivPrecio); 
+                const miSkuDivImgCont = document.createElement('div');  
+                const miSkuDivPrecio = document.createElement('div');  
+                    miSkuDivPrecio.classList.add( 'marker','marker-arrow'); 
+                    const miSkuDivPreciospan = document.createElement('span');  
+                        miSkuDivPreciospan.textContent = `${divisa} ${info.precio.toFixed(2)}  `;
+                        miSkuDivPrecio.appendChild(miSkuDivPreciospan);// <span>$1.00</span>
+
+                const miSkuspanImgLabel = document.createElement('span');  
+                        miSkuspanImgLabel.classList.add('label-mark__tag');
+                const miSkuspanImgLabelTxt = document.createElement('span');  
+                        miSkuspanImgLabelTxt.classList.add('label-mark__tag-text');
+                    miSkuspanImgLabelTxt.textContent = `${info.disponible}`; 
+                     miSkuspanImgLabel.appendChild(miSkuspanImgLabelTxt);   
+            /*<span class="label-mark__tag">
+                <span class="label-mark__tag-text">Disponible</span>
+            </span> 
+*/  // Boton
+                const miNodoDivBtn = document.createElement('div');
+                    miNodoDivBtn.classList.add( 'markerbtn' ); 
+
+                const miNodoBtnAdd = document.createElement('button');
+                miNodoBtnAdd.classList.add('btn', 'btn-primary');
+                miNodoDivBtn.style="float: right";
+
+                Fuente: https://www.iteramos.com/pregunta/58780/coloca-un-boton-alineado-a-la-derecha";
+                miNodoBtnAdd.textContent = 'Agregar';
+                
+                miNodoBtnAdd.setAttribute('add', info.id);
+                miNodoBtnAdd.addEventListener('click', AddSkuLista);
+                miNodoDivBtn.appendChild(miNodoBtnAdd); 
+                
+                miSkuDivImgCont.appendChild(miSkuDivImg);  
+                miSkuDivImgCont.appendChild(miSkuDivPrecio); 
+                miSkuDivImgCont.appendChild(miNodoDivBtn);
+                miSkuDivImgCont.appendChild(miSkuspanImgLabel);  
+                miSkuDivImgHead.appendChild(miSkuDivImgCont);  
  
-            // Descripción del Producto
-            const midivTitle = document.createElement('div');  
-                midivTitle.classList.add( 'item-list__title','item-list__body','item-list__body-wrap');//'item-sku-text'); 
-                const miNodoTitle = document.createElement('a');
-    // miNodoTitle.classList.add('col','col-md-4' );//col-md-4 card-precio
-            miNodoTitle.textContent = info.nombre;
-            miNodoTitle.href = info.ofertaen;
-            midivTitle.appendChild(miNodoTitle);    
-           /* // Precio
-            const miNodoPrecio = document.createElement('div');
-            miNodoPrecio.classList.add('col','col-md-4','card-precio');
-            miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}  `; //ofertaen
-            //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
-          */  // Boton
-            const miNodoDivBtn = document.createElement('div');
-            //miNodoDivBtn.classList.add('col' ,'col-md-12'); 
 
-            const miNodoBtnAdd = document.createElement('button');
-            miNodoBtnAdd.classList.add('btn', 'btn-primary');
-            miNodoBtnAdd.textContent = 'Agregar';
-            miNodoBtnAdd.setAttribute('add', info.id);
-            miNodoBtnAdd.addEventListener('click', AddSkuLista);
-
-            miNodoDivBtn.appendChild(miNodoBtnAdd);
-          //  miNodoPrecio.appendChild(miNodoDivBtn);
-           // Insertamos
-            const miitemsep = document.createElement('hr');
-            miitemsep.classList.add('featurette-divider');
-            miSkuBody.appendChild(miitemsep);
-            miSkuBody.appendChild(miSkuDivImg);
-            //miSkuBody.appendChild(miSkuDivPrecio);
-            miSkuBody.appendChild(midivTitle);
-            //miSkuBody.appendChild(miNodoPrecio);
-            miSkuBody.appendChild(miNodoDivBtn);
-            miNodo.appendChild(miSkuBody);
-            DOMitems.appendChild(miNodo);
+ 
+    
+                // Descripción del Producto
+                const midivTitle = document.createElement('div');  
+                    midivTitle.classList.add( 'item-list__title','item-list__body','item-list__body-wrap');//'item-sku-text'); 
+                    const miNodoTitle = document.createElement('a');
+        // miNodoTitle.classList.add('col','col-md-4' );//col-md-4 card-precio
+                miNodoTitle.textContent = info.nombre;
+                miNodoTitle.href = info.ofertaen;
+                midivTitle.appendChild(miNodoTitle);    
+            /* // Precio
+                const miNodoPrecio = document.createElement('div');
+                miNodoPrecio.classList.add('col','col-md-4','card-precio');
+                miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}  `; //ofertaen
+                //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
+            */  
+            // Insertamos
+                const miitemsep = document.createElement('hr');
+                miitemsep.classList.add('featurette-divider');
+                miSkuBody.appendChild(miitemsep);
+                miSkuBody.appendChild(miSkuDivImgHead);
+                //miSkuBody.appendChild(miSkuDivPrecio);
+                miSkuBody.appendChild(midivTitle);
+                //miSkuBody.appendChild(miNodoPrecio);
+                //miSkuBody.appendChild(miNodoDivBtn);
+                miNodo.appendChild(miSkuBody);
+                DOMitems.appendChild(miNodo);
         });
     }
 
