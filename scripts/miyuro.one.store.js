@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     miSkuDivImg.classList.add('item-list__img-wrap','offer-image' ); // , 'item-sku-img-wrap', 'offer-image'
                 const miSkuImagen = document.createElement('img');
                     miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
-                    miSkuImagen.style='width:80%'
+                //    miSkuImagen.style='width:80%'
             //  miSkuImagen.style.height='75px';
             // miSkuImagen.style.width ='75px';            
                 miSkuImagen.setAttribute('src', info.imagen);
