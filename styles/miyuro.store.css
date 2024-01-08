@@ -2628,7 +2628,7 @@ textarea.form-control.is-invalid {
 .btn {
     display: inline-flex;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1em;
     line-height: 1.5;
     color: #212529;
     text-align: center;
@@ -9833,13 +9833,7 @@ fieldset:disabled .btn {
   .btn-whap-icon, .btn-tot-icon {
     margin-top:13px;
   }
-    
-  /* Add padding BETWEEN each column */
-  .row,
-  .row > .column {
-    padding: 8px;
-  }
-  
+      
   /* Create three equal columns that floats next to each other */
   .column {
     float: left;
@@ -9968,9 +9962,9 @@ fieldset:disabled .btn {
 }
 
 .item-list__item .marker-arrow { /*Liston de Precio*/
-    font-size: 1.3rem;
-    height: 2rem;
-    width: 5.5rem
+    font-size: 1em;
+    height: 2em;
+    width: 5em
 }
 .item-list__item {
     background-color: transparent;
