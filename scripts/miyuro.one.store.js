@@ -37,7 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const miSkuBody = document.createElement('div');
              //   miSkuBody.classList.add('d-flex');
                 miSkuBody.classList.add( 'item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
-                // Imagen
+
+                // Imagen href="https://OSmiyuro.one/section/activities"
+                const miSkuDivImgLink = document.createElement('a');  
+                miSkuDivImgLink.href=info.imagen;
+
                 const miSkuDivImgHead = document.createElement('div');  
                     miSkuDivImgHead.classList.add( 'item-list__header');
                 const miSkuDivImg = document.createElement('div');  
@@ -48,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             //  miSkuImagen.style.height='75px';
             // miSkuImagen.style.width ='75px';            
                 miSkuImagen.setAttribute('src', info.imagen);
-                miSkuDivImg.appendChild(miSkuImagen);  
+                miSkuDivImgLink.appendChild(miSkuImagen);
+                miSkuDivImg.appendChild(miSkuDivImgLink);    
 
                 const miSkuDivImgCont = document.createElement('div');  
                 const miSkuDivPrecio = document.createElement('div');  
