@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
              //   miSkuBody.classList.add('d-flex');
                 miSkuBody.classList.add( 'item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
 
-                // Imagen href="https://OSmiyuro.one/section/activities"
+                // Imagen  
                 const miSkuDivImgLink = document.createElement('a');  
-                miSkuDivImgLink.href=info.imagen;
+                        miSkuDivImgLink.href=info.imagen;
 
                 const miSkuDivImgHead = document.createElement('div');  
                     miSkuDivImgHead.classList.add( 'item-list__header');
