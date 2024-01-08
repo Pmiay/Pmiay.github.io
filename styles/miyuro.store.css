@@ -9833,31 +9833,7 @@ fieldset:disabled .btn {
   .btn-whap-icon, .btn-tot-icon {
     margin-top:13px;
   }
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-family: Arial;
-  }
-  
-  /* Center website */
-  .main {
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  h1 {
-    font-size: 50px;
-    word-break: break-all;
-  }
-  
-  .row {
-    margin: 10px -16px;
-  }
-  
+    
   /* Add padding BETWEEN each column */
   .row,
   .row > .column {
@@ -9870,19 +9846,9 @@ fieldset:disabled .btn {
     width: 50%;
     /* display: none; Hide all elements by default */
   }
+ 
   
-  /* Clear floats after rows */ 
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Content */
-  .content {
-    background-color: white;
-    padding: 10px;
-  }
+ 
   /* ##################################################################################### */
   /* ##################################################################################### */
   .item-list__header {
