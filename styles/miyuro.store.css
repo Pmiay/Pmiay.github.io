@@ -2655,7 +2655,7 @@ textarea.form-control.is-invalid {
 .btn-check:focus+.btn,
 .btn:focus {
     outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+    box-shadow: 0 0 0 .25rem rgba(4, 68, 54, 0.836)
 }
 .btn.disabled,
 .btn:disabled,
@@ -2667,9 +2667,15 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #2c6e6bf6;
     border-color: #2fada7f6;
+    height: 30px;
+    padding: 0;
 }
 .btn-redondeado {
     border-radius:1.846em; /* */
+    height: 25px;
+    width: 25px;
+    padding: 0 0 0 5px;
+     font-weight: bold;
 }
 .btn-primary:hover {
     color: #fff;
@@ -2679,9 +2685,9 @@ fieldset:disabled .btn {
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
     color: #fff;
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
-    box-shadow: 0 0 0 .25rem rgba(49, 132, 253, .5)
+    background-color: #267765;
+    border-color: #0c5f51;
+    box-shadow: 0 0 0 .25rem rgba(5, 87, 66, 0.5)
 }
 .btn-check:active+.btn-primary,
 .btn-check:checked+.btn-primary,
@@ -2689,8 +2695,8 @@ fieldset:disabled .btn {
 .btn-primary:active,
 .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #0a58ca;
-    border-color: #0a53be
+    background-color: #1dc2a673;
+    border-color: #05727588
 }
 .btn-check:active+.btn-primary:focus,
 .btn-check:checked+.btn-primary:focus,
@@ -9963,7 +9969,7 @@ fieldset:disabled .btn {
 
 .item-list__item .marker-arrow { /*Liston de Precio*/
     font-size: 1em;
-    height: 2em;
+    height: 1.5em;
     width: 5em
 }
 .item-list__item {
