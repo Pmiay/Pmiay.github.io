@@ -48,9 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     miSkuDivImg.classList.add('item-list__img-wrap','offer-image' ); // , 'item-sku-img-wrap', 'offer-image'
                 const miSkuImagen = document.createElement('img');
                     miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
-                   // miSkuImagen.style='width:80%'
-            //  miSkuImagen.style.height='75px';
-            // miSkuImagen.style.width ='75px';            
+                   // miSkuImagen.style='width:80%'          
                 miSkuImagen.setAttribute('src', info.imagen);
                 miSkuDivImgLink.appendChild(miSkuImagen);
                 miSkuDivImg.appendChild(miSkuDivImgLink);    
@@ -76,9 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const miNodoBtnAdd = document.createElement('button');
                 miNodoBtnAdd.classList.add('btn', 'btn-primary');
                 miNodoDivBtn.style="float: right";
-
-                Fuente: https://www.iteramos.com/pregunta/58780/coloca-un-boton-alineado-a-la-derecha";
-                miNodoBtnAdd.textContent = 'Agregar';
+ 
+                miNodoBtnAdd.textContent = 'Añadir';
                 
                 miNodoBtnAdd.setAttribute('add', info.id);
                 miNodoBtnAdd.addEventListener('click', AddSkuLista);
