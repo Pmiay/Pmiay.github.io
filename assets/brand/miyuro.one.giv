@@ -171,11 +171,11 @@ miyuro =  [
 {	id: 169,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/st151.png',	nombre: 'Sombrero Con Protección UV',	precio: 8.5,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 170,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st153.png',	nombre: 'Cintas Adhesiva',	precio: 1.5,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 171,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st160.png',	nombre: 'Grifo de Bronce Roscado Para Manguera 1/2"',	precio: 2.15,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 172,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/assets/brand/HogarTi.png',	nombre: 'Instalación Tomacorriente o Interruptor',	precio: 4.75,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 172,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/assets/brand/HogarTi.png',	nombre: 'Instalación Tomacorriente, Interruptor o Grifo',	precio: 4.75,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 173,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st159.png',	nombre: 'Interruptor con Tapa Decorativo Blanco 15A',	precio: 2.45,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 174,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st167.png',	nombre: 'Lona de Polietileno 3 x 3 mts Azul/Gris',	precio: 6.45,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 174,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st167.png',	nombre: 'Lona de Polietileno 3 x 3 mts Azul/Gris',	precio: 7.45,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 175,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st158a.png',	nombre: 'Tapa Plástica Para Interruptor Decorativa.',	precio: 1.05,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 176,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st157.png',	nombre: 'Tomacorriente Doble. Nema 5-15R. 15A',	precio: 1,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 177,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st165.png',	nombre: 'WD-40 11 oz  382 ml',	precio: 6.14,	ofertaen: 'https://www.miyuro.one/dele',	}
+{	id: 177,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st165.png',	nombre: 'WD-40 11 oz  382 ml',	precio: 6.68,	ofertaen: 'https://www.miyuro.one/dele',	}
 
 ] ;
