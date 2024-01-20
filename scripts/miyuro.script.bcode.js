@@ -36,11 +36,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		console.log(data);
 	});
 
+
+	//starting
+	FromStorage()
+
+
+});
+/* let docContent = '{"lecturas":[' +
+	'{"bcode":"00000","qty":qty,"now":"dd-mm-yy 00:00" },' */
+
+
 function beep() {
 	var bip = new Audio('./assets/sound/bipOne.mp3');
 	bip.play();
 }
-
 function savereader(code){  // https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_parse
 	var qty = document.getElementById("qty").value;
 /* 	let docContent = '{"lecturas":[' +
@@ -61,14 +70,6 @@ function FromStorage () {
 		docContent = JSON.parse(miLocalStorage.getItem('lecturas'));
 	}
 }
-	//starting
-	FromStorage()
-
-
-});
-/* let docContent = '{"lecturas":[' +
-	'{"bcode":"00000","qty":qty,"now":"dd-mm-yy 00:00" },' */
-
 
 function add(){
 	text. document.getElementById("demo").value
