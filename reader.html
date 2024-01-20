@@ -4,13 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>BarCode Reader Test</title>
-    <link href="./styles/miyuro.bcode.css" rel="stylesheet" type="text/css" />
+    <link href="./styles/miyuro.bcode.css" rel="stylesheet" type="text/css" /> 
   </head>
   <body>
-		<a href="miyuro.one">Miyuro.One</a>
-		<p id="resultado">Bar Code</p>
+		<a href="miyuro.one">Miyuro.One</a> 
+    <div class="col-xs-6">
+		  <p id="resultado">Bar Code</p>
+      <p> X </p>
+      <input type="text" id="qty" name="qty">
+      
+    </div>
 		<p>Container reader value: </p>
 		<div id="contenedor"></div>
+    <button onclick="beep()">Sound</button>
+    <textarea id="*---lecturas">
+      Sin Lecturas
+    </textarea>
+    <table > 
+      <thead >
+          <tr class="text-muted">
+            <th>Producto</th>
+            <th>Total</th>
+          </tr>
+      </thead>
+
+      <tbody id="lecturas" >   </tbody>
+      
+   </table>
 		<!-- Cargamos Quagga y luego nuestro script -->
 		<script src="./scripts/miyuro.bcode.js"></script>
     <script src="./scripts/miyuro.script.bcode.js"></script>
