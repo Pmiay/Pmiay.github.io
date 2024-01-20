@@ -7,8 +7,8 @@
 	max-width: 100%;
 	max-height: 150px;
 	/*position:relative;*/
-	background-color: yellow;
-	position:static;
+	background-color: blueviolet;
+	position:sticky;
 
 }
 canvas{
