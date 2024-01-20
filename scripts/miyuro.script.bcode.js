@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function beep() {
+	window.alert("beep");
 	var bip = new Audio('./assets/sound/bipOne.mp3');
 	bip.play();
 }
