@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 		
 	function savereader(code){  // https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_parse
+		DOMlista.textContent = '';
 		var qty = document.getElementById("qty").value;
+
 	//	window.alert("savereader2" + code);
 	/* 	let docContent = '{"lecturas":[' +
 		'{"bcode":"' + code + '","qty":' + qty + ',"now":"dd-mm-yy 00:00" },' +
@@ -21,6 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
 	
 		const lectdata =  JSON.stringify(docContent);
 		document.getElementById("lecturas").innerHTML = lectdata; 
+
+
+		const miNodo = document.createElement('div');
+		const midivdes = document.createElement('td'); 
+		midivdes.classList.add('row-over', 'txt-product-container');
+  		 const mispandes = document.createElement('span'); 
+	   mispandes.textContent= `${lectdata} ${qty}`  ;
+	   midivdes.appendChild(mispandes);
+
+		miNodo.appendChild(midivdes);
+		DOMlista.appendChild(miNodo);
 	}
 	function ToStorage () { 
 		miLocalStorage.setItem('lecturas', JSON.stringify(docContent));
@@ -60,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		var code = data.codeResult.code;
 		$resultados.textContent = code; //data.codeResult.code;
 				
-		//savereader (code);
+		savereader (code);
 		beep();
 		// Imprimimos todo el data para que puedas depurar
 		console.log(data);
