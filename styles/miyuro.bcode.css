@@ -1,14 +1,13 @@
 #contenedor video{
 	max-width: 100%;
-	max-height: 100%;
-	height: 50%;
+	max-height:   50%;
 	 
 }
 #contenedor{
 	max-width: 100%;
 	max-height: 150px;
 	/*position:relative;*/
-	background-color: blueviolet;
+	background-color: burlywood;
 	position:sticky;
 
 }
