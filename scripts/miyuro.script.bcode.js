@@ -1,5 +1,6 @@
+let docContent = [];
 document.addEventListener("DOMContentLoaded", () => {
-	let docContent = [];
+	
     const DOMlista = document.querySelector('#lista');
 	const $resultados = document.querySelector("#resultado");
     const miLocalStorage = window.localStorage;
@@ -53,11 +54,12 @@ function beep() {
 }
 function savereader(code){  // https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_parse
 	var qty = document.getElementById("qty").value;
+	window.alert("savereader2" + code);
 /* 	let docContent = '{"lecturas":[' +
 	'{"bcode":"' + code + '","qty":' + qty + ',"now":"dd-mm-yy 00:00" },' +
 	'{"bcode":"' + code + '",qty:' + qty + ',"now":"dd-mm-yy 00:00" }'; */
-	docContent.push( code); //'{"bcode":"' + code + '",qty:' + qty + ',"now":"dd-mm-yy 00:00" }');
-
+	docContent.push(code); //'{"bcode":"' + code + '",qty:' + qty + ',"now":"dd-mm-yy 00:00" }');
+window.alert("savereader3");
 	const lectdata =  JSON.stringify(docContent);
 	document.getElementById("lecturas").innerHTML = lectdata; 
 }
