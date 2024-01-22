@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-
+	//starting
+	FromStorage();
+	
 	Quagga.init({
 		inputStream: {
 			constraints: {
@@ -84,11 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		savereader (code);
 		beep();
 		// Imprimimos todo el data para que puedas depurar
-		console.log(data);
+			//console.log(data);
 	});
 
-	//starting
-	FromStorage();
+
 
 
 });
