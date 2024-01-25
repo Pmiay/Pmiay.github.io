@@ -1,7 +1,7 @@
 let docContent = [];
 document.addEventListener("DOMContentLoaded", () => {
 	
-    const DOMlista = document.querySelector('#lista');
+   // const DOMlista = document.querySelector('#lista');
 	const $resultados = document.querySelector("#resultado");
     const miLocalStorage = window.localStorage;
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 		
 	function savereader(code){  // https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_parse
-		DOMlista.textContent = '';
+		//DOMlista.textContent = '';
 		var qty = document.getElementById("qty").value;
 
 	//	window.alert("savereader2" + code);
