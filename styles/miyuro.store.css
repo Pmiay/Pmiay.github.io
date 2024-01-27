@@ -6803,7 +6803,7 @@ fieldset:disabled .btn {
     margin-top: 3rem!important
 }
 .mt-auto {
-    margin-top: auto!important
+    margin-top: auto!important; 
 }
 .me-0 {
     margin-right: 0!important
@@ -6899,8 +6899,8 @@ fieldset:disabled .btn {
     padding-left: .5rem!important
 }
 .px-3 {
-    padding-right: 1rem!important;
-    padding-left: 1rem!important
+    padding-right: .25rem!important;
+    padding-left: .25rem!important
 }
 .px-4 {
     padding-right: 1.5rem!important;
@@ -9854,6 +9854,12 @@ fieldset:disabled .btn {
     width: 50%;
     /* display: none; Hide all elements by default */
   }
+  @media (min-width: 900px) {
+    .column{
+        float: left;
+        width: 25%;
+    }
+}
   tr:nth-child(even) {
     background-color:   rgba(210, 224, 224, 0.473);;
 }
@@ -9861,6 +9867,9 @@ fieldset:disabled .btn {
  
   /* ##################################################################################### */
   /* ##################################################################################### */
+  .nomargin{
+    padding: 0 0 0 0;
+  }
   .item-list__header {
     background-color: #f3f7f7;
     border-radius: .5rem;
@@ -9909,6 +9918,7 @@ fieldset:disabled .btn {
     font-size: 20px;
     color: var(--bs-orange);
     text-align: right;
+    padding-right: .25rem;
   }
 .txt-product-container{
     color:gray;
@@ -9916,14 +9926,16 @@ fieldset:disabled .btn {
   }
 .cart-item-quantity{
     text-align: center; 
+    vertical-align:center;
     font-weight: bold;    
     border:#0c4128;
     border-top: 1px solid var(--color136);
     border-bottom: 1px solid var(--color136);
     margin: 0px;
     width: 20px;
-    height: 15px;
+    height: 1.8rem;
     margin-left: 1px; 
+    background-color: transparent;
   } 
   .label-mark__tag-text {
     bottom: -1px;
@@ -10096,6 +10108,4 @@ body.mobile-app .product-loading .offer-image:before {
     overflow: hidden;
     width: 100%;
 }
-body.offers-map #modalMapOffer .item-list__item .item-list__header {
-    width: 150px
-}
+ 
