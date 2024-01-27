@@ -42,7 +42,7 @@ miyuro =  [
 {	id: 108,	disponible:'Disponible',	grupo:'Golocinas',	imagen: 'https://miyuro.one/images/store/st15.jpg',	nombre: 'Mermelada Naranja Lokman360G',	precio: 1.55,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 109,	disponible:'Disponible',	grupo:'Golocinas',	imagen: 'https://miyuro.one/images/store/st130.png',	nombre: 'Pop Corn Mais JOLLY TIME 907g',	precio: 2.9,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 110,	disponible:'Disponible',	grupo:'Granos',	imagen: 'https://miyuro.one/images/store/st13.jpg',	nombre: 'Arvejas Amarillas Gallo Pinto 12Oz',	precio: 0.75,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 111,	disponible:'Disponible',	grupo:'Granos',	imagen: 'https://miyuro.one/images/store/st12.jpg',	nombre: 'Lentejas Vikingo 1Lb',	precio: 0.95,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 111,	disponible:'Disponible',	grupo:'Granos',	imagen: 'https://miyuro.one/images/store/st12.png',	nombre: 'Lentejas Vikingo 1Lb',	precio: 0.95,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 114,	disponible:'Disponible',	grupo:'Leche',	imagen: 'https://miyuro.one/images/store/st68.png',	nombre: 'Leche Condensada Bella Holandesa 397G',	precio: 1.9,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 115,	disponible:'Disponible',	grupo:'Leche',	imagen: 'https://miyuro.one/images/store/st107.png',	nombre: 'Leche de Coco American Pride 400Ml',	precio: 1.1,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 116,	disponible:'Disponible',	grupo:'Leche',	imagen: 'https://miyuro.one/images/store/st20.png',	nombre: 'Leche En Polvo Instantánea Kanny 400G',	precio: 3.4,	ofertaen: 'https://www.miyuro.one/dele',	},
