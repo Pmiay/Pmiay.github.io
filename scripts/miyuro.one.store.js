@@ -47,7 +47,7 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
                 miSkuPrecioDiv.appendChild(miSkuPrecioSpan);
             miSkuDivImgH.appendChild(miSkuPrecioDiv);
             const miSkuTagSpan = document.createElement('span'); miSkuTagSpan.classList.add('label-mark__tag' );
-                const miSkuTag = document.createElement('span');  miSkuTag.classList.add('label-mark__tag-text' );miSkuTag.textContent = 'Disponible';
+                const miSkuTag = document.createElement('span');  miSkuTag.classList.add('label-mark__tag-text' );miSkuTag.textContent = `${info.disponible}`;
                     miSkuTagSpan.appendChild(miSkuTag);
             miSkuDivImgH.appendChild(miSkuTagSpan);        
             const miSkuBtnDiv = document.createElement('div');miSkuBtnDiv.classList.add( 'markerbtn' );miSkuBtnDiv.style="float: right";
