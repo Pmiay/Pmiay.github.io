@@ -62,10 +62,10 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
             miSkuFootBrandDiv.appendChild(miSkuFootBrandImg); 
         miSkuFootDiv.appendChild(miSkuFootBrandDiv); */
             const miSkuFootNameDiv = document.createElement('div'); miSkuFootNameDiv.classList.add('item-list__body-wrap' );
-                const miSkuNameFirstDiv = document.createElement('div'); miSkuNameFirstDiv.classList.add( 'item-list__title')
+             /*   const miSkuNameFirstDiv = document.createElement('div'); miSkuNameFirstDiv.classList.add( 'item-list__title')
                 const miSkuTitleA = document.createElement('a'); miSkuTitleA.textContent = '***'; //info.nombre;miSkuTitleA.href = info.ofertaen;
                     miSkuNameFirstDiv.appendChild(miSkuTitleA); 
-                miSkuFootNameDiv.appendChild(miSkuNameFirstDiv); 
+                miSkuFootNameDiv.appendChild(miSkuNameFirstDiv); */
 
                 const miSkuNameSecondDiv = document.createElement('div'); miSkuNameSecondDiv.classList.add( 'item-list__text')
                 const miSkuSecondA = document.createElement('a'); miSkuSecondA.textContent = info.nombre;miSkuSecondA.href = info.ofertaen;
