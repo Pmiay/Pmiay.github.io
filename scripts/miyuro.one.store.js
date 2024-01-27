@@ -10,7 +10,6 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-
 const elementosBase = miyuro;
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -33,95 +32,60 @@ document.addEventListener('DOMContentLoaded', () => {
             // Estructura
             const miNodo = document.createElement('row');
                 miNodo.classList.add('column' );
-            // Body
-            const miSkuBody = document.createElement('div');
-             //   miSkuBody.classList.add('d-flex');
-                miSkuBody.classList.add( 'item-list__item','item-list__image-and-text','ml-050','mr-010','mobile-2-2' );
+const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-list__item','ml-050','mr-010','mobile-2-2' );
+    const miSkuDivImgH = document.createElement('div'); miSkuDivImgH.classList.add('item-list__header' );
+            const miSkuDivImg = document.createElement('div'); miSkuDivImg.classList.add('item-list__img-wrap','offer-image' );
+                const miSkuAImg = document.createElement('a'); miSkuAImg.classList.add('no-context-menu'); miSkuAImg.href=info.imagen;
+                    const miSkuImg = document.createElement('img'); miSkuImg.classList.add('offer-image__content','ls-is-cached','lazyloaded' );
+                        miSkuImg.setAttribute('width','100');
+                        miSkuImg.setAttribute('src', info.imagen);
+                        miSkuAImg.appendChild(miSkuImg);
+                miSkuDivImg.appendChild(miSkuAImg);
+            miSkuDivImgH.appendChild(miSkuDivImg);  
+            const miSkuPrecioDiv = document.createElement('div'); miSkuPrecioDiv.classList.add('marker','marker-arrow' );
+                const miSkuPrecioSpan = document.createElement('span'); miSkuPrecioSpan.textContent = `${divisa} ${info.precio.toFixed(2)}  `;
+                miSkuPrecioDiv.appendChild(miSkuPrecioSpan);
+            miSkuDivImgH.appendChild(miSkuPrecioDiv);
+            const miSkuTagSpan = document.createElement('span'); miSkuTagSpan.classList.add('label-mark__tag' );
+                const miSkuTag = document.createElement('span');  miSkuTag.classList.add('label-mark__tag-text' );miSkuTag.textContent = 'Disponible';
+                    miSkuTagSpan.appendChild(miSkuTag);
+            miSkuDivImgH.appendChild(miSkuTagSpan);        
+            const miSkuBtnDiv = document.createElement('div');miSkuBtnDiv.classList.add( 'markerbtn' );miSkuBtnDiv.style="float: right";
+                const miSkuBtnAdd = document.createElement('button');miSkuBtnAdd.classList.add('btn', 'btn-primary');miSkuBtnAdd.textContent = 'Añadir';                
+                        miSkuBtnAdd.setAttribute('add', info.id);miSkuBtnAdd.addEventListener('click', AddSkuLista);
+                        miSkuBtnDiv.appendChild(miSkuBtnAdd); 
+            miSkuDivImgH.appendChild(miSkuBtnDiv); 
+    miSkuDiv.appendChild(miSkuDivImgH); 
+    const miSkuFootDiv = document.createElement('div'); miSkuFootDiv.classList.add('item-list__body' );
+        const miSkuFootBrandDiv = document.createElement('div'); miSkuFootBrandDiv.classList.add('item-list__logo' );
+            const miSkuFootBrandImg = document.createElement('img');miSkuFootBrandImg.classList.add('lazyloaded' ); miSkuFootBrandImg.href=info.brand; //data-srcset="https://mi....">
+            miSkuFootBrandDiv.appendChild(miSkuFootBrandImg); 
+        miSkuFootDiv.appendChild(miSkuFootBrandDiv); 
+            const miSkuFootNameDiv = document.createElement('div'); miSkuFootNameDiv.classList.add('item-list__body-wrap' );
+                const miSkuNameFirstDiv = document.createElement('div'); miSkuNameFirstDiv.classList.add( 'item-list__title')
+                const miSkuTitleA = document.createElement('a'); miSkuTitleA.textContent = info.grupo; //info.nombre;miSkuTitleA.href = info.ofertaen;
+                    miSkuNameFirstDiv.appendChild(miSkuTitleA); 
+                miSkuFootNameDiv.appendChild(miSkuNameFirstDiv); 
 
-                // Imagen  
-                const miSkuDivImgLink = document.createElement('a');  
-                        miSkuDivImgLink.href=info.imagen;
+                const miSkuNameSecondDiv = document.createElement('div'); miSkuNameSecondDiv.classList.add( 'item-list__title')
+                const miSkuSecondA = document.createElement('a'); miSkuSecondA.textContent = info.nombre;miSkuSecondA.href = info.ofertaen;
+                miSkuNameSecondDiv.appendChild(miSkuSecondA); 
+                miSkuFootNameDiv.appendChild(miSkuNameSecondDiv); 
 
-                const miSkuDivImgHead = document.createElement('div');  
-                    miSkuDivImgHead.classList.add( 'item-list__header');
-                const miSkuDivImg = document.createElement('div');  
-                    miSkuDivImg.classList.add('item-list__img-wrap','offer-image' ); // , 'item-sku-img-wrap', 'offer-image'
-                const miSkuImagen = document.createElement('img');
-                    miSkuImagen.classList.add('offer-image__content', 'ls-is-cached', 'lazyloaded' );
-                   // miSkuImagen.style='width:80%'          
-                miSkuImagen.setAttribute('src', info.imagen);
-                miSkuDivImgLink.appendChild(miSkuImagen);
-                miSkuDivImg.appendChild(miSkuDivImgLink);    
+        miSkuFootDiv.appendChild(miSkuFootNameDiv);  
+    miSkuDiv.appendChild(miSkuFootDiv);  
 
-                const miSkuDivImgCont = document.createElement('div');  
-                const miSkuDivPrecio = document.createElement('div');  
-                    miSkuDivPrecio.classList.add( 'marker','marker-arrow'); 
-                    const miSkuDivPreciospan = document.createElement('span');  
-                        miSkuDivPreciospan.textContent = `${divisa} ${info.precio.toFixed(2)}  `;
-                        miSkuDivPrecio.appendChild(miSkuDivPreciospan);// <span>$1.00</span>
-
-                const miSkuspanImgLabel = document.createElement('span');  
-                        miSkuspanImgLabel.classList.add('label-mark__tag');
-                const miSkuspanImgLabelTxt = document.createElement('span');  
-                        miSkuspanImgLabelTxt.classList.add('label-mark__tag-text');
-                    miSkuspanImgLabelTxt.textContent = `${info.disponible}`; 
-                     miSkuspanImgLabel.appendChild(miSkuspanImgLabelTxt);   
-            /*<span class="label-mark__tag">  <span class="label-mark__tag-text">Disponible</span>  </span> 
-*/  // Boton
-                const miNodoDivBtn = document.createElement('div');
-                    miNodoDivBtn.classList.add( 'markerbtn' ); 
-
-                const miNodoBtnAdd = document.createElement('button');
-                miNodoBtnAdd.classList.add('btn', 'btn-primary');
-                miNodoDivBtn.style="float: right";
- 
-                miNodoBtnAdd.textContent = 'Añadir';
-                
-                miNodoBtnAdd.setAttribute('add', info.id);
-                miNodoBtnAdd.addEventListener('click', AddSkuLista);
-                miNodoDivBtn.appendChild(miNodoBtnAdd); 
-                
-                miSkuDivImgCont.appendChild(miSkuDivImg);  
-                miSkuDivImgCont.appendChild(miSkuDivPrecio); 
-                miSkuDivImgCont.appendChild(miNodoDivBtn);
-                miSkuDivImgCont.appendChild(miSkuspanImgLabel);  
-                miSkuDivImgHead.appendChild(miSkuDivImgCont);  
- 
-
- 
-    
-                // Descripción del Producto
-                const midivTitle = document.createElement('div');  
-                    midivTitle.classList.add( 'item-list__title','item-list__body','item-list__body-wrap');//'item-sku-text'); 
-                    const miNodoTitle = document.createElement('a');
-        // miNodoTitle.classList.add('col','col-md-4' );//col-md-4 card-precio
-                miNodoTitle.textContent = info.nombre;
-                miNodoTitle.href = info.ofertaen;
-                midivTitle.appendChild(miNodoTitle);    
-            /* // Precio
-                const miNodoPrecio = document.createElement('div');
-                miNodoPrecio.classList.add('col','col-md-4','card-precio');
-                miNodoPrecio.textContent = `Precio: ${divisa} ${info.precio.toFixed(2)}  `; //ofertaen
-                //<p class="mb-0">Precio: <a href="${info.ofertaen}"> $divisa${info.precio}${divisa}</a>.</p>
-            */  
-            // Insertamos
-                const miitemsep = document.createElement('hr');
-                miitemsep.classList.add('featurette-divider');
-                miSkuBody.appendChild(miitemsep);
-                miSkuBody.appendChild(miSkuDivImgHead);
-                //miSkuBody.appendChild(miSkuDivPrecio);
-                miSkuBody.appendChild(midivTitle);
-                //miSkuBody.appendChild(miNodoPrecio);
-                //miSkuBody.appendChild(miNodoDivBtn);
-                miNodo.appendChild(miSkuBody);
-                DOMitems.appendChild(miNodo);
+        const miitemsep = document.createElement('hr'); miitemsep.classList.add('featurette-divider');
+          miSkuDiv.appendChild(miitemsep);
+          miNodo.appendChild(miSkuDiv);
+          DOMitems.appendChild(miNodo);
         });
     }
 
     /**
     * Evento para añadir un producto al carrito de la compra
     */
-    function AddSkuLista(evento) { //        window.alert("#changeQtySku evento.target" +  '='    );
+    function AddSkuLista(evento) {
         lista.push(evento.target.getAttribute('add'))   //marcador
         ListaDeCompra();// Actualizamos el carrito
         
@@ -184,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 miDivTotal.classList.add('cart-item-total');
                 const miDivTotalspan = document.createElement('span');
                 miDivTotalspan.classList.add('cart-item-total' );
-                miDivTotalspan.textContent= `${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)} `  ;
+                miDivTotalspan.textContent= `${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)}`  ;
             miDivTotal.appendChild(miDivTotalspan);
             miTdTotal.appendChild(miDivTotal);
 
@@ -278,18 +242,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // Renderizamos los cambios
         ListaDeCompra();
         // Borra LocalStorage
-        localStorage.clear();
+        //localStorage.clear();
+        localStorage.removeItem('lista');
 
     }
 
-    function ListaToLocalStorage () {
+    function ListaToLocalStorage () { 
         miLocalStorage.setItem('lista', JSON.stringify(lista));
     }
 
     function localStorageToLista () {
-        // ¿Existe un carrito previo guardado en LocalStorage?
-        if (miLocalStorage.getItem('lista') !== null) {
-            // Carga la información
+        // ¿Existe un carrito previo guardado en LocalStorage? 
+        if (miLocalStorage.getItem('lista') !== null) {  // Carga la información
             lista = JSON.parse(miLocalStorage.getItem('lista'));
         }
     }
@@ -310,22 +274,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         window.jsPDF = window.jspdf.jsPDF;//new jsPDF('l', 'in', [3, 5]);
-         var doc = new jsPDF('p', 'cm', [9, 20]); 
+        var doc = new jsPDF('p', 'cm', [9, 20]);//var doc = new jsPDF('p', 'cm', [9, 20]); 
          //doc.add()                       
             // Source HTMLElement or a string containing HTML.
 
-        var elementHTML = document.querySelector("#pedido");
-//window.alert("#lista2" + elementHTML );
-        doc.html(elementHTML, {
-            callback: function(doc) {
-                // Save the PDF
-                doc.save('Pedido_Miyuro_One.pdf');
-            },
-            x: 0.02,
-            y: 0.02,
-            width: 8.8, //target width in the PDF document
-            windowWidth: 650 //window width in CSS pixels
-        });   
+        var elementHTML = document.querySelector("#pedido"); 
+        const custName = document.querySelector('#Nombre');
+       // window.alert("#lista2" + custName.value  );
+       if(custName.value.length>0){
+            doc.html(elementHTML, {
+                callback: function(doc) {
+                    // Save the PDF
+                    doc.save(custName.value +'_Miyuro_One.pdf');
+                },
+                x: 0.5, //Izquierdo
+                y: 0.5, //superior
+                width: 8.8, //target width in the PDF document
+                windowWidth: 400 //window width in CSS pixels
+            });  
+        } else{window.alert("Por favor especifique\na nombre de quien va el pedido"  );custName.focus()}
+
 /*That code let you create a Blob object inside the browser and show it in the new tab.
 pdf.addHTML($('#content'), y, x, options, function () {
 var blob = pdf.output("blob");
