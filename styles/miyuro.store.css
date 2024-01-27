@@ -225,12 +225,16 @@ sub {
 sup {
     top: -.5em
 }
+
 a {
-    color: #0d6efd;
-    text-decoration: underline
+    -webkit-text-decoration-skip: objects;
+    background-color: transparent;
+    color: #ffffffee;
+    text-decoration: none
 }
 a:hover {
-    color: #0a58ca
+    color: #7eb8a0ce;
+    text-decoration: none
 }
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
@@ -10099,6 +10103,177 @@ body.mobile-app .product-loading .offer-image:before {
     background: #eee;
     z-index: 1000
 }
+.header {
+    background-color: #fff;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100
+}
+.header__container {
+    display: none;
+    margin-bottom: 1.35rem;
+    margin-top: 1.35rem
+}
+.h1,
+h1 {
+    font-size: 1.75rem
+}
+@media (min-width: 768px) {
+    .h1,
+    h1 {
+        font-size: 2rem
+    }
+}
+@media (min-width: 992px) {
+    .h1,
+    h1 {
+        font-size: 2.5rem
+    }
+}
+.h2,
+h2 {
+    font-size: 1.5rem
+}
+@media (min-width: 768px) {
+    .h2,
+    h2 {
+        font-size: 1.625rem
+    }
+}
+@media (min-width: 992px) {
+    .h2,
+    h2 {
+        font-size: 2rem
+    }
+}
+.h3,
+h3 {
+    font-size: 1.375rem
+}
+@media (min-width: 768px) {
+    .h3,
+    h3 {
+        font-size: 1.5rem
+    }
+}
+@media (min-width: 992px) {
+    .h3,
+    h3 {
+        font-size: 1.75rem
+    }
+}
+.h4,
+h4 {
+    font-size: 1.25rem
+}
+@media (min-width: 768px) {
+    .h4,
+    h4 {
+        font-size: 1.375rem
+    }
+}
+@media (min-width: 992px) {
+    .h4,
+    h4 {
+        font-size: 1.5rem
+    }
+}
+.h5,
+h5 {
+    font-size: 1.125rem
+}
+@media (min-width: 768px) {
+    .h5,
+    h5 {
+        font-size: 1.25rem
+    }
+}
+.h6,
+h6 {
+    font-size: 1rem
+}
+@media (min-width: 768px) {
+    .h6,
+    h6 {
+        font-size: 1.125rem
+    }
+}
+.item-list__item {
+    background-color: transparent;
+    border: none;
+    border-radius: .5rem;
+    text-align: left;
+    white-space: normal
+}
+@media (min-width: 768px) {
+    .item-list__item {
+        border-radius: .5rem
+    }
+}
+.item-list__img-wrap {
+    border: none;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    overflow: hidden;
+    width: 100%
+}
+.item-list__header {
+    background-color: #f3f7f7;
+    border-radius: .5rem;
+    position: relative
+}
+.item-list__header img {
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%
+}
+@media (min-width: 768px) {
+    .item-list__header img {
+        transition: all .5s ease-in-out
+    }
+    .item-list__header img:hover {
+        transform: scale(1.1)
+    }
+    .item-list__header img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px
+    }
+}
+.item-list__header .marker {
+    bottom: 0;
+    left: -.5rem;
+    position: absolute
+}
+.item-list__body {
+    align-content: stretch;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: .5rem .5rem .5rem 0
+}
+@media (min-width: 576px) {
+    .item-list__body {
+        padding: .6rem
+    }
+}
+.item-list__body-wrap {
+    background: transparent;
+    margin: 0 .5rem 0 0;
+    overflow: hidden;
+    width: 100%
+}
+@media (min-width: 576px) {
+    .item-list__body-wrap {
+        margin: 0 .5rem 0 .6rem
+    }
+}
 .item-sku-img-wrap {
     border: none;
     border-bottom-left-radius: .5rem;
@@ -10108,4 +10283,55 @@ body.mobile-app .product-loading .offer-image:before {
     overflow: hidden;
     width: 100%;
 }
- 
+.item-list__title {
+    background: transparent;
+    color: #000;
+    display: block;
+    font-family: BarlowSemiBold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    max-height: 1.5rem;
+    overflow: hidden
+}
+.item-list__text {
+    height: 3rem;
+    overflow: hidden;
+    text-align: initial
+}
+@media (max-width: 991.98px) {
+    .mobile-2 .item-list__body {
+        flex-direction: column-reverse
+    }
+    .mobile-2 .item-list__logo img {
+        width: 30px
+    }
+    .mobile-2 .item-list__text {
+        height: 2.5rem
+    }
+    .mobile-2 .item-list__body-wrap {
+        font-size: .9375rem;
+        margin-left: 0
+    }
+}
+body.offers-map #modalMapOffer .item-list__title {
+    font-size: 12px
+}
+body.mobile-app .product-loading .item-list__body a {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5)
+}
+body.offers-map #modalMapOffer .item-list__item .item-list__body {
+    flex: 1;
+    flex-direction: column;
+    padding-left: 15px;
+    width: 100px
+}
+body.offers-map #modalMapOffer .item-list__item .item-list__header {
+    width: 150px
+}
+.no-context-menu,
+.no-context-menu * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none
+}
+
