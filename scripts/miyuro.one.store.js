@@ -57,17 +57,17 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
             miSkuDivImgH.appendChild(miSkuBtnDiv); 
     miSkuDiv.appendChild(miSkuDivImgH); 
     const miSkuFootDiv = document.createElement('div'); miSkuFootDiv.classList.add('item-list__body' );
-        const miSkuFootBrandDiv = document.createElement('div'); miSkuFootBrandDiv.classList.add('item-list__logo' );
+       /* const miSkuFootBrandDiv = document.createElement('div'); miSkuFootBrandDiv.classList.add('item-list__logo' );
             const miSkuFootBrandImg = document.createElement('img');miSkuFootBrandImg.classList.add('lazyloaded' ); miSkuFootBrandImg.href=info.brand; //data-srcset="https://mi....">
             miSkuFootBrandDiv.appendChild(miSkuFootBrandImg); 
-        miSkuFootDiv.appendChild(miSkuFootBrandDiv); 
+        miSkuFootDiv.appendChild(miSkuFootBrandDiv); */
             const miSkuFootNameDiv = document.createElement('div'); miSkuFootNameDiv.classList.add('item-list__body-wrap' );
                 const miSkuNameFirstDiv = document.createElement('div'); miSkuNameFirstDiv.classList.add( 'item-list__title')
-                const miSkuTitleA = document.createElement('a'); miSkuTitleA.textContent = info.grupo; //info.nombre;miSkuTitleA.href = info.ofertaen;
+                const miSkuTitleA = document.createElement('a'); miSkuTitleA.textContent = '***'; //info.nombre;miSkuTitleA.href = info.ofertaen;
                     miSkuNameFirstDiv.appendChild(miSkuTitleA); 
                 miSkuFootNameDiv.appendChild(miSkuNameFirstDiv); 
 
-                const miSkuNameSecondDiv = document.createElement('div'); miSkuNameSecondDiv.classList.add( 'item-list__title')
+                const miSkuNameSecondDiv = document.createElement('div'); miSkuNameSecondDiv.classList.add( 'item-list__text')
                 const miSkuSecondA = document.createElement('a'); miSkuSecondA.textContent = info.nombre;miSkuSecondA.href = info.ofertaen;
                 miSkuNameSecondDiv.appendChild(miSkuSecondA); 
                 miSkuFootNameDiv.appendChild(miSkuNameSecondDiv); 
