@@ -138,8 +138,9 @@
     <div  class="container style.system-container d-flex mw-100 h-100 p-3 mx-auto flex-column ">
          <!-- Elementos generados a partir del JSON -->
          <main id="items"class="row px-3 nomargin" >     <!--    -->     
-            <div id="mySidebar" class="sidebar navbar">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>                                   
+            <div id="mySidebar" class="sidebar navbar"> 
+                        <button id="btn-env" onclick="enviarPedido();"   type="button">Enviar Pdf</button>
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>                              
                 <aside id="pedido" class="mt-auto bg-white">      
                         <div class="row px-3">
                             <div class="px-0">
@@ -190,11 +191,7 @@
                 -->
         </main>
                
-            <div class="btn-total" id ="btn-t">    
-                <p   class="text-right text-right">
-                    <button id="btn-env" onclick="enviarPedido();"   type="button">Enviar</button>      
-                </p>
-            </div>    
+   
     </div>
     <script>
         function openNav() {
@@ -206,6 +203,7 @@
         
         function closeNav() {
           document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("mySidebar").style.visibility="hidden";
           document.getElementById("items").style.marginLeft= "0";
           document.getElementById("nb").style.marginLeft = "0";   
         }
