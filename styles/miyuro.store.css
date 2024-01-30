@@ -79,7 +79,10 @@ body {
     text-align: var(--bs-body-text-align);
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+    
+    min-height: 75rem;
+    padding-top: 4.5rem;
 }
 hr {
     margin: .25rem 0 .25rem;
@@ -110,7 +113,7 @@ h6 {
 }
 .h1,
 h1 {
-    font-size: calc(1.375rem + 1.5vw)
+    font-size: calc(1.375rem + 1.5vw) 
 }
 @media (min-width: 1200px) {
     .h1,
@@ -10103,6 +10106,10 @@ body.mobile-app .product-loading .offer-image:before {
     background: #eee;
     z-index: 1000
 }
+
+#header {
+    position: sticky;
+}
 .header {
     background-color: #fff;
     padding: 0;
@@ -10335,3 +10342,278 @@ body.offers-map #modalMapOffer .item-list__item .item-list__header {
     -webkit-user-select: none
 }
 
+.navbar-slider__wrapper-fluid {
+    background-color: transparent;
+    border-bottom: 1px solid #edf0f0;
+}
+
+.navbar-slider__link-active {
+    border-bottom: 4px solid #ff4200;
+}
+.navbar-slider__link {
+    align-items: center;
+    color: #000;
+    display: inline-flex;
+    font-family: BarlowMedium,sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 2.6em;
+    padding: 0 9px;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+}
+.navbar-slider__nav-contents-no-transition {
+    transition: none;
+}
+.navbar-slider__nav-contents-no-transition {
+    transition: none;
+}
+.navbar-slider__nav-contents {
+    float: left;
+    position: relative;
+    transition: transform .2s ease-in-out;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+
+.navbar-slider__wrapper-fluid {
+    background-color: transparent;
+    border-bottom: 1px solid #edf0f0;
+}
+@media (max-width: 1199.98px){
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    padding: 0!important;
+    width: 100%!important;
+}}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+/*Menu lateral*/
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 8px 15px 5px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.icon-state {
+    position: relative;
+    vertical-align: middle;
+}
+.header__cart-icon {
+    margin-left: -2px; 
+}
+
+.header__cart-toggle:hover .header__cart-count, .header__cart-toggle[aria-expanded=true] .header__cart-count {
+    transform: scale(1.2);
+}
+
+.header__cart-count {
+    display: inline-flex;
+    position: absolute;
+    right: -14px;
+    top: -7px;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    min-width: 20px;
+    padding: 4px;
+    font-size:12px; /* calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));**/
+    font-weight: 450;/*var(--text-font-bolder-weight);*/
+    text-align: center;
+    background:#486e69;
+    color:#20c997;
+    border-radius: 1.75em;
+    transition: transform .35s ease-in-out;
+    will-change: transform;
+    transform: scale(1.01);
+    z-index: 1;
+}
+.header__cart-toggle:hover .header__cart-count,
+.header__cart-toggle[aria-expanded=true] .header__cart-count {
+    transform: scale(1.2)
+}
+*, :after, :before {
+    box-sizing: border-box!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 640px) {
+    .header__cart-icon .icon-state__secondary.icon-state__secondary {
+        left: 8px
+    }
+    .header__action-item .icon--lock-2 {
+        display: block
+    }
+    .header__search-bar-wrapper {
+        visibility: hidden;
+        position: absolute;
+        padding: 0 20px 0 20px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: var(--header-background);
+        z-index: -1;
+        transition: visibility .25s ease-in-out, margin-bottom .25s ease-in-out
+    }
+    .header__search-bar-wrapper.is-visible {
+        visibility: visible;
+        margin-bottom: -59px
+    }
+    .header__search-bar-wrapper.is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 10
+    }
+}
+@media screen and (min-width: 641px) {
+    .header__action-list {
+        padding-left: 28px
+    }
+    .header__action-item,
+    .header__action-item-content {
+        position: relative
+    }
+    .header__action-item-content {
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content
+    }
+    .header__action-item .icon--lock-2 {
+        vertical-align: text-top
+    }
+}
+.header__action-item-link {
+    display: block;
+    font-weight: var(--text-font-bolder-weight);
+    font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 16px))
+}
+.header__action-item-link--small {
+    font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 13px));
+    font-weight: 400
+}
+.icon-state {
+    position: relative;
+    vertical-align: middle
+}
+.icon-state .icon-state__primary,
+.icon-state .icon-state__secondary {
+    display: block;
+    transition: opacity .35s ease-in-out, transform .35s ease-in-out
+}
+.icon-state .icon-state__secondary {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-50%) scale(.3)
+}
+.icon-state[aria-expanded=true] .icon-state__primary {
+    opacity: 0;
+    transform: scale(.3)
+}
+.icon-state[aria-expanded=true] .icon-state__secondary {
+    opacity: 1;
+    transform: translateY(-50%) scale(1)
+}
+.header .icon--cart {
+    width: 27px;
+    height: 24px;
+}
+.header .icon--account, .header .icon--cart, .header .icon--close, .header .icon--hamburger, .header .icon--hamburger-mobile, .header .icon--search {
+    display: block;
+}
+.icon {
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    fill: currentColor;
+    vertical-align: middle;
+    background: 0 0;
+    pointer-events: none;
+    overflow: visible; 
+}
+      
