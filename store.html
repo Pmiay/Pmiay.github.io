@@ -17,7 +17,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">	</script>
     <script type="text/javascript" src="./assets/brand/miyuro.one.giv"></script>
     <script type="text/javascript" src="./scripts/miyuro.one.store.js"></script>
-    <header class="mb-auto "> 
+    <header id="htitulo"  class="mb-auto "> 
         <p class="h1">Directo, al mismo precio</p>
         <p class="lead">No se complique solo elija lo que necesita y nosotros haremos el resto.</p>                      
     </header>
@@ -133,7 +133,7 @@
             </div>
         </div>
     
-        </header>
+    </header>
 
     <div  class="container style.system-container d-flex mw-100 h-100 p-3 mx-auto flex-column ">
          <!-- Elementos generados a partir del JSON -->
@@ -147,7 +147,7 @@
                                 <h3 class="title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
                                     <h4 class="title-cart py-3 border-bottom border-gray text-muted">
                                         <label for="Nombre">Nombre:</label>
-                                        <input type="text" id="Nombre" name="Nombre"  size="12"></input><br> 
+                                        <input type="text" id="Nombre" name="Nombre"  size="12" onchange="Getuser()"></input><br> 
                                         <label for="Whatsapp">Whatsapp:</label>
                                         <input type="text" id="Whatsapp" name="Whatsapp"  size="10"></input>        
                                     </h4>
@@ -197,15 +197,19 @@
         function openNav() {
           document.getElementById("mySidebar").style.width = "400px";
           document.getElementById("mySidebar").style.visibility="visible";
-          document.getElementById("items").style.marginLeft = "400px";
-          document.getElementById("nb").style.marginLeft = "400px";          
+          document.getElementById("items").style.marginLeft = "400px";           
+          document.getElementById("htitulo").style.marginLeft = "400px";        
+          document.getElementById("nb").style.marginLeft = "400px";  
+          document.getElementById("header").style.marginLeft = "400px";          
         }
         
         function closeNav() {
           document.getElementById("mySidebar").style.width = "0";
           document.getElementById("mySidebar").style.visibility="hidden";
           document.getElementById("items").style.marginLeft= "0";
+          document.getElementById("htitulo").style.marginLeft = "0";  
           document.getElementById("nb").style.marginLeft = "0";   
+          document.getElementById("header").style.marginLeft = "0"; 
         }
         </script>
 </body>
