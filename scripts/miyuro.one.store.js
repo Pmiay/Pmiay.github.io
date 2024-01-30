@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMitems = document.querySelector('#items');
     const DOMlista = document.querySelector('#lista');
     const DOMtotal = document.querySelector('#total');
+    const DOMund = document.querySelector('#unidades');
     const DOMtotalp = document.querySelector('#totalp');
     const DOMbotonVaciar = document.querySelector('#btn-clear');
     const miLocalStorage = window.localStorage;
@@ -195,6 +196,7 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
         });
         // Renderizamos el precio total en el HTML
         DOMtotal.textContent = Total();
+        DOMund.textContent=lista.length;
         DOMtotalp.textContent =DOMtotal.textContent ;
     }
 
@@ -232,7 +234,6 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
             return total + miItem[0].precio;
         }, 0).toFixed(2);
     }
-
     /**
     * Varia el carrito y vuelve a dibujarlo
     */
