@@ -10,95 +10,203 @@
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">    -->
 
     <!-- miyuro.one core CSS   -->
+    
     <link href="styles/miyuro.store.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">            </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">          </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">	</script>
     <script type="text/javascript" src="./assets/brand/miyuro.one.giv"></script>
     <script type="text/javascript" src="./scripts/miyuro.one.store.js"></script>
-
+    <header class="mb-auto "> 
+        <p class="h1">Directo, al mismo precio</p>
+        <p class="lead">No se complique solo elija lo que necesita y nosotros haremos el resto.</p>                      
+    </header>
 </head>
-<body  class="d-flex h-100 text-center text-white bg-dark">
-
-    <div  class="container style.system-container d-flex mw-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto"> 
-            <div>
-              <h3 class="float-md-start mb-1">Miyuro</h3>
-              <nav class="nav nav-masthead justify-content-center float-md-end">
-                <a class="nav-link active" aria-current="page" href="#">Menu</a>
-                <a class="nav-link" href="#">Servicios</a>
-                <a class="nav-link" href="#">Contacto</a>
-              </nav>
+<body  class="h-100 text-center text-white bg-dark"> <!-- d-flex  -->
+    <header id="header" class="header " data-scroll-header="">
+        <nav id="nb" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <button class="openbtn" onclick="openNav()">
+                    <div class="header__action-item-content">
+                        <div class="header__cart-icon icon-state" aria-expanded="false">
+                            <span class="icon-state__primary"><svg class="icon icon--cart" viewBox="0 0 27 24" role="presentation">
+                            <g transform="translate(0 1)" stroke-width="2" stroke="currentColor" fill="none" fill-rule="evenodd">
+                            <circle stroke-linecap="square" cx="11" cy="20" r="2"></circle>
+                            <circle stroke-linecap="square" cx="22" cy="20" r="2"></circle>
+                            <path d="M7.31 5h18.27l-1.44 10H9.78L6.22 0H0"></path>
+                            </g>
+                            </svg><span class="header__cart-count" id="unidades">0</span>
+                            </span>
+                            <span class="icon-state__secondary"><svg class="icon icon--close" viewBox="0 0 19 19" role="presentation">
+                            <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg></span>
+                        </div>
+                        <span class="text-muted  ">&dollar;<span id="total"></span> </span><!-- Precio total --> 
+                    </div>
+                </button>
+            <a class="navbar-brand" href="#">  Miyuro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Contactos</a>
+                </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Búsqueda</button>
+                </form>
             </div>
-            <h1>Directo, al mismo precio</h1>
-            <p class="lead">No se complique solo elija lo que necesita y nosotros haremos el resto.</p>
-                      
+            </div>
+        </nav>
+        <div class="container-fluid navbar-slider__wrapper-fluid">
+            <div class="container">
+                <div class="navbar-slider__wrapper">
+                    <nav id="navbar-slider" class="navbar-slider" data-overflowing="none">
+                        <div id="navbar-slider__nav-contents" class="navbar-slider__nav-contents">
+                            <a href="#" data-category="all">Todas</a>
+                            <a href="https://miyuro.one/section/all-products"
+                                class="navbar-slider__nav-contents-no-transition navbar-slider__link">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        Todos
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://miyuro.one/section/frecuentes"
+                                class="navbar-slider__nav-contents-no-transition navbar-slider__link">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        Frecuentes
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://miyuro.one/section/salud"
+                                class="navbar-slider__nav-contents-no-transition navbar-slider__link ">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        Salud
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://miyuro.one/section/alimentos"
+                                class="navbar-slider__nav-contents-no-transition navbar-slider__link ">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        Alimentos
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </nav>
+                    <button id="navbar-slider__advancer-left" class="navbar-slider__advancer navbar-slider__advancer-Left"
+                        type="button">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.07 35.96">
+                            <title>
+                                icon_arrow_left_b
+                            </title>
+                            <path
+                                d="M16.44,18l11.4-11.4a3.87,3.87,0,1,0-5.48-5.47L8.23,15.24h0a3.89,3.89,0,0,0,0,5.48h0L22.36,34.85a3.87,3.87,0,0,0,5.48-5.48Z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button id="navbar-slider__advancer-right" class="navbar-slider__advancer navbar-slider__advancer-right"
+                        type="button">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.07 35.96">
+                            <title>
+                                icon_arrow_right_b
+                            </title>
+                            <path
+                                d="M19.62,18,8.23,6.58A3.87,3.87,0,0,1,13.7,1.11L27.83,15.24h0a3.89,3.89,0,0,1,0,5.48h0L13.7,34.85a3.87,3.87,0,0,1-5.47-5.48Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
         </header>
+
+    <div  class="container style.system-container d-flex mw-100 h-100 p-3 mx-auto flex-column ">
          <!-- Elementos generados a partir del JSON -->
-        <main id="items" class="row px-3">
-                <!-- Carrito -->
-            <aside class="mt-auto bg-white">
-                <!-- Elementos del carrito -->
-                 <!--<ul id="carrito" class="list-group "></ul>  -->
-                <div id="pedido" >
-                  <div class="row px-3">
-                      <div class="px-0">
-                          <h3 class="title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
-                              <h4 class="title-cart py-3 border-bottom border-gray text-muted">
-                                  <label for="Nombre">Nombre:</label>
-                                  <input type="text" id="Nombre" name="Nombre"  size="12"></input><br> 
-                                  <label for="Whatsapp">Whatsapp:</label>
-                                  <input type="text" id="Whatsapp" name="Whatsapp"  size="10"></input>
- 
-                              </h5>
-                      </div>
-                  </div>
-                     <table > 
+         <main id="items"class="row px-3 nomargin" >     <!--    -->     
+            <div id="mySidebar" class="sidebar navbar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>                                   
+                <aside id="pedido" class="mt-auto bg-white">      
+                        <div class="row px-3">
+                            <div class="px-0">
+                                <h3 class="title-cart py-3 border-bottom border-gray text-muted">Miyuro.One | Lista de compras</h3>
+                                    <h4 class="title-cart py-3 border-bottom border-gray text-muted">
+                                        <label for="Nombre">Nombre:</label>
+                                        <input type="text" id="Nombre" name="Nombre"  size="12"></input><br> 
+                                        <label for="Whatsapp">Whatsapp:</label>
+                                        <input type="text" id="Whatsapp" name="Whatsapp"  size="10"></input>        
+                                    </h4>
+                            </div>
+                        </div>                            
+                    <table > 
                         <thead  >
                             <tr class="text-muted">
-                              <th>Producto</th>
-                              <th>Total</th>
+                                <th>Producto</th>
+                                <th>Total</th>
                             </tr>
-                          </thead>
-                        <tbody id="lista" >   </tbody>
-                        
-                     </table>
+                            </thead>
+                        <tbody id="lista">   </tbody>
+                    
+                    </table>                        
+               <tfoot class="row px-3">
+                   <button id="btn-clear" class="  btn-danger col-sm-12  ">Limpiar</button>
+                   <h5 class="text-muted text-right">Total: &dollar;<span id="totalp"></span> 
+                       <!--  <hr class="featurette-divider"> -->
+               </tfoot>  
+            
+                </aside> 
 
-                  <tfoot class="row px-3">
-                          <button id="btn-clear" class="  btn-danger col-sm-12  ">Limpiar</button>
-                          <h5 class="text-muted text-right">Total: &dollar;<span id="totalp"></span> 
-                              <!--  <hr class="featurette-divider"> -->
-                  </tfoot> 
-                </div>               
-            </aside> 
-        <!--      
-            <div >
-                <button  aria-label="Cantidad decreciente">
-                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.333 9.334h13.334V7.11H1.333v2.223z" fill="currentColor"></path>
-                    </svg>
-                </button> 
+            </div>     
+                <!--      
+                    <div >
+                        <button  aria-label="Cantidad decreciente">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.333 9.334h13.334V7.11H1.333v2.223z" fill="currentColor"></path>
+                            </svg>
+                        </button> 
 
-                <input   class="input-width-4 flex-auto bn bg-transparent tc" id="product-list-quantity-stepper-13438" value="4" pattern="[0-9]*"  size="3">
- 
-                <button  aria-label="Aumentar la cantidad">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.6666 6.88905H9.11103V1.3335H6.88881V6.88905H1.33325V9.11127H6.88881V14.6668H9.11103V9.11127H14.6666V6.88905Z" fill="currentColor"></path>
-                    </svg>
-                </button>
-            </div>
-         -->
+                        <input   class="input-width-4 flex-auto bn bg-transparent tc" id="product-list-quantity-stepper-13438" value="4" pattern="[0-9]*"  size="3">
+        
+                        <button  aria-label="Aumentar la cantidad">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.6666 6.88905H9.11103V1.3335H6.88881V6.88905H1.33325V9.11127H6.88881V14.6668H9.11103V9.11127H14.6666V6.88905Z" fill="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                -->
         </main>
-              <!-- Precio total -->
-        <div class="btn-total" id ="btn-t">
-            <p class="text-muted text-right">Total: &dollar;<span id="total"></span> 
-            </p>
-        </div>    
+               
             <div class="btn-total" id ="btn-t">    
-            <p   class="text-right text-right">
-                <button id="btn-env" onclick="enviarPedido();"   type="button">Enviar</button>      
-            </p>
-        </div>    
+                <p   class="text-right text-right">
+                    <button id="btn-env" onclick="enviarPedido();"   type="button">Enviar</button>      
+                </p>
+            </div>    
     </div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "400px";
+          document.getElementById("items").style.marginLeft = "400px";
+          document.getElementById("nb").style.marginLeft = "400px";          
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("items").style.marginLeft= "0";
+        }
+        </script>
 </body>
 </html>
