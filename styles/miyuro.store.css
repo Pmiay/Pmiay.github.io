@@ -10428,7 +10428,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 15px;
   visibility:hidden;
 }
 
@@ -10449,8 +10449,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   position: absolute;
   top: 0;
   right: 25px;
+  padding:0 0 0;
   font-size: 36px;
-  margin-left: 50px;
+  margin-left: 90%;
+  
 }
 
 .openbtn {
