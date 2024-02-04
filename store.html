@@ -140,7 +140,7 @@
          <main id="items"class="row px-3 nomargin" >     <!-- style="display: inline "   style="float: left"    -->     
             <div id="mySidebar"  class="sidebar "> 
                 <header class="  navbar fixed-top" >
-                    <div class="navbar" style="width: 400px"> <!--  fixed-top -->
+                    <div id="cbtn" class="navbar" > <!-- screen.width fixed-top  width: 400px;-->
                         <button id="btn-env" onclick="enviarPedido();"   type="button">Enviar Pdf</button>                                                
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                     </div>
@@ -208,6 +208,7 @@
             sw = sw;
           }//          window.alert(`${sw}px`);
           document.getElementById("mySidebar").style.width = `${sw}px`;
+          document.getElementById("cbtn").style.width = `${sw}px`;
           document.getElementById("mySidebar").style.visibility="visible";
           document.getElementById("items").style.marginLeft = `${sw}px`;           
           document.getElementById("htitulo").style.marginLeft = `${sw}px`;        
