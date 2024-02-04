@@ -11,6 +11,7 @@ function readTextFile(file, callback) {
 }
 
 const elementosBase = miyuro;
+    let custName="";
 document.addEventListener('DOMContentLoaded', () => {
 
     let lista = [];
@@ -250,12 +251,15 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
 
     function ListaToLocalStorage () { 
         miLocalStorage.setItem('lista', JSON.stringify(lista));
+        miLocalStorage.setItem('custName', custName);
+ 
     }
 
     function localStorageToLista () {
         // ¿Existe un carrito previo guardado en LocalStorage? 
         if (miLocalStorage.getItem('lista') !== null) {  // Carga la información
             lista = JSON.parse(miLocalStorage.getItem('lista'));
+            custName = miLocalStorage.getItem('custName');
         }
     }
 
@@ -270,7 +274,14 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
 
 });
 
+function Getuser(){
+    const Name = document.querySelector('#Nombre'); 
+    custName=Name.value;    //marcador
+    localStorage.setItem('custName', custName);
+    
+   // window.alert(localStorage.getItem('custName') );
 
+}
     function enviarPedido(){//https://stackoverflow.com/questions/17739816/how-to-open-generated-pdf-using-jspdf-in-new-window
 
 
@@ -288,10 +299,10 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
                     // Save the PDF
                     doc.save(custName.value +'_Miyuro_One.pdf');
                 },
-                x: 0.5, //Izquierdo
+                x: 0.2, //Izquierdo
                 y: 0.5, //superior
                 width: 8.8, //target width in the PDF document
-                windowWidth: 400 //window width in CSS pixels
+                windowWidth: screen.width > 400 ? 400 : screen.width //400 //window width in CSS pixels
             });  
         } else{window.alert("Por favor especifique\na nombre de quien va el pedido"  );custName.focus()}
 
