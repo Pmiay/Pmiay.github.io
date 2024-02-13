@@ -196,7 +196,7 @@ miyuro =  [
 {	id: 182,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/st149.png',	nombre: 'Head & Shoulders Aceite de Argán Pack 375ml + 180ml',	precio: 7.95,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 183,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/st147.png',	nombre: 'Jugo de Cranberry Ocean Light 2.84 L ',	precio: 4.25,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 184,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/st170.png',	nombre: 'Pañoletas diseños varios',	precio: 0.9,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 202,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/.jpg',	nombre: 'Pañoletas Largas diseños varios',	precio: 3,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 202,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/st191.png',	nombre: 'Pañoletas Largas diseños varios',	precio: 3,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 185,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/st151.png',	nombre: 'Sombrero Con Protección UV',	precio: 8.5,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 186,	disponible:'Disponible',	grupo:'Salud',	imagen: 'https://miyuro.one/images/store/st171.png',	nombre: 'Sombrero de Lona alas ajustables',	precio: 10,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 214,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st203.png',	nombre: 'Biodegradable Cuchara Plástica 25 Und',	precio: 0.8,	ofertaen: 'https://www.miyuro.one/dele',	},
