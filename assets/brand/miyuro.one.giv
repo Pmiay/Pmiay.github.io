@@ -222,6 +222,7 @@ miyuro =  [
 {	id: 210,	disponible:'Disponible',	grupo:'Nuevo',	imagen: 'https://miyuro.one/images/store/st199.png',	nombre: 'Plástico transp. Adherente 250 pie',	precio: 4.5,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 196,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st158a.png',	nombre: 'Tapa Plástica Para Interruptor Decorativa.',	precio: 1.05,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 197,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st157.png',	nombre: 'Tomacorriente Doble. Nema 5-15R. 15A',	precio: 1,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 198,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st165.png',	nombre: 'WD-40 11 oz  382 ml',	precio: 6.68,	ofertaen: 'https://www.miyuro.one/dele',	}
+{	id: 198,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st165.png',	nombre: 'WD-40 11 oz  382 ml',	precio: 6.68,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 223,	disponible:'Consultar',	grupo:'Carnes',	imagen: 'https://miyuro.one/images/store/st212.png',	nombre: 'Bacalao Noruego Bolsa 2.2 lb',	precio: 5.77,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/757062',	}
 
 ] ;
