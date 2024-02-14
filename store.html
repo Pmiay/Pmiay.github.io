@@ -169,7 +169,10 @@
                         
                         </table>                        
                         <tfoot class="row px-3">
-                            <h5 class="text-muted text-right">Total: &dollar;<span id="totalp"></span> 
+                            <h5 class="Saldos text-muted text-right">Sub Total: &dollar;<span id="totalp"></span> 
+                            <h5 class="Saldos text-muted text-right">Pagado: &dollar;<span id="totalabonado"></span> 
+                                <input type="text" id="Pagado" name="Abono"  size="5" onchange="document.getElementById('totalapagar').textContent= (document.getElementById('totalp').textContent - this.value).toFixed(2);" ></input>       
+                            <h5 class="Saldos text-muted text-right">Total a Pagar: &dollar;<span id="totalapagar"></span> 
                                 <!--  <hr class="featurette-divider"> -->
                         </tfoot>                  
                     </aside> 
