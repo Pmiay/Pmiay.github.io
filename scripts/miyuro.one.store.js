@@ -11,10 +11,11 @@ function readTextFile(file, callback) {
 }
 
 const elementosBase = miyuro;
-    let custName="";
+    
 document.addEventListener('DOMContentLoaded', () => {
 
     let lista = [];
+    let custName="";
     const divisa = '$';
     const DOMitems = document.querySelector('#items');
     const DOMlista = document.querySelector('#lista');
