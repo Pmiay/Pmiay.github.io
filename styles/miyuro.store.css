@@ -10454,6 +10454,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   margin-left: 90%;
   
 }
+.text-right {
+    text-align: right;
+    margin-right: 8px;
+  }
 #cbtn{
     top: -12px; 
 }
