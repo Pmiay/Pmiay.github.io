@@ -199,6 +199,7 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
         DOMtotal.textContent = Total();
         DOMund.textContent=lista.length;
         DOMtotalp.textContent =DOMtotal.textContent ;
+        document.querySelector('#totalapagar').textContent = DOMtotalp.textContent;
     }
 
     /**
