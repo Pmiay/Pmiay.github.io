@@ -21,6 +21,8 @@ miyuro =  [
 {	id: 17,	disponible:'Consultar',	grupo:'Granos',	imagen: 'https://miyuro.one/images/store/st02.jpg',	nombre: 'Arvejas Amarillas Vikingo 1Lbs',	precio: 0,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 208,	disponible:'Consultar',	grupo:'Nuevo',	imagen: 'https://miyuro.one/images/store/st197.png',	nombre: 'Calzoncillo Members Selection 5 Und',	precio: 11.76,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/733100',	},
 {	id: 209,	disponible:'Consultar',	grupo:'Nuevo',	imagen: 'https://miyuro.one/images/store/st198.png',	nombre: 'Manta Impresa BHF Designs 152 177 cm',	precio: 10.69,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/455505',	},
+{	id: 229,	disponible:'Consultar',	grupo:'Nuevo',	imagen: 'https://miyuro.one/images/store/st219.png',	nombre: 'Sábanas King Caro Home 2 Juegos',	precio: 25.67,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/452610',	},
+{	id: 228,	disponible:'Consultar',	grupo:'Nuevo',	imagen: 'https://miyuro.one/images/store/st218.png',	nombre: 'Sábanas Queen Caro Home 2 Juegos',	precio: 21.93,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/452607',	},
 {	id: 206,	disponible:'Consultar',	grupo:'Nuevo',	imagen: 'https://miyuro.one/images/store/st195.png',	nombre: 'Sábanas Doble Caro Home 2 Juegos',	precio: 20.86,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/452595',	},
 {	id: 207,	disponible:'Consultar',	grupo:'Nuevo',	imagen: 'https://miyuro.one/images/store/st196.png',	nombre: 'Sábanas Twin Caro Home 2 Juegos',	precio: 17.97,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/452588',	},
 {	id: 18,	disponible:'Consultar',	grupo:'Leche',	imagen: 'https://miyuro.one/images/store/st06.png',	nombre: 'Leche En Polvo Instantánea Kanny  400G',	precio: 0,	ofertaen: 'https://www.miyuro.one/dele',	},
@@ -39,7 +41,8 @@ miyuro =  [
 {	id: 31,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st139.png',	nombre: 'Banana´s Cake, Dulce de Guineo con frutos secos',	precio: 2.75,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 32,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st140.png',	nombre: 'Cocada gourmet con frutos secos 7 onzas',	precio: 2,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 33,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st137.png',	nombre: 'Coco en concha negra unidad',	precio: 0.75,	ofertaen: 'https://miyuro.one/Deleites',	},
-{	id: 199,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st188.png',	nombre: 'Guanabana',	precio: 2.25,	ofertaen: '',	},
+{	id: 199,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st188.png',	nombre: 'Guanábana Libra',	precio: 1.5,	ofertaen: '',	},
+{	id: 199,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st217.png',	nombre: 'Guanábana Pulpa Libra',	precio: 1.5,	ofertaen: '',	},
 {	id: 34,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st132.png',	nombre: 'Guineo Chino Cuadrado verde',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 35,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st131.png',	nombre: 'Guineo Criollo Maduro o proximo',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 36,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st133.png',	nombre: 'Guineo Manzano',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
@@ -225,7 +228,8 @@ miyuro =  [
 {	id: 196,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st158a.png',	nombre: 'Tapa Plástica Para Interruptor Decorativa.',	precio: 1.05,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 197,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st157.png',	nombre: 'Tomacorriente Doble. Nema 5-15R. 15A',	precio: 1,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 198,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st165.png',	nombre: 'WD-40 11 oz  382 ml',	precio: 6.68,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 223,	disponible:'Consultar',	grupo:'Carnes',	imagen: 'https://miyuro.one/images/store/st212.png',	nombre: 'Bacalao Noruego Bolsa 2.2 lb',	precio: 5.77,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/757062',	},
+{	id: 223,	disponible:'Consultar',	grupo:'Carnes',	imagen: 'https://miyuro.one/images/store/st212.png',	nombre: 'Bacalao Noruego Bolsa 2.2 lb',	precio: 7.5,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/757062',	},
+{	id: 227,	disponible:'Consultar',	grupo:'Carnes',	imagen: 'https://miyuro.one/images/store/st216.png',	nombre: 'lmejas Blanca con Concha 2.2 lb',	precio: 6.5,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/455942',	},
 {	id: 226,	disponible:'Consultar',	grupo:'Carnes',	imagen: 'https://miyuro.one/images/store/st215.png',	nombre: 'Corvina en Trozos Sea Gallery 2.5 lb',	precio: 9.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/411701',	}
 
 ] ;
