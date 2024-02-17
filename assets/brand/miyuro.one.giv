@@ -39,7 +39,7 @@ miyuro =  [
 {	id: 28,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st145.png',	nombre: 'Aguacate Mantequilla, Geometría variada Grande',	precio: 1.5,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 29,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st144.png',	nombre: 'Aguacate Mantequilla, Geometría variada Mediado',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 30,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st143.png',	nombre: 'Aguacate Mantequilla, Geometría variada Pequeño',	precio: 0.75,	ofertaen: 'https://miyuro.one/Deleites',	},
-{	id: 31,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st139.png',	nombre: 'Banana´s Cake, Dulce de Guineo con frutos secos',	precio: 2.75,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 31,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st139.png',	nombre: 'Banana´s Cake, Dulce de Guineo con frutos secos',	precio: 3.50,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 32,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st140.png',	nombre: 'Cocada gourmet con frutos secos 7 onzas',	precio: 2,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 33,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st137.png',	nombre: 'Coco en concha negra unidad',	precio: 0.75,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 199,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st188.png',	nombre: 'Guanábana Libra',	precio: 1.5,	ofertaen: '',	},
