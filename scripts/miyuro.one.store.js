@@ -15,10 +15,10 @@ const elementosBase = miyuro;
 document.addEventListener('DOMContentLoaded', () => {
 
     let lista = [];
-    let custName="";
+    
     const divisa = '$';
     const DOMitems = document.querySelector('#items');
-    const DOMlista = document.querySelector('#lista');
+    const DOMlista = document.querySelector('#lista'); 
     const DOMtotal = document.querySelector('#total');
     const DOMund = document.querySelector('#unidades');
     const DOMtotalp = document.querySelector('#totalp');
@@ -134,7 +134,10 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
                             midivdes.appendChild(mispandes);
                      /**/        const mispandespre = document.createElement('div');
                                 mispandespre.classList.add('cart-item-total' );
-                                mispandespre.textContent= `${divisa} ${miItem[0].precio.toFixed(2)}`  ;
+  //Para precio variable                              
+ //                               let price = prompt("Precio=", `${(miItem[0].precio).toFixed(2)}` ); // `${divisa} ${miItem[0].precio.toFixed(2)}`
+ let price =`${(miItem[0].precio).toFixed(2)}`;
+                                mispandespre.textContent= `${divisa} ${(1 * price).toFixed(2)}`  ;
                                 //midivdes.appendChild(mispandespre);
                                 miTdProd.appendChild(mispandespre); /**/
                  //miTdProd.appendChild(midivdes);  
@@ -151,7 +154,7 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
                 miDivTotal.classList.add('cart-item-total');
                 const miDivTotalspan = document.createElement('span');
                 miDivTotalspan.classList.add('cart-item-total' );
-                miDivTotalspan.textContent= `${divisa}${(numeroUnidadesItem * miItem[0].precio).toFixed(2)}`  ;
+                miDivTotalspan.textContent= `${divisa}${(numeroUnidadesItem * price).toFixed(2)}`  ;
             miDivTotal.appendChild(miDivTotalspan);
             miTdTotal.appendChild(miDivTotal);
 
@@ -201,6 +204,7 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
         DOMund.textContent=lista.length;
         DOMtotalp.textContent =DOMtotal.textContent ;
         document.querySelector('#totalapagar').textContent = DOMtotalp.textContent;
+        
     }
 
     /**
@@ -242,18 +246,19 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
     */
     function limpiarLista() {
         // Limpiamos los productos guardados
-        lista = [];
+        lista = []; 
         // Renderizamos los cambios
         ListaDeCompra();
         // Borra LocalStorage
         //localStorage.clear();
         localStorage.removeItem('lista');
-
+        localStorage.removeItem('custName');
+        document.querySelector('#Nombre').value='' ;
     }
 
     function ListaToLocalStorage () { 
-        miLocalStorage.setItem('lista', JSON.stringify(lista));
-        miLocalStorage.setItem('custName', custName);
+        miLocalStorage.setItem('lista', JSON.stringify(lista)); 
+        miLocalStorage.setItem('custName', document.querySelector('#Nombre').value);
  
     }
 
@@ -261,7 +266,10 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
         // ¿Existe un carrito previo guardado en LocalStorage? 
         if (miLocalStorage.getItem('lista') !== null) {  // Carga la información
             lista = JSON.parse(miLocalStorage.getItem('lista'));
-            custName = miLocalStorage.getItem('custName');
+        }// window.alert( document.querySelector('#Nombre').value);
+        if (miLocalStorage.getItem('custName') !== null) {  // Carga la información 
+            document.querySelector('#Nombre').value =miLocalStorage.getItem('custName');
+           
         }
     }
 
@@ -276,10 +284,8 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
 
 });
 
-function Getuser(){
-    const Name = document.querySelector('#Nombre'); 
-    custName=Name.value;    //marcador
-    localStorage.setItem('custName', custName);
+function Getuser(){   //marcador
+    localStorage.setItem('custName', document.querySelector('#Nombre').value );
     
    // window.alert(localStorage.getItem('custName') );
 
