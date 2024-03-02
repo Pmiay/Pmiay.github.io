@@ -51,7 +51,7 @@ miyuro =  [
 {	id: 38,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st135.png',	nombre: 'Jugo Congelado 100% Limón 230ml',	precio: 1.5,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 39,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st134.png',	nombre: 'Limón Criollo',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 109,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st186.png',	nombre: 'Melón Amarillo',	precio: 1,	ofertaen: '',	},
-{	id: 40,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st141.png',	nombre: 'Miel de caña 37onz',	precio: 3,	ofertaen: 'https://miyuro.one/Deleites',	},
+{	id: 40,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st141.png',	nombre: 'Miel de caña 37onz',	precio: 3.50,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 41,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st136.png',	nombre: 'Nance Grande, ácido Botella',	precio: 2,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 201,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st190.png',	nombre: 'Naranja Nacional',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 42,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st142.png',	nombre: 'Naranja Tierras Altas de Coclé',	precio: 2,	ofertaen: 'https://miyuro.one/Deleites',	},
