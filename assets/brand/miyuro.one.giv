@@ -49,6 +49,6 @@ miyuro =  [
 {	id: 47,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st27.png',	nombre: 'Azucar Turbinada Santa Rosa 800G',	precio: 1.15,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 48,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st14.png',	nombre: 'Café Tradicional Regular Duran 425G',	precio: 5.25,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 49,	disponible:'Disponible',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st84.png',	nombre: 'Harina Espiga Blanca 5 Lb',	precio: 2.8,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 50,	disponible:'Disponible',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st53.jpg',	nombre: 'Huevos Toledano Grandes 15  Und',	precio: 2.7,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 50,	disponible:'Disponible',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st53.jpg',	nombre: 'Huevos Toledano Grandes 15  Und',	precio: 2.7,	ofertaen: 'https://www.miyuro.one/dele',	}
 
 ] ;
