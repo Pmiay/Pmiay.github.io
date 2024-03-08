@@ -192,7 +192,7 @@ miyuro =  [
 {	id: 190,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st140.png',	nombre: 'Cocada gourmet con frutos secos 7 onzas',	precio: 2.25,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 191,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st137.png',	nombre: 'Coco en concha negra unidad',	precio: 0.75,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 192,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st188.png',	nombre: 'Guanábana Libra',	precio: 1.5,	ofertaen: '',	},
-{	id: 193,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st217.png',	nombre: 'Guanábana Pulpa 2 Libras',	precio: 4.5,	ofertaen: '',	},
+{	id: 193,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st217.png',	nombre: 'Guanábana Pulpa 2 Libras',	precio: 3.5,	ofertaen: '',	},
 {	id: 194,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st132.png',	nombre: 'Guineo Chino Cuadrado verde',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 195,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st131.png',	nombre: 'Guineo Criollo Maduro o proximo',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 196,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st133.png',	nombre: 'Guineo Manzano',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
