@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMlista = document.querySelector('#lista'); 
     const DOMtotal = document.querySelector('#total');
     const DOMund = document.querySelector('#unidades');
+    const DOMundT = document.querySelector('#unidadesT');
     const DOMtotalp = document.querySelector('#totalp');
     const DOMbotonVaciar = document.querySelector('#btn-clear');
     const miLocalStorage = window.localStorage;
@@ -202,8 +203,10 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
         // Renderizamos el precio total en el HTML
         DOMtotal.textContent = Total();
         DOMund.textContent=lista.length;
+        DOMundT.textContent='Items ' + lista.length;
         DOMtotalp.textContent =DOMtotal.textContent ;
         document.querySelector('#totalapagar').textContent = DOMtotalp.textContent;
+        document.querySelector('#totalapagarT').textContent = DOMtotalp.textContent;
         
     }
 
