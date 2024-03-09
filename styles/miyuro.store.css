@@ -683,7 +683,11 @@ progress {
 }
 .col-3 {
     flex: 0 0 auto;
-    width: 25%
+    width: 25%;
+}
+.col-3-r {
+    flex: auto 0 0;
+    width: 75%
 }
 .col-4 {
     flex: 0 0 auto;
@@ -6810,7 +6814,7 @@ fieldset:disabled .btn {
     margin-top: 3rem!important
 }
 .mt-auto {
-    margin-top: auto!important; 
+    margin-top: auto!important;  
 }
 .me-0 {
     margin-right: 0!important
@@ -10458,6 +10462,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     text-align: right;
     margin-right: 8px;
   }
+.dscpagado {
+    font-size: 8px;
+    margin-right: 8px;
+  }
 #cbtn{
     top: -12px; 
 }
@@ -10511,17 +10519,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     font-weight: 450;/*var(--text-font-bolder-weight);*/
     text-align: center;
     background:#486e69;
-    color:#20c997;
+    color:#fefefe;
     border-radius: 1.75em;
     transition: transform .35s ease-in-out;
     will-change: transform;
     transform: scale(1.01);
     z-index: 1;
 }
-.header__cart-toggle:hover .header__cart-count,
-.header__cart-toggle[aria-expanded=true] .header__cart-count {
-    transform: scale(1.2)
-}
+
 *, :after, :before {
     box-sizing: border-box!important;
     -webkit-font-smoothing: antialiased;
