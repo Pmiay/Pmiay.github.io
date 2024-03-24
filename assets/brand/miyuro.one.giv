@@ -187,7 +187,7 @@ miyuro =  [
 {	id: 185,	disponible:'Consultar',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st21.png',	nombre: 'Papel Higiénico Higienol 1000 Hojas  4 Rollos',	precio: 2.95,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 186,	disponible:'Disponible',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st148.png',	nombre: 'Papel Higiénico Higienol 1000 Hojas  Dobles 4 Rollos',	precio: 2.5,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 187,	disponible:'Disponible',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st57.png',	nombre: 'Papel Toalla2 Rollos x200 Hojas',	precio: 3,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 188,	disponible:'Disponible',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st25.jpg',	nombre: 'Pasta Dental Crest Complete 178 Gms',	precio: 2.85,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 188,	disponible:'Disponible',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st25.png',	nombre: 'Pasta Dental Crest Complete 178 Gms',	precio: 2.85,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 189,	disponible:'Consultar',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st32.png',	nombre: 'Platón Plástico 42 Plg',	precio: 2,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 190,	disponible:'Disponible',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st108.png',	nombre: 'Roll On Lady Speed Stick Powder Fresh 50 Ml',	precio: 2.75,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 191,	disponible:'Disponible',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st233.png',	nombre: 'Desodorante Drop Sensitive 60ml',	precio: 1.35,	ofertaen: 'https://www.miyuro.one/dele',	},
