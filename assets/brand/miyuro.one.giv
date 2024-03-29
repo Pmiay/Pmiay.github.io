@@ -57,7 +57,7 @@ miyuro =  [
 {	id: 55,	disponible:'Disponible',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st128.png',	nombre: 'Aceite de soya Purela',	precio: 1.3,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 56,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st129.png',	nombre: 'Arroz de Primera 5 lb',	precio: 2.3,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 57,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st120.png',	nombre: 'Azúcar Morena La Victoria 5 lb',	precio: 3.15,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 58,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st27.png',	nombre: 'Azucar Turbinada Santa Rosa 800G',	precio: 1.15,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 58,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st27.png',	nombre: 'Azucar Turbinada Santa Rosa 800G',	precio: 1.20,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 59,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st14.png',	nombre: 'Café Tradicional Regular Duran 425G',	precio: 5.25,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 60,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st84.png',	nombre: 'Harina Espiga Blanca 5 Lb',	precio: 2.8,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 61,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st53.jpg',	nombre: 'Huevos Toledano Grandes 15  Und',	precio: 2.7,	ofertaen: 'https://www.miyuro.one/dele',	},
