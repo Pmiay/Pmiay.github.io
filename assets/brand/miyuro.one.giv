@@ -72,7 +72,7 @@ miyuro =  [
 {	id: 70,	disponible:'Disponible',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st29.png',	nombre: 'Queso Americano Nestlé Individual 25Und',	precio: 4,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 71,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st208.png',	nombre: 'Queso Blanco Molido Superior 128G',	precio: 1.35,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 72,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st244.png',	nombre: 'Queso Blanco Prensado 210g',	precio: 2.75,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 73,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st264.png',	nombre: 'Queso Blanco Prensado Mili 227g',	precio: 1.65,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 73,	disponible:'Consultar',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st264.png',	nombre: 'Queso Blanco Prensado Mili 227g',	precio: 2.50,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 74,	disponible:'Disponible',	grupo:'Alimentos',	imagen: 'https://miyuro.one/images/store/st58.png',	nombre: 'Spaguetti Parmigiana 454G',	precio: 0.6,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 75,	disponible:'Consultar',	grupo:'bebé',	imagen: 'https://miyuro.one/images/store/st122.png',	nombre: 'Enfamil Comfort Premium Infant Formula 1.65 kg',	precio: 66.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/375833',	},
 {	id: 76,	disponible:'Disponible',	grupo:'Café',	imagen: 'https://miyuro.one/images/store/st236.png',	nombre: 'Café Coclé 212 GR',	precio: 2.65,	ofertaen: 'https://www.miyuro.one/dele',	},
