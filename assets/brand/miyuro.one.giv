@@ -207,7 +207,7 @@ miyuro =  [
 {	id: 205,	disponible:'Disponible',	grupo:'Limpieza',	imagen: 'https://miyuro.one/images/store/st54.jpg',	nombre: 'Toallas Microfibra3 Und 40X40Cm',	precio: 1.75,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 206,	disponible:'Consultar',	grupo:'mascota',	imagen: 'https://miyuro.one/images/store/st86.png',	nombre: 'Alimento Para Gatos Pollo Y Guisantes 15 Lb',	precio: 15.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/755730',	},
 {	id: 207,	disponible:'Consultar',	grupo:'mascota',	imagen: 'https://miyuro.one/images/store/st87.png',	nombre: 'Alimento Para Perros Adultos Pollo/Guisantes 40 Lb',	precio: 34.99,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/755710',	},
-{	id: 208,	disponible:'Consultar',	grupo:'mascota',	imagen: 'https://miyuro.one/images/store/st124.png',	nombre: 'Arena Aglomerante para Gatos Aroma a Fresco 19 Kg',	precio: 20.85,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/3067',	},
+{	id: 208,	disponible:'Consultar',	grupo:'mascota',	imagen: 'https://miyuro.one/images/store/st124.png',	nombre: 'Arena Aglomerante para Gatos Aroma a Fresco 19 Kg',	precio: 16.58,	ofertaen: 'https://www.pricesmart.com/site/pa/es/pagina-producto/3067',	},
 {	id: 209,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st145.png',	nombre: 'Aguacate Mantequilla, Geometría variada Grande',	precio: 1.5,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 210,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st144.png',	nombre: 'Aguacate Mantequilla, Geometría variada Mediado',	precio: 1,	ofertaen: 'https://miyuro.one/Deleites',	},
 {	id: 211,	disponible:'Consultar',	grupo:'Orgánico',	imagen: 'https://miyuro.one/images/store/st143.png',	nombre: 'Aguacate Mantequilla, Geometría variada Pequeño',	precio: 0.75,	ofertaen: 'https://miyuro.one/Deleites',	},
@@ -279,6 +279,9 @@ miyuro =  [
 {	id: 277,	disponible:'Consultar',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st34.png',	nombre: 'Mouse Inalámbrico BT/2.4G Recargable  Negro',	precio: 25,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 278,	disponible:'Consultar',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st33.jpg',	nombre: 'Mouse Inalámbrico BT/2.4G Recargable Verde Claro',	precio: 25,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 279,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st199.png',	nombre: 'Plástico transp. Adherente 250 pie',	precio: 4.5,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 280,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st226.png',	nombre: 'Super Pegamento Super Glue Transparente',	precio: 0.55,	ofertaen: 'https://www.miyuro.one/dele',	}
+{	id: 280,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st226.png',	nombre: 'Super Pegamento Super Glue Transparente',	precio: 0.55,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 281,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/stx.png',	nombre: 'Cinta para el Cabello',	precio: 1.00,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 282,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/stx.png',	nombre: 'Jabon UltraKlin 1Kilo',	precio: 1.75,	ofertaen: 'https://www.miyuro.one/dele',	}
+
 
 ] ;
