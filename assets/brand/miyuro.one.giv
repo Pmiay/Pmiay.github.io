@@ -16,6 +16,6 @@ miyuro =  [
 {	id: 14,	disponible:'Consultar',	grupo:'Tecnología',	imagen: 'https://duvinier.sharepoint.com/sites/miyuro/one/images/store/st248.png',	nombre: 'Refrigerante R134A Dragon 340g',	precio: 5.25,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 15,	disponible:'Consultar',	grupo:'Tecnología',	imagen: 'https://duvinier.sharepoint.com/sites/miyuro/one/images/store/st34.png',	nombre: 'Mouse Inalámbrico BT/2.4G Recargable  Negro',	precio: 25,	ofertaen: 'https://www.miyuro.one/dele',	}
 {	id: 16,	disponible:'Consultar',	grupo:'Tecnología',	imagen: 'https://duvinier.sharepoint.com/sites/miyuro/one/images/store/st33.jpg',	nombre: 'Mouse Inalámbrico BT/2.4G Recargable Verde Claro',	precio: 25,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 17,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://duvinier.sharepoint.com/sites/miyuro/one/images/store/st226.png',	nombre: 'Super Pegamento Super Glue Transparente',	precio: 0.55,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 17,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://duvinier.sharepoint.com/sites/miyuro/one/images/store/st226.png',	nombre: 'Super Pegamento Super Glue Transparente',	precio: 0.55,	ofertaen: 'https://www.miyuro.one/dele',	}
 
 ] ;
