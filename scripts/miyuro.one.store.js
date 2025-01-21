@@ -10,11 +10,13 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-const elementosBase = miyuro;
-    
+const elementosBase = miyuro; 
+let grupo ="Todos";
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let lista = [];
+    let pedido = [];
     
     const divisa = '$';
     const DOMitems = document.querySelector('#items');
@@ -23,73 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMund = document.querySelector('#unidades');
     const DOMundT = document.querySelector('#unidadesT');
     const DOMtotalp = document.querySelector('#totalp');
-    const DOMbotonVaciar = document.querySelector('#btn-clear');
+    const DOMbotonVaciar = document.querySelector('#btn-clear'); 
     const miLocalStorage = window.localStorage;
 
     // Funciones
 
-    /**
-    * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
-    */
-    function ListarSku() {
-        elementosBase.forEach((info) => {
-            // Estructura
-            const miNodo = document.createElement('row');
-                miNodo.classList.add('column' );
-const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-list__item','ml-050','mr-010','mobile-2-2' );
-    const miSkuDivImgH = document.createElement('div'); miSkuDivImgH.classList.add('item-list__header' );
-            const miSkuDivImg = document.createElement('div'); miSkuDivImg.classList.add('item-list__img-wrap','offer-image' );
-                const miSkuAImg = document.createElement('a'); miSkuAImg.classList.add('no-context-menu'); miSkuAImg.href=info.imagen;
-                    const miSkuImg = document.createElement('img'); miSkuImg.classList.add('offer-image__content','ls-is-cached','lazyloaded' );
-                        miSkuImg.setAttribute('width','100');
-                        miSkuImg.setAttribute('src', info.imagen);
-                        miSkuAImg.appendChild(miSkuImg);
-                miSkuDivImg.appendChild(miSkuAImg);
-            miSkuDivImgH.appendChild(miSkuDivImg);  
-            const miSkuPrecioDiv = document.createElement('div'); miSkuPrecioDiv.classList.add('marker','marker-arrow' );
-                const miSkuPrecioSpan = document.createElement('span'); miSkuPrecioSpan.textContent = `${divisa} ${info.precio.toFixed(2)}  `;
-                miSkuPrecioDiv.appendChild(miSkuPrecioSpan);
-            miSkuDivImgH.appendChild(miSkuPrecioDiv);
-            const miSkuTagSpan = document.createElement('span'); miSkuTagSpan.classList.add('label-mark__tag' );
-                const miSkuTag = document.createElement('span');  miSkuTag.classList.add('label-mark__tag-text' );miSkuTag.textContent = `${info.disponible}`;
-                    miSkuTagSpan.appendChild(miSkuTag);
-            miSkuDivImgH.appendChild(miSkuTagSpan);        
-            const miSkuBtnDiv = document.createElement('div');miSkuBtnDiv.classList.add( 'markerbtn' );miSkuBtnDiv.style="float: right";
-                const miSkuBtnAdd = document.createElement('button');miSkuBtnAdd.classList.add('btn', 'btn-primary');miSkuBtnAdd.textContent = 'Añadir';                
-                        miSkuBtnAdd.setAttribute('add', info.id);miSkuBtnAdd.addEventListener('click', AddSkuLista);
-                        miSkuBtnDiv.appendChild(miSkuBtnAdd); 
-            miSkuDivImgH.appendChild(miSkuBtnDiv); 
-    miSkuDiv.appendChild(miSkuDivImgH); 
-    const miSkuFootDiv = document.createElement('div'); miSkuFootDiv.classList.add('item-list__body' );
-       /* const miSkuFootBrandDiv = document.createElement('div'); miSkuFootBrandDiv.classList.add('item-list__logo' );
-            const miSkuFootBrandImg = document.createElement('img');miSkuFootBrandImg.classList.add('lazyloaded' ); miSkuFootBrandImg.href=info.brand; //data-srcset="https://mi....">
-            miSkuFootBrandDiv.appendChild(miSkuFootBrandImg); 
-        miSkuFootDiv.appendChild(miSkuFootBrandDiv); */
-            const miSkuFootNameDiv = document.createElement('div'); miSkuFootNameDiv.classList.add('item-list__body-wrap' );
-             /*   const miSkuNameFirstDiv = document.createElement('div'); miSkuNameFirstDiv.classList.add( 'item-list__title')
-                const miSkuTitleA = document.createElement('a'); miSkuTitleA.textContent = '***'; //info.nombre;miSkuTitleA.href = info.ofertaen;
-                    miSkuNameFirstDiv.appendChild(miSkuTitleA); 
-                miSkuFootNameDiv.appendChild(miSkuNameFirstDiv); */
-
-                const miSkuNameSecondDiv = document.createElement('div'); miSkuNameSecondDiv.classList.add( 'item-list__text')
-                const miSkuSecondA = document.createElement('a'); miSkuSecondA.textContent = info.nombre;miSkuSecondA.href = info.ofertaen;
-                miSkuNameSecondDiv.appendChild(miSkuSecondA); 
-                miSkuFootNameDiv.appendChild(miSkuNameSecondDiv); 
-
-        miSkuFootDiv.appendChild(miSkuFootNameDiv);  
-    miSkuDiv.appendChild(miSkuFootDiv);  
-
-        const miitemsep = document.createElement('hr'); miitemsep.classList.add('featurette-divider');
-          miSkuDiv.appendChild(miitemsep);
-          miNodo.appendChild(miSkuDiv);
-          DOMitems.appendChild(miNodo);
-        });
-    }
+  
 
     /**
     * Evento para añadir un producto al carrito de la compra
     */
     function AddSkuLista(evento) {
+        //alert(evento.target.getAttribute('pedido'));
+        pedido.push(evento.target.getAttribute('pedido'))   //marcador
         lista.push(evento.target.getAttribute('add'))   //marcador
         ListaDeCompra();// Actualizamos el carrito
         
@@ -218,7 +166,7 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
         const id = evento.target.dataset.item;
        
         // Borramos todos los productos   window.alert("#BorraSkuLista " + id +  "=> " + lista);
-        for (i = lista.length - 1; i >= 0; i--) {if(lista[i]==id){lista.splice(i,1);break;}
+        for (i = lista[0].length - 1; i >= 0; i--) {if(lista[i]==id){lista.splice(i,1);pedido.splice(i,1);break;}
         } 
    /*
         lista = lista.filter((listaId) => {
@@ -250,61 +198,95 @@ const miSkuDiv = document.createElement('div'); miSkuDiv.classList.add('item-lis
     function limpiarLista() {
         // Limpiamos los productos guardados
         lista = []; 
+        pedido = [];
         // Renderizamos los cambios
         ListaDeCompra();
         // Borra LocalStorage
         //localStorage.clear();
         localStorage.removeItem('lista');
+        localStorage.removeItem('pedido');
         localStorage.removeItem('custName');
         document.querySelector('#Nombre').value='' ;
+        localStorage.removeItem('contacId');
+        document.querySelector('#Whatsapp').value='' ;
     }
 
     function ListaToLocalStorage () { 
         miLocalStorage.setItem('lista', JSON.stringify(lista)); 
-        miLocalStorage.setItem('custName', document.querySelector('#Nombre').value);
+        miLocalStorage.setItem('pedido', JSON.stringify(pedido)); 
+        miLocalStorage.setItem('custName', document.querySelector('#Nombre').value); 
+        miLocalStorage.setItem('contacId', document.querySelector('#Whatsapp').value);
  
     }
 
     function localStorageToLista () {
         // ¿Existe un carrito previo guardado en LocalStorage? 
         if (miLocalStorage.getItem('lista') !== null) {  // Carga la información
-            lista = JSON.parse(miLocalStorage.getItem('lista'));
+            if (miLocalStorage.getItem('pedido') !== null) {  // Carga la información
+                lista = JSON.parse(miLocalStorage.getItem('lista'));
+                pedido = JSON.parse(miLocalStorage.getItem('pedido'));
+                window.alert(pedido);
+            }else{lista = [];}
         }// window.alert( document.querySelector('#Nombre').value);
         if (miLocalStorage.getItem('custName') !== null) {  // Carga la información 
-            document.querySelector('#Nombre').value =miLocalStorage.getItem('custName');
-           
+            document.querySelector('#Nombre').value =miLocalStorage.getItem('custName');           
+        }
+        if (miLocalStorage.getItem('contacId') !== null) {  // Carga la información 
+            document.querySelector('#Whatsapp').value =miLocalStorage.getItem('contacId');           
         }
     }
-
+    function getBase(b,g){
+        if(g != "Todos"){ //window.alert(g);
+            return b.filter(el => {
+                 return el.grupo == g;
+             });
+         } else{
+             return b;   
+         }
+     }
     // Eventos
     DOMbotonVaciar.addEventListener('click', limpiarLista);
 
     // Inicio
     localStorageToLista();
-    ListarSku();
+    //ListarSku();
     ListaDeCompra();
 
 
 });
 
 function Getuser(){   //marcador
-    localStorage.setItem('custName', document.querySelector('#Nombre').value );
-    
+    localStorage.setItem('custName', document.querySelector('#Nombre').value );    
    // window.alert(localStorage.getItem('custName') );
+
+}
+function Getcontac(){   //marcador
+    localStorage.setItem('contacId', document.querySelector('#Whatsapp').value );    
+   // window.alert(localStorage.getItem('custName') );
+
+}
+function getGroup(){   //marcador
+    //localStorage.setItem('custName', document.querySelector('#Nombre').value );
+    grupo = "Café";
+   // ListaDeCompra();
+    window.alert(localStorage.getItem('custName') );
 
 }
     function enviarPedido(){//https://stackoverflow.com/questions/17739816/how-to-open-generated-pdf-using-jspdf-in-new-window
 
 
         window.jsPDF = window.jspdf.jsPDF;//new jsPDF('l', 'in', [3, 5]);
-        var doc = new jsPDF('p', 'cm', [9, 20]);//var doc = new jsPDF('p', 'cm', [9, 20]); 
-         //doc.add()                       
+        var doc = new jsPDF('p', 'cm', [9, 21]) // var doc = new jsPDF('p', 'cm', [9, 12]) /*>=3 */ ;//var doc = new jsPDF('p', 'cm', [9, 20]); 
+         //doc.add()           //cada item extra +1.5   to 20Max       
             // Source HTMLElement or a string containing HTML.
 
         var elementHTML = document.querySelector("#pedido"); 
+
         const custName = document.querySelector('#Nombre');
+        const contacId = document.querySelector('#Whatsapp');
        // window.alert("#lista2" + custName.value  );
        if(custName.value.length>0){
+        if(contacId.value.length>0){
             doc.html(elementHTML, {
                 callback: function(doc) {
                     // Save the PDF
@@ -315,30 +297,9 @@ function Getuser(){   //marcador
                 width: 8.8, //target width in the PDF document
                 windowWidth: screen.width > 400 ? 400 : screen.width //400 //window width in CSS pixels
             });  
+        } else{window.alert("Por favor especifique\na nombre de quien va el pedido"  );contacId.focus()}
         } else{window.alert("Por favor especifique\na nombre de quien va el pedido"  );custName.focus()}
 
-/*That code let you create a Blob object inside the browser and show it in the new tab.
-pdf.addHTML($('#content'), y, x, options, function () {
-var blob = pdf.output("blob");
-window.open(URL.createObjectURL(blob));
-});
-Search in jspdf.js this:
-if(type == 'datauri') {
-document.location.href ='data:application/pdf;base64,' + Base64.encode(buffer);
-}
-Add :
-if(type == 'datauriNew') {   
-window.open('data:application/pdf;base64,' + Base64.encode(buffer));
-}
-call this option 'datauriNew' Saludos ;)
-using javascript you can send the generated pdf to a new window using the following code.
-var string = doc.output('datauristring');
 
-var iframe = "<iframe width='100%' height='100%' src='" + string + "'></iframe>"
 
-var x = window.open();
-x.document.open();
-x.document.write(iframe);
-x.document.close();
-*/
     }
