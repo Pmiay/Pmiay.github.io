@@ -43,6 +43,95 @@ document.addEventListener('DOMContentLoaded', () => {
         
         ListaToLocalStorage();// Actualizamos el LocalStorage        
     }
+     // Obtén el modal
+     var modal = document.getElementById("myModal");
+     var span = document.getElementsByClassName("close")[0];
+
+     // Cuando el usuario hace clic en la imagen, abre el modal
+     function viewModal() {
+     // alert("Hola");
+         modal.style.display = "block";
+     }
+
+     // Cuando el usuario hace clic en <span> (x), cierra el modal
+     span.onclick = function() {
+         modal.style.display = "none";
+     }
+
+     // Cuando el usuario hace clic fuera del modal, cierra el modal
+     window.onclick = function(event) {
+         if (event.target == modal) {
+             modal.style.display = "none";
+         }
+     }
+     
+                             ///////////////////////////////////////////////////////////////////////////
+     function setModalContent(evento) {
+
+         viewModal();
+ 
+        // Carrusel
+        var slideIndex = 0;
+        var loc = evento.target.getAttribute('src'); //document.getElementById("MyoModal").getAttribute('src'); // 
+        var expand = evento.target.getAttribute('expand'); //document.getElementById("MyoModal").getAttribute('expand'); //
+        var totImg = evento.target.getAttribute('totImg'); //document.getElementById("MyoModal").getAttribute('totImg'); // 
+ 
+             var locd = loc.split ("/");
+             var images=[loc];
+ 
+           //  alert(expand );
+             //loc=loc.replace(locd[locd.length-1],expand);
+             loc = "https://store.miyuro.one/" + expand
+         //    alert (loc);
+         for(let i = 1; i <= totImg; i++)  { //alert("inFE");
+                 images.push(loc + "/"+ locd[locd.length-1].replace(".","."+ i + ".")); // Añade más imágenes aquí
+ 
+             }
+           //  alert(images);
+      
+        function loadCarousel() {  
+         clearModal();
+         var carouselInner = document.getElementById("carouselInner");
+             images.forEach((image, index) => {
+                 var div = document.createElement("div");
+                 div.className = "carousel-item" + (index === 0 ? " active" : "");
+                 var img = document.createElement("img");
+                 img.setAttribute('src',image);
+                 img.setAttribute('alt','Imagen ' + (index + 1));
+                 div.appendChild(img);
+                 carouselInner.appendChild(div);
+             });
+        } //alert(images);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+ 
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("carousel-item");
+            if (n >= slides.length) {slideIndex = 0}
+            if (n < 0) {slideIndex = slides.length - 1}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.transform = "translateX(" + (-slideIndex * 100) + "%)";
+            }
+        }
+ 
+        // Cambia las imágenes automáticamente cada 3 segundos
+        setInterval(function() {
+            plusSlides(1);
+        }, 3000);
+    function clearModal(){
+         var carI = document.getElementById("carouselInner"); 
+         while (carI.hasChildNodes()) {
+             carI.removeChild(carI.firstChild);
+         }
+    }
+        // Cargar el carrusel al inicio
+        loadCarousel();
+ }
+
+      //////////////////////////////////////////////////////////////////////////
 
     /**
     * Dibuja todos los productos guardados en el carrito
