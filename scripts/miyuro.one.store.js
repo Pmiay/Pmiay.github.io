@@ -140,7 +140,7 @@ const miSkuDivImgM = document.createElement('div'); miSkuDivImgM.classList.add('
       //<a class="blantershow" href="https://wa.me/50768666811?text=https://store.miyuro.one/st34/Pedido.html%20%0D%0AEsta%20disponible%20" id="wbtn" target="_blank"> 
         const miSkuDivPedidoA = document.createElement('a'); miSkuDivPedidoA.classList.add('blantershow');
                                                              miSkuDivPedidoA.target='_blank';
-                                                             miSkuDivPedidoA.href = "https://wa.me/50768666811?text=https://store.miyuro.one/" + info.producto + "/Pedido.html%20%0D%0AEsta%20disponible%20%0D%0A" + info.nombre +"%20%0D%0A" + info.precio.toFixed(2);
+                                                             miSkuDivPedidoA.href = "https://wa.me/50768666811?text=https://store.miyuro.one/" + info.producto + "/Pedido.html%20%0D%0A*Esta%20disponible*%20%0D%0A" + info.nombre +"%20%0D%0A" + info.precio.toFixed(2);
     /*    const miSkuDivPedidoASVG = document.createElement('svg'); miSkuDivPedidoASVG.width=20; miSkuDivPedidoASVG.viewBox="0 0 24 24";
         const miSkuDivPedidodefs = document.createElement('defs'); 
         const miSkuDivPedidoPath1 = document.createElement('path'); miSkuDivPedidoPath1.fill="#eceff1";miSkuDivPedidoPath1.d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z";
