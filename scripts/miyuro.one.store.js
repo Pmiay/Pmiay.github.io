@@ -129,7 +129,7 @@ const miSkuDivImgM = document.createElement('div'); miSkuDivImgM.classList.add('
                 miSkuFootNameDiv.appendChild(miSkuNameFirstDiv); */
 
                 const miSkuNameSecondDiv = document.createElement('div'); miSkuNameSecondDiv.classList.add( 'item-list__text');
-                const miSkuSecondA = document.createElement('a'); miSkuSecondA.textContent = info.nombre;miSkuSecondA.href = "https://store.miyuro.one/" + info.producto + "/" + info.nombre.replace(" ","-") + ".html" ; //info.ofertaen;
+                const miSkuSecondA = document.createElement('a'); miSkuSecondA.textContent = info.nombre;miSkuSecondA.href = "https://store.miyuro.one/" + info.producto + "/" + info.nombre.replaceAll(" ","-") + ".html" ; //info.ofertaen;
                 miSkuNameSecondDiv.appendChild(miSkuSecondA); 
                 miSkuFootNameDiv.appendChild(miSkuNameSecondDiv); 
 
