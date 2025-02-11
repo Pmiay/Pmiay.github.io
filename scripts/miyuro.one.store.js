@@ -137,7 +137,7 @@ const miSkuDivImgM = document.createElement('div'); miSkuDivImgM.classList.add('
     miSkuDiv.appendChild(miSkuFootDiv);   
 //botton pedido
         const miSkuFootDivPedido = document.createElement('div'); miSkuFootDivPedido.classList.add('item-list__body-wrap' );
-      //<a class="blantershow" href="https://wa.me/50768666811?text=https://store.miyuro.one/st34/Pedido.html%20%0D%0AEsta%20disponible%20" id="wbtn" target="_blank"> 
+      //<a class="blantershow" href="https://wa.me/50768666811?text=https://store.miyuro.one/st34/Pedido.html%20%0D%0A*Esta%20disponible%20*" id="wbtn" target="_blank"> 
         const miSkuDivPedidoA = document.createElement('a'); miSkuDivPedidoA.classList.add('blantershow');
                                                              miSkuDivPedidoA.target='_blank';
                                                              miSkuDivPedidoA.href = "https://wa.me/50768666811?text=https://store.miyuro.one/" + info.producto + "/Pedido.html%20%0D%0A*Esta%20disponible*%20%0D%0A" + info.nombre +"%20%0D%0A" + info.precio.toFixed(2);
