@@ -1,7 +1,7 @@
 miyuro =  [
 {	id: 0,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st328.png',	producto:'st328',	nombre: 'Hamaca Resistente a la intemperie 150 cm x 198 cm soporta 320 libras',	precio: 35,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 1,	disponible:'Disponible',	grupo:'Automobil',	imagen: 'https://miyuro.one/images/store/st326.png',	producto:'st326',	nombre: 'Machete con Funda Kukry 18" Pulgadas',	precio: 18,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 2,	disponible:'Disponible',	grupo:'Automobil',	imagen: 'https://miyuro.one/images/store/st327.png',	producto:'st327',	nombre: 'Machete de Acero Inoxidable con Funda 63 cm',	precio: 32,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 2,	disponible:'Disponible',	grupo:'Automobil',	imagen: 'https://miyuro.one/images/store/st331.png',	producto:'st331',	nombre: 'Casco, seguridad en bicicleta o scooter L',	precio: 16,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 3,	disponible:'Disponible',	grupo:'Automobil',	imagen: 'https://miyuro.one/images/store/st320.png',	producto:'st320',	nombre: 'Espejo retrovisor auxiliar interior para auto, giratorio 360° con ventosa ajustable',	precio: 17,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 4,	disponible:'Disponible',	grupo:'Automobil',	imagen: 'https://miyuro.one/images/store/st329.png',	producto:'st329',	nombre: 'Banco portatil de energía puertos USB y USB-C CLJ1200',	precio: 97,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 5,	disponible:'Disponible',	grupo:'Automobil',	imagen: 'https://miyuro.one/images/store/st318.png',	producto:'st318',	nombre: 'Batería para Auto 570Amp',	precio: 114,	ofertaen: 'https://www.miyuro.one/dele',	},
@@ -16,6 +16,8 @@ miyuro =  [
 {	id: 14,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st34.png',	producto:'st34',	nombre: 'Mouse Inalámbrico BT/2.4G Recargable  Negro',	precio: 25,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 15,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st319.png',	producto:'st319',	nombre: 'Sensor de Posición del Cigüeñal CKP / árbol de levas',	precio: 21,	ofertaen: 'https://www.miyuro.one/dele',	},
 {	id: 16,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st321.png',	producto:'st321',	nombre: 'Coolant Anticorrosivo para Radiadores Amarillo 3.78 L',	precio: 5,	ofertaen: 'https://www.miyuro.one/dele',	},
-{	id: 17,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st322.png',	producto:'st322',	nombre: 'Hyundai Relays 95230-3A400 DC12V 30A V4-1A',	precio: 16,	ofertaen: 'https://www.miyuro.one/dele',	}
+{	id: 17,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st322.png',	producto:'st322',	nombre: 'Hyundai Relays 95230-3A400 DC12V 30A V4-1A',	precio: 16,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 18,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st333.png',	producto:'st333',	nombre: 'Mause pad -90X42cm- Gamers Spider-Man con Mouse',	precio: 19.75,	ofertaen: 'https://www.miyuro.one/dele',	},
+{	id: 19,	disponible:'Disponible',	grupo:'Tecnología',	imagen: 'https://miyuro.one/images/store/st332.png',	producto:'st332',	nombre: 'Kit de estilo y elegancia para automóvil ',	precio: 35,	ofertaen: 'https://www.miyuro.one/dele',	}
 
 ] ;
