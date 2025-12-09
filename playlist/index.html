@@ -1,1 +1,495 @@
 
+<!DOCTYPE html>
+<html lang="es" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playlist · MiYuro</title>
+  <meta name="description" content="Gestor de playlist con reproducción de audio, guardado en LocalStorage, importación/exportación y modo claro/oscuro." />
+  <style>
+    /* Temas (claro/oscuro) con variables */
+    :root{
+      --bg:#0f172a; /* dark slate-900 */
+      --panel:#111827; /* dark gray-900 */
+      --text:#e5e7eb; /* dark gray-200 */
+      --muted:#94a3b8; /* dark slate-400 */
+      --accent:#22d3ee; /* cyan-400 */
+      --accent-2:#a78bfa; /* violet-400 */
+      --danger:#ef4444; /* red-500 */
+      --border:rgba(255,255,255,.08);
+      --soft:#0b1223;
+    }
+    [data-theme="light"]{
+      --bg:#f8fafc; /* slate-50 */
+      --panel:#ffffff; /* white */
+      --text:#0f172a; /* slate-900 */
+      --muted:#64748b; /* slate-500 */
+      --accent:#06b6d4; /* cyan-500 */
+      --accent-2:#7c3aed; /* violet-600 */
+      --danger:#dc2626; /* red-600 */
+      --border:rgba(0,0,0,.08);
+      --soft:#f1f5f9; /* slate-100 */
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans',sans-serif;background:linear-gradient(120deg,var(--bg),#0b1020 30%, #0a0f1a);color:var(--text)}
+    [data-theme="light"] body{background:linear-gradient(120deg,var(--bg),#eef2ff 30%, #f8fafc)}
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(17,24,39,.6);backdrop-filter:saturate(1.2) blur(6px);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border)}
+    [data-theme="light"] header{background:rgba(255,255,255,.8)}
+    header h1{margin:0;font-size:1.1rem;letter-spacing:.2px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand .logo{width:32px;height:32px;border-radius:8px;background:radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));box-shadow:0 0 20px rgba(34,211,238,.25)}
+    .container{max-width:1100px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    @media (max-width:960px){.container{grid-template-columns:1fr}}
+    .panel{background:rgba(17,24,39,.6);border:1px solid var(--border);border-radius:14px;padding:16px}
+    [data-theme="light"] .panel{background:rgba(255,255,255,.9)}
+    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0 12px}
+    button, .btn{appearance:none;border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer;transition:.15s ease;display:inline-flex;align-items:center;gap:8px}
+    button:hover{border-color:rgba(255,255,255,.2);transform:translateY(-1px)}
+    [data-theme="light"] button:hover{border-color:rgba(0,0,0,.15)}
+    button.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0b1020;border:none}
+    button.danger{border-color:rgba(239,68,68,.4);color:#fee2e2}
+    .input{width:100%;padding:9px 11px;border-radius:10px;border:1px solid var(--border);background:var(--soft);color:var(--text)}
+    label{font-size:.9rem;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+    ul#playlist{list-style:none;margin:0;padding:0}
+    ul#playlist li{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;background:rgba(2,6,23,.6)}
+    [data-theme="light"] ul#playlist li{background:#f8fafc}
+    .handle{cursor:grab;color:var(--muted)}
+    .title{flex:1}
+    .time{font-size:.85rem;color:var(--muted)}
+    .actions{display:flex;gap:6px}
+    .now{border-color:var(--accent);box-shadow:0 0 0 2px rgba(34,211,238,.15) inset}
+    .footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px;color:var(--muted);font-size:.9rem}
+    .player{display:flex;gap:10px;align-items:center}
+    .seek{width:100%}
+    input[type="range"]{width:100%}
+    .dropzone{border:1px dashed rgba(255,255,255,.20);border-radius:12px;padding:12px;text-align:center;color:var(--muted)}
+    .dropzone.drag{border-color:var(--accent);color:var(--text);background:rgba(34,211,238,.08)}
+    details summary{cursor:pointer}
+    code{background:var(--soft);padding:3px 6px;border-radius:6px}
+    .tip{margin-top:8px;color:#f59e0b}
+    .theme{gap:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><div class="logo"></div><h1>MiYuro · Playlist</h1></div>
+    <div class="controls">
+      <button id="btnPrev" title="Anterior">⏮️</button>
+      <button id="btnPlay" class="primary" title="Reproducir/Pausar">▶️ / ⏸️</button>
+      <button id="btnNext" title="Siguiente">⏭️</button>
+      <button id="btnTheme" class="theme" title="Cambiar tema">🌙 / ☀️</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2 style="margin-top:0">Lista de reproducción</h2>
+      <div class="controls">
+        <button id="btnAdd">➕ Añadir pista</button>
+        <button id="btnClear" class="danger">🗑️ Limpiar</button>
+        <button id="btnShuffle">🔀 Mezclar</button>
+        <button id="btnSave">💾 Guardar</button>
+        <button id="btnExport">⬇️ Exportar JSON</button>
+        <label for="importFile" class="btn">⬆️ Importar JSON</label>
+        <input id="importFile" type="file" accept="application/json" style="display:none" />
+      </div>
+
+      <ul id="playlist"></ul>
+      <div class="footer">
+        <div id="count">0 pistas</div>
+        <div id="status">—</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 style="margin-top:0">Reproductor</h2>
+      <div class="player">
+        <div style="flex:1">
+          <div id="nowTitle" style="font-weight:600">Sin pista</div>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+            <input id="seek" class="seek" type="range" min="0" max="100" value="0" />
+            <span id="current" class="time">00:00</span>
+            <span id="duration" class="time">00:00</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+            <label>Volumen</label>
+            <input id="vol" type="range" min="0" max="1" step="0.01" value="0.9" />
+          </div>
+          <div id="tip" class="tip" style="display:none">⚠️ Si alguna pista no suena, revisa que el enlace sea un archivo de audio directo .mp3/.ogg.</div>
+        </div>
+      </div>
+
+      <div class="dropzone" id="dropzone">Arrastra archivos .mp3/.ogg o pega enlaces directos aquí</div>
+
+      <details style="margin-top:10px">
+        <summary>➕ Añadir manualmente</summary>
+        <div class="grid" style="margin-top:10px">
+          <div>
+            <label for="inpTitle">Título</label>
+            <input id="inpTitle" class="input" placeholder="Nombre de la pista" />
+          </div>
+          <div>
+            <label for="inpUrl">URL / archivo local</label>
+            <input id="inpUrl" class="input" placeholder="https://... o seleccionar archivo" />
+          </div>
+        </div>
+        <div class="controls" style="margin-top:10px">
+          <input id="fileLocal" type="file" accept="audio/*" />
+          <button id="btnAddManual" class="primary">Añadir</button>
+        </div>
+        <p style="color:var(--muted)">Sugerencia: usa enlaces directos a audio (MP3/OGG). Los archivos locales se leen con <code>File</code>/<code>Blob</code> sin subirlos.</p>
+      </details>
+
+      <audio id="audio" crossorigin="anonymous"></audio>
+    </section>
+  </main>
+
+  <script>
+    /** Utilidades **/
+    const $ = sel => document.querySelector(sel);
+    const fmt = s => {
+      if(!isFinite(s)) return '00:00';
+      const m = Math.floor(s/60), sec = Math.floor(s%60);
+      return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+    };
+
+    /** Tema claro/oscuro **/
+    const THEME_KEY = 'miyuro.theme';
+    const applyTheme = (t) => {
+      if(t==='light') document.documentElement.setAttribute('data-theme','light');
+      else if(t==='dark') document.documentElement.setAttribute('data-theme','dark');
+      else {
+        document.documentElement.setAttribute('data-theme','auto');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark? 'dark':'light');
+      }
+    };
+    const cycleTheme = () => {
+      const cur = localStorage.getItem(THEME_KEY) || 'auto';
+      const next = cur==='auto'? 'light' : cur==='light'? 'dark' : 'auto';
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+      $('#status').textContent = `Tema: ${next}`;
+      setTimeout(()=>$('#status').textContent='—', 2500);
+    };
+
+    /** Estado **/
+    let playlist = [];
+    let index = -1; // pista activa
+
+    /** Persistencia **/
+    const STORAGE_KEY = 'miyuro.playlist.v2';
+    const load = () => {
+      try{
+        const json = localStorage.getItem(STORAGE_KEY);
+        if(json){
+          const data = JSON.parse(json);
+          if(Array.isArray(data)) playlist = data;
+        } else {
+          // Playlist inicial con MP3 directos
+          playlist = [
+            {
+              title: 'Pachelbel – Canon in D (archive.org) – MP3',
+              src: 'https://archive.org/download/PachelbelCanonInDMajor/Pachelbel_%20Canon%20-%20In%20D%20Major.mp3',
+              open: 'https://archive.org/details/PachelbelCanonInDMajor',
+              credit: 'Internet Archive',
+              license: 'Attribution-NoDerivs 3.0'
+            },
+            {
+              title: 'Vivaldi – seasons Spring (archive.org) – MP3',
+              src: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1/01.01.%20No.%201%20-%20Spring%20%28La%20Primavera%29%3A%201st%20Movt.%20Allegro%3B%202nd%20Movt.%20Largo%3B%203rd%20Movt.%20Allegro.mp3',
+              open: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1',
+              credit: 'Internet Archive',
+              license: 'Attribution-NoDerivs 3.0'
+            },
+            {
+              title: 'Vivaldi – seasons Winter (archive.org) – MP3',
+              src: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1/02.02.%20No.%204%20-%20Winter%20%28L%27Inverno%29%3A%201st%20Movt.%20Allegro%20Non%20Molto%3B%202nd%20Movt.%20Largo%3B%203rd%20Movt.%20Allegro.mp3',
+              open: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1',
+              credit: 'Internet Archive',
+              license: 'Attribution-NoDerivs 3.0'
+            },
+            {
+              title: 'Vivaldi – seasons Autumn (archive.org) – MP3',
+              src: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1/02.01.%20No.%203%20-%20Autumn%20%28L%27Autumno%29%3A%201st%20Movt.%20Allegro%3B%202nd%20Movt.%20Adagio%20Molto%3B%203rd%20Movt.%20Allegro.mp3',
+              open: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1',
+              credit: 'Internet Archive',
+              license: 'Attribution-NoDerivs 3.0'
+            },
+            {
+              title: 'Vivaldi – seasons Summer (archive.org) – MP3',
+              src: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1/01.02.%20No.%202%20-%20Summer%20%28L%27%20Estate%29%3A%201st%20Movt.%20Allegro%20Non%20Molto%3B%202nd%20Movt.%20Adagio%3B%203rd%20Movt.%20Presto.mp3',
+              open: 'https://archive.org/download/lp_the-four-seasons_antonio-vivaldi_2/disc1',
+              credit: 'Internet Archive',
+              license: 'Attribution-NoDerivs 3.0'
+            },
+            {
+              title: 'Chopin – NocturneNo.2 (archive.org) – MP3',
+              src: 'https://archive.org/download/FredericChopinNocturneNo.2InEFlatMajorOp.9No.2FromBlueLagoon/Frederic%20Chopin%20-%20Nocturne%20No.%202%20In%20E%20Flat%20Major%20Op.9%20No.2%20%28From%20Blue%20Lagoon%29.mp3',
+              open: 'https://archive.org/download/FredericChopinNocturneNo.2InEFlatMajorOp.9No.2FromBlueLagoon',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            {
+              title: 'Debussy – Arabesques Nos. 1 & 2 (archive.org) – MP3',
+              src: 'https://archive.org/download/DebussyArabesqueNo.1AndNo.2/Debussy%20-%20Arabesque%20No.1%20and%20No.2.mp3',
+              open: 'https://archive.org/download/DebussyArabesqueNo.1AndNo.2',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            {
+              title: 'Celine – I\'m Alive (archive.org) – MP3',
+              src: 'https://archive.org/download/celine-alive-aus/02%20Céline%20Dion%20-%20I%27m%20Alive%20%28The%20Wake%20Up%20Mix%29.mp3',
+              open: 'https://archive.org/download/celine-alive-aus',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            {
+              title: 'Amaia – El 28 (archive.org) – MP3',
+              src: 'https://archive.org/download/lovg-esencial/1-04%20El%2028.mp3',
+              open: 'https://archive.org/download/lovg-esencial/',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            {
+              title: 'Amaia – La Playa (archive.org) – MP3',
+              src: 'https://archive.org/download/lovg-esencial/1-02%20La%20Playa.mp3',
+              open: 'https://archive.org/download/lovg-esencial/',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            {
+              title: 'Amaia – Rosas (archive.org) – MP3',
+              src: 'https://archive.org/download/lovg-esencial/1-08%20Rosas.mp3',
+              open: 'https://archive.org/download/lovg-esencial/',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            {
+              title: 'Amaia – 20 De Enero (archive.org) – MP3',
+              src: 'https://archive.org/download/lovg-esencial/2-04%2020%20De%20Enero.mp3',
+              open: 'https://archive.org/download/lovg-esencial/',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            {
+              title: 'Amaia – Puedes Contar Conmigo (archive.org) – MP3',
+              src: 'https://archive.org/download/lovg-esencial/1-01%20Puedes%20Contar%20Conmigo.mp3',
+              open: 'https://archive.org/download/lovg-esencial/',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            },
+            { /* https://archive.org/details/lovg-esencial/1-01+Puedes+Contar+Conmigo.mp3  */
+              title: 'Celine – The Power of Love (archive.org) – MP3',
+              src: 'https://archive.org/download/celine-memphis/Live%20in%20Memphis/01%20The%20Power%20of%20Love.mp3',
+              open: 'https://archive.org/download/celine-memphis/Live%20in%20Memphis/',
+              credit: 'Internet Archive',
+              license: 'Public Domain (per item notes)'
+            }
+          ];
+        }
+      }catch(e){console.warn('No se pudo cargar la lista', e)}
+      render();
+    };
+    const save = () => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(playlist));
+      $('#status').textContent = 'Guardado en este navegador';
+      setTimeout(()=>$('#status').textContent='—', 2500);
+    };
+
+    /** Audio **/
+    const audio = $('#audio');
+    audio.volume = 0.9;
+
+    const playAt = (i) => {
+      if(i<0 || i>=playlist.length) return;
+      index = i;
+      const item = playlist[i];
+      audio.src = item.src;
+      audio.play().catch(err=>{
+        console.warn('No se pudo reproducir', err);
+      });
+      updateNow();
+      render();
+    };
+
+    const updateNow = () => {
+      const item = playlist[index];
+      $('#nowTitle').textContent = item? item.title : 'Sin pista';
+      $('#status').textContent = item? 'Reproduciendo' : '—';
+    };
+
+    const next = () => {
+      if(playlist.length===0) return;
+      index = (index+1) % playlist.length;
+      playAt(index);
+    };
+    const prev = () => {
+      if(playlist.length===0) return;
+      index = (index-1+playlist.length) % playlist.length;
+      playAt(index);
+    };
+
+    /** Render **/
+    const render = () => {
+      const ul = $('#playlist');
+      ul.innerHTML = '';
+      playlist.forEach((item,i)=>{
+        const li = document.createElement('li');
+        li.className = i===index? 'now' : '';
+        li.draggable = true;
+        li.innerHTML = `
+          <span class=handle title="Arrastrar">☰</span>
+          <div class=title>
+            <div>${item.title || 'Sin título'}</div>
+            <div style="font-size:.8rem;color:var(--muted)">${item.credit||''}${item.license? ' · '+item.license:''}</div>
+          </div>
+          <div class=actions>
+            <button data-act="play">▶️</button>
+            <button data-act="open" title="Abrir fuente">🌐</button>
+            <button data-act="up">⬆️</button>
+            <button data-act="down">⬇️</button>
+            <button data-act="del" class="danger">🗑️</button>
+          </div>`;
+        li.querySelector('[data-act="play"]').onclick = ()=> playAt(i);
+        li.querySelector('[data-act="open"]').onclick = ()=>{
+          const url = item.open || item.src;
+          window.open(url, '_blank');
+        };
+        li.querySelector('[data-act="up"]').onclick = ()=>{
+          if(i>0){ [playlist[i-1], playlist[i]] = [playlist[i], playlist[i-1]]; render(); save(); }
+        };
+        li.querySelector('[data-act="down"]').onclick = ()=>{
+          if(i<playlist.length-1){ [playlist[i+1], playlist[i]] = [playlist[i], playlist[i+1]]; render(); save(); }
+        };
+        li.querySelector('[data-act="del"]').onclick = ()=>{
+          playlist.splice(i,1);
+          if(index>=playlist.length) index = playlist.length-1;
+          render(); save();
+        };
+        // Drag & drop
+        li.addEventListener('dragstart', e=>{ e.dataTransfer.setData('text/plain', i); });
+        li.addEventListener('dragover', e=>{ e.preventDefault(); });
+        li.addEventListener('drop', e=>{
+          e.preventDefault();
+          const from = parseInt(e.dataTransfer.getData('text/plain'),10);
+          const to = i;
+          if(Number.isInteger(from)){
+            const [m] = playlist.splice(from,1);
+            playlist.splice(to,0,m);
+            render(); save();
+          }
+        });
+        ul.appendChild(li);
+      });
+      $('#count').textContent = `${playlist.length} pista${playlist.length!==1?'s':''}`;
+    };
+
+    /** Controles **/
+    $('#btnPlay').onclick = ()=>{ if(audio.paused) audio.play(); else audio.pause(); };
+    $('#btnNext').onclick = next;
+    $('#btnPrev').onclick = prev;
+    $('#btnAdd').onclick = ()=>{
+      const url = prompt('URL directa al audio (mp3/ogg)');
+      if(!url) return;
+      const title = prompt('Título para la pista');
+      playlist.push({title: title||url, src:url});
+      render(); save();
+    };
+    $('#btnClear').onclick = ()=>{
+      if(confirm('¿Eliminar todas las pistas?')){ playlist = []; index = -1; render(); save(); }
+    };
+    $('#btnShuffle').onclick = ()=>{
+      for(let i=playlist.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [playlist[i],playlist[j]]=[playlist[j],playlist[i]]; }
+      render(); save();
+    };
+    $('#btnSave').onclick = save;
+    $('#btnExport').onclick = ()=>{
+      const blob = new Blob([JSON.stringify(playlist,null,2)], {type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'miyuro-playlist.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    };
+    $('#importFile').onchange = async (e)=>{
+      const file = e.target.files?.[0];
+      if(!file) return;
+      try{
+        const text = await file.text();
+        const data = JSON.parse(text);
+        if(Array.isArray(data)){
+          playlist = data.filter(x=>x && x.src);
+          render(); save();
+        } else alert('JSON inválido');
+      }catch(err){ alert('No se pudo importar: '+err.message); }
+      e.target.value = '';
+    };
+    $('#btnTheme').onclick = cycleTheme;
+
+    /** Player events **/
+    audio.addEventListener('timeupdate', ()=>{
+      const p = audio.currentTime / (audio.duration || 1) * 100;
+      $('#seek').value = isFinite(p)? String(p) : '0';
+      $('#current').textContent = fmt(audio.currentTime);
+      $('#duration').textContent = fmt(audio.duration);
+    });
+    audio.addEventListener('ended', next);
+    audio.addEventListener('error', ()=>{ $('#tip').style.display = 'block'; $('#status').textContent = 'Error de reproducción'; });
+    $('#seek').addEventListener('input', (e)=>{
+      const val = parseFloat(e.target.value);
+      if(isFinite(audio.duration)){
+        audio.currentTime = audio.duration * (val/100);
+      }
+    });
+    $('#vol').addEventListener('input', (e)=>{ audio.volume = parseFloat(e.target.value); });
+
+    /** Dropzone para archivos y enlaces **/
+    const dz = $('#dropzone');
+    dz.addEventListener('dragover', e=>{ e.preventDefault(); dz.classList.add('drag'); });
+    dz.addEventListener('dragleave', ()=> dz.classList.remove('drag'));
+    dz.addEventListener('drop', async (e)=>{
+      e.preventDefault(); dz.classList.remove('drag');
+      const items = e.dataTransfer.items;
+      for(const it of items){
+        if(it.kind==='file'){
+          const file = it.getAsFile();
+          if(file && file.type.startsWith('audio/')){
+            const url = URL.createObjectURL(file);
+            playlist.push({title:file.name, src:url});
+          }
+        } else if(it.kind==='string' && it.type==='text/plain'){
+          const text = await new Promise(r=>it.getAsString(r));
+          if(/^https?:/i.test(text)){
+            playlist.push({title:text, src:text});
+          }
+        }
+      }
+      render(); save();
+    });
+
+    /** Entrada manual **/
+    $('#fileLocal').addEventListener('change', e=>{
+      const f = e.target.files?.[0];
+      if(f){ $('#inpUrl').value = URL.createObjectURL(f); if(!$('#inpTitle').value) $('#inpTitle').value = f.name; }
+    });
+    $('#btnAddManual').onclick = ()=>{
+      const title = $('#inpTitle').value.trim();
+      const url = $('#inpUrl').value.trim();
+      if(!url){ alert('Ingresa una URL o selecciona un archivo'); return; }
+      playlist.push({title:title||url, src:url});
+      $('#inpTitle').value = ''; $('#inpUrl').value = ''; $('#fileLocal').value = '';
+      render(); save();
+    };
+
+    // Carga inicial
+    applyTheme(localStorage.getItem(THEME_KEY)||'auto');
+    load();
+  </script>
+</body>
+</html>
+
