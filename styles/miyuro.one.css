@@ -30,3 +30,24 @@
     height: 15vw;
     object-fit: cover;
 } */
+.linea-con-texto {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.linea-con-texto::before,
+.linea-con-texto::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #000; /* Color y grosor de la línea */
+}
+
+/* Espacio a los lados del texto */
+.linea-con-texto:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.linea-con-texto:not(:empty)::after {
+  margin-left: .5em;
+}
