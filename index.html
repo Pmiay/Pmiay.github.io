@@ -39,6 +39,14 @@
           font-size: 3.5rem;
         }
       }
+      body { font-family: Arial, sans-serif; margin: 20px; background-color: #f8f9fa; color: #333; }
+        .seccion { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .alerta-roja { border-left: 2px solid #dc3545; }
+        .alerta-naranja { border-left: 2px solid #fd7e14; }
+        .titulo { font-size: 1.3em; font-weight: bold; margin-bottom: 10px; color: #222; }
+        .resaltado { font-size: 1.5em; font-weight: bold; color: #dc3545; }
+        ul { padding-left: 5px; }
+        li { margin-bottom: 8px; line-height: 1.4; }      
     </style>
 
  
@@ -119,7 +127,39 @@ end page
   </div>
 </main>
     
-<div id="sismos-panama">......</div>
+  <!-- Contenedor de Resultados (Sismos) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- Escenario Sismico -->
+    <div class="border border-slate-100 bg-slate-50/50 rounded-xl p-4 flex flex-col justify-between">
+      <div>
+        <div class="flex justify-between items-center mb-2">
+        <h2 class="font-bold text-slate-900">Sismos</h2>
+        <span class="text-xs bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded">Panamá</span>
+        </div>
+        
+        <div class="space-y-1.5 text-xs text-slate-600  border-slate-200 pb-3 mb-3">
+          <!-- Sección 1: Terremoto Principal -->
+          <div id="terremoto-principal" class="seccion alerta-roja">
+              <div class="titulo">💥 Terremoto Principal Detectado</div>
+              <div id="principal-info">Procesando datos...</div>
+          </div>
+
+          <!-- Sección 2: Sumatoria de Réplicas -->
+          <div id="sumatoria-replicas" class="seccion">
+              <div class="titulo">📊 Contador de Réplicas</div>
+              <div id="contador-info">Calculando...</div>
+          </div>
+
+          <!-- Sección 3: Los 5 movimientos más significativos -->
+          <div id="movimientos-significativos" class="seccion alerta-naranja">
+              <div class="titulo">⚠️ Top 5 Movimientos Más Significativos</div>
+              <ul id="lista-significativos"><li>Cargando registros...</li></ul>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>  
     
 <footer class="text-muted py-5">
   <div class="container">
